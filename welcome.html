@@ -21,55 +21,12 @@
         .btn-next { background: var(--c-accent); color: black; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; flex: 2; }
         .btn-prev { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 8px; cursor: pointer; flex: 1; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        /* Fix for White-on-White Dropdown Menu */
-select {
-    appearance: none; /* Removes default browser styling */
-    -webkit-appearance: none;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    cursor: pointer;
-}
-
-/* This targets the actual list of items when the menu opens */
-select option {
-    background-color: #0a0a0a; /* Solid black background */
-    color: #ffffff;            /* Solid white text */
-}
-
-/* Specifically for mobile/Safari support */
-select:focus {
-    outline: none;
-    border-color: var(--c-accent);
-}
-        /* Grid for Multi-Select Availability */
-.schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.check-item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: 0.2s;
-}
-
-.check-item:hover { background: rgba(162, 238, 242, 0.1); }
-
-/* Hidden actual checkbox, styled label */
-.check-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--c-accent);
-}
+        
+        select option { background-color: #0a0a0a; color: #ffffff; }
+        
+        .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 15px; }
+        .check-item { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem; }
+        .check-item input[type="checkbox"] { accent-color: var(--c-accent); }
     </style>
 </head>
 <body>
@@ -81,137 +38,128 @@ select:focus {
 
     <form id="welcomeWizard">
         <div class="step active" id="step1">
-    <h1>Step 1: The Student</h1>
-    <p style="opacity: 0.6;">Tell us who we'll be teaching.</p>
-    
-    <label>Student's Full Name</label>
-    <input type="text" name="student_name" required placeholder="Enter name">
-    
-    <label>Current Grade/Year Level</label>
-    <input type="text" name="grade" required placeholder="e.g., Year 9 / Grade 10">
-    
-    <label>Curriculum</label>
-    <select name="curriculum" required>
-        <option value="" disabled selected>Select Curriculum</option>
-        <option value="British (IGCSE/GCSE/A-Level)">British (IGCSE/GCSE/A-Level)</option>
-        <option value="American (Common Core/AP)">American (Common Core/AP)</option>
-        <option value="IB (PYP/MYP/DP)">International Baccalaureate (IB)</option>
-        <option value="Ministry (Kuwait)">Ministry (Kuwait)</option>
-        <option value="Other">Other</option>
-    </select>
-
-    <div class="btn-group">
-        <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
-    </div>
-</div>
-        
+            <h1>Step 1: The Student</h1>
+            <label>Student's Full Name</label>
+            <input type="text" name="student_name" required>
+            
+            <label>Student/Parent Email</label>
+            <input type="email" name="student_email" required placeholder="For login credentials">
+            
+            <label>Current Grade/Year Level</label>
+            <input type="text" name="grade" required>
+            
+            <label>Curriculum</label>
+            <select name="curriculum" required>
+                <option value="" disabled selected>Select Curriculum</option>
+                <option value="British">British (IGCSE/GCSE/A-Level)</option>
+                <option value="American">American (Common Core/AP)</option>
+                <option value="IB">International Baccalaureate (IB)</option>
+                <option value="Ministry">Ministry (Kuwait)</option>
+            </select>
+            <div class="btn-group">
+                <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
 
         <div class="step" id="step2">
-    <h1>Step 2: Learning Goals</h1>
-    <p style="opacity: 0.6;">What are your primary objectives?</p>
-    
-    <label>Primary Focus</label>
-    <select name="goal" required>
-        <option value="" disabled selected>Select your goal</option>
-        <option value="exam_prep">Exam Preparation (IGCSE/IB/SAT)</option>
-        <option value="general_support">General Academic Support</option>
-        <option value="specific_subject">Specific Subject Mastery</option>
-    </select>
-    
-    <label>Any specific struggles?</label>
-    <textarea name="struggles" rows="3" placeholder="e.g., Difficulty with Algebra or Essay Structure"></textarea>
-    
-    <div class="btn-group">
-        <button type="button" class="btn-prev" onclick="nextStep(1)">Back</button>
-        <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
-    </div>
-</div>
-    
+            <h1>Step 2: Learning Goals</h1>
+            <label>Primary Focus</label>
+            <select name="goal" required>
+                <option value="" disabled selected>Select your goal</option>
+                <option value="exam_prep">Exam Preparation</option>
+                <option value="general_support">General Academic Support</option>
+            </select>
+            <label>Specific Struggles</label>
+            <textarea name="struggles" rows="3"></textarea>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="nextStep(1)">Back</button>
+                <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
+            </div>
+        </div>
 
-       <div class="step" id="step3">
-    <h1>Step 3: Availability</h1>
-    <p style="opacity: 0.6;">Select all slots that work (Kuwait Time / GMT+3).</p>
-    
-    <label>Weekly Availability</label>
-    <div class="schedule-grid">
-        <label class="check-item"><input type="checkbox" name="availability" value="Mon 3-6pm"> Mon 3-6pm</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Mon 6-9pm"> Mon 6-9pm</label>
-        
-        <label class="check-item"><input type="checkbox" name="availability" value="Tue 3-6pm"> Tue 3-6pm</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Tue 6-9pm"> Tue 6-9pm</label>
-        
-        <label class="check-item"><input type="checkbox" name="availability" value="Wed 3-6pm"> Wed 3-6pm</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Wed 6-9pm"> Wed 6-9pm</label>
-        
-        <label class="check-item"><input type="checkbox" name="availability" value="Thu 3-6pm"> Thu 3-6pm</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Thu 6-9pm"> Thu 6-9pm</label>
-        
-        <label class="check-item"><input type="checkbox" name="availability" value="Fri Any"> Fri (Any)</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Sat Any"> Sat (Any)</label>
-
-        <label class="check-item"><input type="checkbox" name="availability" value="Sun 3-6pm"> Sun 3-6pm</label>
-        <label class="check-item"><input type="checkbox" name="availability" value="Sun 6-9pm"> Sun 6-9pm</label>
-        
-    </div>
-
-    <label style="margin-top: 25px;">Best Contact Method</label>
-    <select name="contact_pref" required style="background-color: #0a0a0a; color: #ffffff;">
-        <option value="whatsapp">WhatsApp</option>
-        <option value="email">Email</option>
-    </select>
-
-    <div class="btn-group">
-        <button type="button" class="btn-prev" onclick="nextStep(2)">Back</button>
-        <button type="button" class="btn-next" onclick="nextStep(4)">Next</button>
-    </div>
-</div>
+        <div class="step" id="step3">
+            <h1>Step 3: Availability</h1>
+            <div class="schedule-grid">
+                <label class="check-item"><input type="checkbox" name="availability" value="Mon 3-6pm"> Mon 3-6pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Mon 6-9pm"> Mon 6-9pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Tue 3-6pm"> Tue 3-6pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Tue 6-9pm"> Tue 6-9pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Wed 3-6pm"> Wed 3-6pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Wed 6-9pm"> Wed 6-9pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Thu 3-6pm"> Thu 3-6pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Thu 6-9pm"> Thu 6-9pm</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Fri Any"> Fri Any</label>
+                <label class="check-item"><input type="checkbox" name="availability" value="Sat Any"> Sat Any</label>
+            </div>
+            <label style="margin-top: 20px;">Contact Method</label>
+            <select name="contact_pref" required>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="email">Email</option>
+            </select>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="nextStep(2)">Back</button>
+                <button type="button" class="btn-next" onclick="nextStep(4)">Next</button>
+            </div>
         </div>
 
         <div class="step" id="step4">
             <h1>Step 4: Finalize Account</h1>
-            <p style="opacity: 0.6;">Set a password for your student portal.</p>
             <label>Create Password</label>
             <input type="password" name="password" required>
-            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.5;">By clicking finish, you agree to our Terms of Service.</p>
             <div class="btn-group">
                 <button type="button" class="btn-prev" onclick="nextStep(3)">Back</button>
-                <button type="" class="btn-next">Finish & </button>
+                <button type="submit" class="btn-next">Finish & Access Portal</button>
             </div>
         </div>
     </form>
 </div>
 
 <script>
-   document.getElementById('welcomeWizard').onsubmit = function(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    const studentName = this.student_name.value;
-    const studentEmail = this.student_email.value; // Ensure you added an email input in Step 1 or 4
-    const password = this.password.value;
-    
-    btn.innerText = "Finalizing Account...";
-    btn.disabled = true;
+    // FIX: The missing nextStep function
+    function nextStep(stepNumber) {
+        // Hide all steps
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        // Show target step
+        document.getElementById('step' + stepNumber).classList.add('active');
+        // Update dots
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            if(i < stepNumber) d.classList.add('active');
+            else d.classList.remove('active');
+        });
+    }
 
-    const formData = new FormData(this);
-    const selectedDays = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
-                              .map(cb => cb.value).join(', ');
-    
-    formData.set('timing', selectedDays);
-    formData.append('form_type', 'profile_setup');
+    document.getElementById('welcomeWizard').onsubmit = function(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        const studentName = this.student_name.value;
+        const studentEmail = this.student_email.value;
+        
+        btn.innerText = "Finalizing Account...";
+        btn.disabled = true;
 
-    fetch('YOUR_GOOGLE_SCRIPT_URL', { method: 'POST', body: formData })
-    .then(res => res.json())
-    .then(data => {
-        if(data.result === "success") {
-            // SET LOGIN STATE
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('studentName', studentName);
-            
-            alert("Success! Your credentials have been emailed to: " + studentEmail);
-            window.location.href = "portal.html"; 
-        }
-    });
-};
+        const formData = new FormData(this);
+        const selectedDays = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
+                                  .map(cb => cb.value).join(', ');
+        
+        formData.set('timing', selectedDays);
+        formData.append('form_type', 'profile_setup');
+
+        fetch('YOUR_GOOGLE_SCRIPT_URL', { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+            if(data.result === "success") {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('studentName', studentName);
+                alert("Success! Your credentials have been emailed to: " + studentEmail);
+                window.location.href = "portal.html"; 
+            }
+        })
+        .catch(err => {
+            alert("Submission error. Please check your internet connection.");
+            btn.disabled = false;
+            btn.innerText = "Finish & Access Portal";
+        });
+    };
 </script>
 
 </body>
