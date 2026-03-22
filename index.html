@@ -471,6 +471,7 @@
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                     .then(response => {
                         btn.innerText = "Success!";
+                        form.reset();
                         if(formId === 'bookingForm') {
     // TEST MODE: No redirect, just an alert to confirm the data sent
     alert("Test Successful: Booking data sent to Google Sheets!");
