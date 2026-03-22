@@ -457,7 +457,7 @@
         });
 
         // --- GOOGLE SHEETS CONNECTION LOGIC ---
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyxw0zdbdH9QHKN5kUGsM8IPW-S29jb1zRrbrDd8mmS_zMXP_2B77KyUe0nJh43LSK8/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwIfaqJeMuaSbXKYfmzlSkNGOKyeUrTJMf6cBoH-vk/dev';
 
         function setupForm(formId, buttonId) {
             const form = document.getElementById(formId);
@@ -477,7 +477,7 @@
                                 window.location.href = "https://your-payment-link.com"; 
                             }, 1500);
                         } else {
-                            alert("Thank you! Your enquiry has been saved to our Google Sheets.");
+                            alert("Thank you! Your enquiry has been sent ✔️");
                             form.reset();
                             btn.disabled = false;
                             btn.innerText = "Send Enquiry";
