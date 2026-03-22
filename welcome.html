@@ -186,36 +186,31 @@ select:focus {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     const studentName = this.student_name.value;
+    const studentEmail = this.student_email.value; // Ensure you added an email input in Step 1 or 4
     const password = this.password.value;
     
-    btn.innerText = "Creating Account...";
+    btn.innerText = "Finalizing Account...";
     btn.disabled = true;
 
     const formData = new FormData(this);
-    
-    // Process multiple checkboxes into one string
     const selectedDays = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
-                              .map(cb => cb.value)
-                              .join(', ');
+                              .map(cb => cb.value).join(', ');
     
     formData.set('timing', selectedDays);
     formData.append('form_type', 'profile_setup');
 
-    fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', { method: 'POST', body: formData })
+    fetch('YOUR_GOOGLE_SCRIPT_URL', { method: 'POST', body: formData })
     .then(res => res.json())
     .then(data => {
         if(data.result === "success") {
-            // 1. Save "Login Session" to browser
+            // SET LOGIN STATE
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('studentName', studentName);
             
-            alert("Welcome to the Family! Your account is ready. Your login details have been emailed to you.");
-            
-            // 2. Immediate Access to the Portal
+            alert("Success! Your credentials have been emailed to: " + studentEmail);
             window.location.href = "portal.html"; 
         }
-    })
-    .catch(err => alert("Error creating account. Please contact support."));
+    });
 };
 </script>
 
