@@ -144,7 +144,7 @@
         formData.set('timing', selectedDays);
         formData.append('form_type', 'profile_setup');
 
-        fetch('YOUR_GOOGLE_SCRIPT_URL', { method: 'POST', body: formData })
+        fetch('https://script.google.com/macros/s/AKfycbyxHMO0OCg8Qe2uZVJnP99ZFvLRDGKgPcwU4EP50bOLnbXATqMC1tEBX6-JhPQRieix/exec', { method: 'POST', body: formData })
         .then(res => res.json())
         .then(data => {
             if(data.result === "success") {
