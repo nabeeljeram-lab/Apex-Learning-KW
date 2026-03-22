@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Family | Apex Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --c-accent: #a2eef2; --c-bg: #0a0a0a; }
+        body { background: var(--c-bg); color: white; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .wizard-card { width: 100%; max-width: 500px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(162,238,242,0.1); border-radius: 24px; position: relative; }
+        .step { display: none; }
+        .step.active { display: block; animation: fadeIn 0.5s ease; }
+        .progress-dots { display: flex; gap: 10px; margin-bottom: 30px; }
+        .dot { height: 4px; flex: 1; background: rgba(255,255,255,0.1); border-radius: 2px; }
+        .dot.active { background: var(--c-accent); }
+        h1 { font-size: 1.8rem; margin-bottom: 10px; color: var(--c-accent); }
+        label { display: block; margin: 20px 0 8px; font-size: 0.9rem; opacity: 0.8; }
+        input, select, textarea { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; box-sizing: border-box; }
+        .btn-group { margin-top: 30px; display: flex; gap: 15px; }
+        .btn-next { background: var(--c-accent); color: black; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; flex: 2; }
+        .btn-prev { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 8px; cursor: pointer; flex: 1; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="wizard-card">
+    <div class="progress-dots">
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <form id="welcomeWizard">
+        <div class="step active" id="step1">
+            <h1>Step 1: The Student</h1>
+            <p style="opacity: 0.6;">Tell us who we'll be teaching.</p>
+            <label>Student's Full Name</label>
+            <input type="text" name="student_name" required placeholder="Enter name">
+            <label>Current Grade/Year Level</label>
+            <input type="text" name="grade" required placeholder="e.g., Year 9 / Grade 10">
+            <div class="btn-group">
+                <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
+
+        <div class="step" id="step2">
+            <h1>Step 2: Learning Goals</h1>
+            <p style="opacity: 0.6;">What are your primary objectives?</p>
+            <label>Primary Focus</label>
+            <select name="goal">
+                <option value="exam_prep">Exam Preparation (IGCSE/IB/SAT)</option>
+                <option value="general_support">General Academic Support</option>
+                <option value="specific_subject">Specific Subject Mastery</option>
+            </select>
+            <label>Any specific struggles?</label>
+            <textarea name="struggles" rows="3" placeholder="e.g., Difficulty with Algebra"></textarea>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="nextStep(1)">Back</button>
+                <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
+            </div>
+        </div>
+
+        <div class="step" id="step3">
+            <h1>Step 3: Availability</h1>
+            <p style="opacity: 0.6;">All times are in Kuwait Time (GMT+3).</p>
+            <label>Preferred Time of Day</label>
+            <select name="timing">
+                <option value="afternoon">Afternoon (3 PM - 6 PM)</option>
+                <option value="evening">Evening (6 PM - 9 PM)</option>
+                <option value="weekends">Weekends Only</option>
+            </select>
+            <label>Best Contact Method</label>
+            <select name="contact_pref">
+                <option value="whatsapp">WhatsApp</option>
+                <option value="email">Email</option>
+            </select>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="nextStep(2)">Back</button>
+                <button type="button" class="btn-next" onclick="nextStep(4)">Next</button>
+            </div>
+        </div>
+
+        <div class="step" id="step4">
+            <h1>Step 4: Finalize Account</h1>
+            <p style="opacity: 0.6;">Set a password for your student portal.</p>
+            <label>Create Password</label>
+            <input type="password" name="password" required>
+            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.5;">By clicking finish, you agree to our Terms of Service.</p>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="nextStep(3)">Back</button>
+                <button type="submit" class="btn-next">Finish & Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function nextStep(stepNumber) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            if(i < stepNumber) d.classList.add('active');
+            else d.classList.remove('active');
+        });
+        document.getElementById('step' + stepNumber).classList.add('active');
+    }
+
+    document.getElementById('welcomeWizard').onsubmit = function(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        btn.innerText = "Saving Profile...";
+        
+        // This will send to your Google Script (Same one we used before)
+        const formData = new FormData(this);
+        formData.append('form_type', 'profile_setup');
+        
+        fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', { method: 'POST', body: formData })
+        .then(() => {
+            alert("Welcome to the Family! We will contact you shortly to schedule your first session.");
+            window.location.href = "index.html";
+        });
+    };
+</script>
+
+</body>
+</html>
