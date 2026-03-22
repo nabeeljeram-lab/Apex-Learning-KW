@@ -472,16 +472,12 @@
                     .then(response => {
                         btn.innerText = "Success!";
                         if(formId === 'bookingForm') {
-                            setTimeout(() => {
-                                // Redirect to payment link once lead is captured
-                                window.location.href = "https://your-payment-link.com"; 
-                            }, 1500);
-                        } else {
-                            alert("Thank you! Your enquiry has been sent ✔️");
-                            form.reset();
-                            btn.disabled = false;
-                            btn.innerText = "Send Enquiry";
-                        }
+    // TEST MODE: No redirect, just an alert to confirm the data sent
+    alert("Test Successful: Booking data sent to Google Sheets!");
+    form.reset();
+    btn.disabled = false;
+    btn.innerText = "Proceed to Payment";
+}
                     })
                     .catch(error => {
                         console.error('Error!', error.message);
