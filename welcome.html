@@ -21,6 +21,55 @@
         .btn-next { background: var(--c-accent); color: black; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; flex: 2; }
         .btn-prev { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 8px; cursor: pointer; flex: 1; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Fix for White-on-White Dropdown Menu */
+select {
+    appearance: none; /* Removes default browser styling */
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+}
+
+/* This targets the actual list of items when the menu opens */
+select option {
+    background-color: #0a0a0a; /* Solid black background */
+    color: #ffffff;            /* Solid white text */
+}
+
+/* Specifically for mobile/Safari support */
+select:focus {
+    outline: none;
+    border-color: var(--c-accent);
+}
+        /* Grid for Multi-Select Availability */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.check-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.check-item:hover { background: rgba(162, 238, 242, 0.1); }
+
+/* Hidden actual checkbox, styled label */
+.check-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--c-accent);
+}
     </style>
 </head>
 <body>
@@ -32,52 +81,90 @@
 
     <form id="welcomeWizard">
         <div class="step active" id="step1">
-            <h1>Step 1: The Student</h1>
-            <p style="opacity: 0.6;">Tell us who we'll be teaching.</p>
-            <label>Student's Full Name</label>
-            <input type="text" name="student_name" required placeholder="Enter name">
-            <label>Current Grade/Year Level</label>
-            <input type="text" name="grade" required placeholder="e.g., Year 9 / Grade 10">
-            <div class="btn-group">
-                <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
-            </div>
-        </div>
+    <h1>Step 1: The Student</h1>
+    <p style="opacity: 0.6;">Tell us who we'll be teaching.</p>
+    
+    <label>Student's Full Name</label>
+    <input type="text" name="student_name" required placeholder="Enter name">
+    
+    <label>Current Grade/Year Level</label>
+    <input type="text" name="grade" required placeholder="e.g., Year 9 / Grade 10">
+    
+    <label>Curriculum</label>
+    <select name="curriculum" required>
+        <option value="" disabled selected>Select Curriculum</option>
+        <option value="British (IGCSE/GCSE/A-Level)">British (IGCSE/GCSE/A-Level)</option>
+        <option value="American (Common Core/AP)">American (Common Core/AP)</option>
+        <option value="IB (PYP/MYP/DP)">International Baccalaureate (IB)</option>
+        <option value="Ministry (Kuwait)">Ministry (Kuwait)</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <div class="btn-group">
+        <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
+    </div>
+</div>
+        
 
         <div class="step" id="step2">
-            <h1>Step 2: Learning Goals</h1>
-            <p style="opacity: 0.6;">What are your primary objectives?</p>
-            <label>Primary Focus</label>
-            <select name="goal">
-                <option value="exam_prep">Exam Preparation (IGCSE/IB/SAT)</option>
-                <option value="general_support">General Academic Support</option>
-                <option value="specific_subject">Specific Subject Mastery</option>
-            </select>
-            <label>Any specific struggles?</label>
-            <textarea name="struggles" rows="3" placeholder="e.g., Difficulty with Algebra"></textarea>
-            <div class="btn-group">
-                <button type="button" class="btn-prev" onclick="nextStep(1)">Back</button>
-                <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
-            </div>
-        </div>
+    <h1>Step 2: Learning Goals</h1>
+    <p style="opacity: 0.6;">What are your primary objectives?</p>
+    
+    <label>Primary Focus</label>
+    <select name="goal" required>
+        <option value="" disabled selected>Select your goal</option>
+        <option value="exam_prep">Exam Preparation (IGCSE/IB/SAT)</option>
+        <option value="general_support">General Academic Support</option>
+        <option value="specific_subject">Specific Subject Mastery</option>
+    </select>
+    
+    <label>Any specific struggles?</label>
+    <textarea name="struggles" rows="3" placeholder="e.g., Difficulty with Algebra or Essay Structure"></textarea>
+    
+    <div class="btn-group">
+        <button type="button" class="btn-prev" onclick="nextStep(1)">Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(3)">Next</button>
+    </div>
+</div>
+    
 
-        <div class="step" id="step3">
-            <h1>Step 3: Availability</h1>
-            <p style="opacity: 0.6;">All times are in Kuwait Time (GMT+3).</p>
-            <label>Preferred Time of Day</label>
-            <select name="timing">
-                <option value="afternoon">Afternoon (3 PM - 6 PM)</option>
-                <option value="evening">Evening (6 PM - 9 PM)</option>
-                <option value="weekends">Weekends Only</option>
-            </select>
-            <label>Best Contact Method</label>
-            <select name="contact_pref">
-                <option value="whatsapp">WhatsApp</option>
-                <option value="email">Email</option>
-            </select>
-            <div class="btn-group">
-                <button type="button" class="btn-prev" onclick="nextStep(2)">Back</button>
-                <button type="button" class="btn-next" onclick="nextStep(4)">Next</button>
-            </div>
+       <div class="step" id="step3">
+    <h1>Step 3: Availability</h1>
+    <p style="opacity: 0.6;">Select all slots that work (Kuwait Time / GMT+3).</p>
+    
+    <label>Weekly Availability</label>
+    <div class="schedule-grid">
+        <label class="check-item"><input type="checkbox" name="availability" value="Mon 3-6pm"> Mon 3-6pm</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Mon 6-9pm"> Mon 6-9pm</label>
+        
+        <label class="check-item"><input type="checkbox" name="availability" value="Tue 3-6pm"> Tue 3-6pm</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Tue 6-9pm"> Tue 6-9pm</label>
+        
+        <label class="check-item"><input type="checkbox" name="availability" value="Wed 3-6pm"> Wed 3-6pm</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Wed 6-9pm"> Wed 6-9pm</label>
+        
+        <label class="check-item"><input type="checkbox" name="availability" value="Thu 3-6pm"> Thu 3-6pm</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Thu 6-9pm"> Thu 6-9pm</label>
+        
+        <label class="check-item"><input type="checkbox" name="availability" value="Fri Any"> Fri (Any)</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Sat Any"> Sat (Any)</label>
+
+        <label class="check-item"><input type="checkbox" name="availability" value="Sun 3-6pm"> Sun 3-6pm</label>
+        <label class="check-item"><input type="checkbox" name="availability" value="Sun 6-9pm"> Sun 6-9pm</label>
+        
+    </div>
+
+    <label style="margin-top: 25px;">Best Contact Method</label>
+    <select name="contact_pref" required style="background-color: #0a0a0a; color: #ffffff;">
+        <option value="whatsapp">WhatsApp</option>
+        <option value="email">Email</option>
+    </select>
+
+    <div class="btn-group">
+        <button type="button" class="btn-prev" onclick="nextStep(2)">Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(4)">Next</button>
+    </div>
+</div>
         </div>
 
         <div class="step" id="step4">
@@ -88,37 +175,48 @@
             <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.5;">By clicking finish, you agree to our Terms of Service.</p>
             <div class="btn-group">
                 <button type="button" class="btn-prev" onclick="nextStep(3)">Back</button>
-                <button type="submit" class="btn-next">Finish & Submit</button>
+                <button type="" class="btn-next">Finish & </button>
             </div>
         </div>
     </form>
 </div>
 
 <script>
-    function nextStep(stepNumber) {
-        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.dot').forEach((d, i) => {
-            if(i < stepNumber) d.classList.add('active');
-            else d.classList.remove('active');
-        });
-        document.getElementById('step' + stepNumber).classList.add('active');
-    }
+   document.getElementById('welcomeWizard').onsubmit = function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const studentName = this.student_name.value;
+    const password = this.password.value;
+    
+    btn.innerText = "Creating Account...";
+    btn.disabled = true;
 
-    document.getElementById('welcomeWizard').onsubmit = function(e) {
-        e.preventDefault();
-        const btn = e.target.querySelector('button[type="submit"]');
-        btn.innerText = "Saving Profile...";
-        
-        // This will send to your Google Script (Same one we used before)
-        const formData = new FormData(this);
-        formData.append('form_type', 'profile_setup');
-        
-        fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', { method: 'POST', body: formData })
-        .then(() => {
-            alert("Welcome to the Family! We will contact you shortly to schedule your first session.");
-            window.location.href = "index.html";
-        });
-    };
+    const formData = new FormData(this);
+    
+    // Process multiple checkboxes into one string
+    const selectedDays = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
+                              .map(cb => cb.value)
+                              .join(', ');
+    
+    formData.set('timing', selectedDays);
+    formData.append('form_type', 'profile_setup');
+
+    fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', { method: 'POST', body: formData })
+    .then(res => res.json())
+    .then(data => {
+        if(data.result === "success") {
+            // 1. Save "Login Session" to browser
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('studentName', studentName);
+            
+            alert("Welcome to the Family! Your account is ready. Your login details have been emailed to you.");
+            
+            // 2. Immediate Access to the Portal
+            window.location.href = "portal.html"; 
+        }
+    })
+    .catch(err => alert("Error creating account. Please contact support."));
+};
 </script>
 
 </body>
