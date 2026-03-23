@@ -4,168 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal | Apex Learning</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-
-<style>
-/* --- 2026 Content Protection --- */
-body {
-    /* Blocks the ability to highlight any text */
-    -webkit-user-select: none; 
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    
-    /* Disables the "Tap and Hold" menu on iPhone/Android */
-    -webkit-touch-callout: none; 
-}
-
-/* IMPORTANT: Allow students to interact with dashboard buttons & links */
-a, button, .btn-join {
-    -webkit-user-select: auto;
-    user-select: auto;
-    pointer-events: auto;
-}
-
-/* Allow students to use the logout button */
-.logout-btn {
-    pointer-events: auto !important;
-}
-</style>
-        
         :root { --c-accent: #a2eef2; --c-bg: #0a0a0a; }
-        body { background: var(--c-bg); color: white; font-family: 'Inter', sans-serif; margin: 0; }
         
-        /* Sidebar/Header */
-        .portal-header { padding: 20px 40px; border-bottom: 1px solid rgba(162,238,242,0.1); display: flex; justify-content: space-between; align-items: center; }
-        
-        /* Dashboard Layout */
-        .portal-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-        
-        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; }
-        .welcome-card { grid-column: span 2; background: linear-gradient(90deg, rgba(162,238,242,0.1) 0%, rgba(10,10,10,1) 100%); }
-        
-        .lesson-link { display: flex; align-items: center; justify-content: space-between; background: rgba(162,238,242,0.05); padding: 20px; border-radius: 12px; margin-top: 15px; border: 1px solid rgba(162,238,242,0.2); }
-        .btn-join { background: var(--c-accent); color: black; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
-        
-        .logout-btn { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 6px; cursor: pointer; }
-        
-        @media (max-width: 768px) { .portal-container { grid-template-columns: 1fr; } .welcome-card { grid-column: span 1; } }
-  /* --- Content Protection Layer --- */
-body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE/Edge */
-    user-select: none;         /* Standard */
-}
+        body { 
+            background: var(--c-bg); 
+            color: white; 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            /* Content Protection */
+            -webkit-user-select: none;
+            user-select: none;
+        }
 
-/* IMPORTANT: Re-enable selection for inputs so students can still type! */
-input, textarea, select {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
-    
+        /* Re-enable selection for inputs */
+        input, textarea { user-select: text; }
+
+        .portal-header { 
+            padding: 20px 40px; 
+            border-bottom: 1px solid rgba(162,238,242,0.1); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+        .portal-container { 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            gap: 30px; 
+        }
+
+        .card { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 16px; 
+            padding: 30px; 
+        }
+
+        .welcome-card { 
+            grid-column: span 2; 
+            background: linear-gradient(90deg, rgba(162,238,242,0.1) 0%, rgba(10,10,10,1) 100%); 
+        }
+
+        h1 { color: var(--c-accent); font-size: 2.5rem; margin: 0; }
+        h2 { font-size: 1.2rem; margin-top: 0; opacity: 0.8; }
+
+        .status-badge {
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .logout-btn { 
+            background: transparent; 
+            color: white; 
+            border: 1px solid rgba(255,255,255,0.2); 
+            padding: 8px 16px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+        }
+
+        @media (max-width: 768px) {
+            .portal-container { grid-template-columns: 1fr; }
+            .welcome-card { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
 
-<script>
-    // SECURITY CHECK: Redirect to home if not logged in
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = "index.html";
-    }
+    <header class="portal-header">
+        <div style="font-weight: bold; color: var(--c-accent);">APEX PORTAL</div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
 
-</script>
+    <div class="portal-container">
+        <div class="card welcome-card">
+            <h1 id="welcomeName">Welcome, Student!</h1>
+            <p>Your journey to academic excellence starts here. Your tutor will update your personalized schedule within 24 hours.</p>
+        </div>
 
-<header class="portal-header">
-    <div style="font-weight: bold; font-size: 1.2rem; color: var(--c-accent);">APEX PORTAL</div>
-    <button class="logout-btn" onclick="logout()">Logout</button>
-</header>
-
-<div class="portal-container">
-    <div class="card welcome-card">
-        <h1>Welcome, <span id="studentNameDisplay">Student</span>!</h1>
-        <p style="opacity: 0.7;">Your journey to academic excellence starts here. Your tutor will update your personalized schedule within 24 hours.</p>
-    </div>
-
-    <div class="card">
-        <h3>Upcoming Lessons</h3>
-        <div class="lesson-link">
-            <div>
-                <strong style="display: block;">Introductory Session</strong>
-                <span style="font-size: 0.8rem; opacity: 0.6;">Awaiting Tutor Confirmation</span>
+        <div class="card">
+            <h2>Upcoming Lessons</h2>
+            <div style="border-left: 2px solid var(--c-accent); padding-left: 15px; margin-top: 20px;">
+                <div style="font-weight: bold;">Introductory Session</div>
+                <div style="font-size: 0.8rem; opacity: 0.6;">Awaiting Tutor Confirmation</div>
+                <a href="#" style="color: var(--c-accent); font-size: 0.9rem; text-decoration: none;">Link Pending</a>
             </div>
-            <a href="#" class="btn-join" style="opacity: 0.5; pointer-events: none;">Link Pending</a>
         </div>
-        
-        <h3 style="margin-top: 40px;">Learning Resources</h3>
-        <p style="opacity: 0.6;">Curriculum-specific materials will appear here once your profile is verified.</p>
-    </div>
 
-    <div class="card">
-        <h3>Your Profile</h3>
-        <div style="font-size: 0.9rem; line-height: 2;">
-            <p><strong>Status:</strong> <span style="color: #4CAF50;">Active Student</span></p>
-            <p><strong>Curriculum:</strong> <span id="curriculumDisplay">Loading...</span></p>
-            <p><strong>Support:</strong> WhatsApp Available</p>
+        <div class="card">
+            <h2>Your Profile</h2>
+            <p>Status: <span class="status-badge">Active Student</span></p>
+            <p id="studentCurriculum">Curriculum: Loading...</p>
+            <p>Support: <span style="color: var(--c-accent);">WhatsApp Available</span></p>
         </div>
     </div>
-</div>
 
-<script>
-    // Populate the dashboard with saved data
-    document.getElementById('studentNameDisplay').innerText = localStorage.getItem('studentName') || 'Student';
-    
-    function logout() {
-        localStorage.clear();
-        window.location.href = "index.html";
-    }
-</script>
-<script>
-    // 1. Disable Right-Click
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    <script>
+        // Load student data from local storage (set during Welcome Wizard)
+        window.onload = function() {
+            const name = localStorage.getItem('studentName') || 'Student';
+            document.getElementById('welcomeName').innerText = `Welcome, ${name}!`;
+            
+            // Set curriculum if you saved it to localStorage
+            const curriculum = localStorage.getItem('studentCurriculum') || 'Contact Admin';
+            document.getElementById('studentCurriculum').innerText = `Curriculum: ${curriculum}`;
+        };
 
-    // 2. Disable Common "Copy/Inspect" Shortcuts
-    document.onkeydown = function(e) {
-        // Disable F12
-        if(e.keyCode == 123) return false;
-        // Disable Ctrl+Shift+I (Inspect)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-        // Disable Ctrl+Shift+C (Element Selector)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-        // Disable Ctrl+Shift+J (Console)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-        // Disable Ctrl+U (View Source)
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-        // Disable Ctrl+S (Save Page)
-        if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;
-    };
-</script>
-
-<script>
-    // 1. Block Context Menu (Right Click)
-    document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // 2. Block Keyboard "Theft" Shortcuts (Copy, Save, View Source)
-    document.onkeydown = function(e) {
-        if (
-            e.keyCode == 123 || // F12
-            (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Inspect
-            (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || // View Source
-            (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) || // Save Page
-            (e.ctrlKey && e.keyCode == 'C'.charCodeAt(0))    // Copy
-        ) {
-            return false;
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'index.html';
         }
-    };
 
-    // 3. Block Image Dragging (Stops people dragging photos to their desktop)
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('dragstart', e => e.preventDefault());
-    });
-</script>
-    
+        // Right-Click Protection
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
 </body>
 </html>
