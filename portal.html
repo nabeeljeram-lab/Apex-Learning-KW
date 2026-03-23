@@ -6,6 +6,33 @@
     <title>Student Portal | Apex Learning</title>
     <link rel="stylesheet" href="style.css">
     <style>
+
+<style>
+/* --- 2026 Content Protection --- */
+body {
+    /* Blocks the ability to highlight any text */
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Disables the "Tap and Hold" menu on iPhone/Android */
+    -webkit-touch-callout: none; 
+}
+
+/* IMPORTANT: Allow students to interact with dashboard buttons & links */
+a, button, .btn-join {
+    -webkit-user-select: auto;
+    user-select: auto;
+    pointer-events: auto;
+}
+
+/* Allow students to use the logout button */
+.logout-btn {
+    pointer-events: auto !important;
+}
+</style>
+        
         :root { --c-accent: #a2eef2; --c-bg: #0a0a0a; }
         body { background: var(--c-bg); color: white; font-family: 'Inter', sans-serif; margin: 0; }
         
@@ -49,6 +76,7 @@ input, textarea, select {
     if (localStorage.getItem('isLoggedIn') !== 'true') {
         window.location.href = "index.html";
     }
+
 </script>
 
 <header class="portal-header">
@@ -115,5 +143,29 @@ input, textarea, select {
         if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;
     };
 </script>
+
+<script>
+    // 1. Block Context Menu (Right Click)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // 2. Block Keyboard "Theft" Shortcuts (Copy, Save, View Source)
+    document.onkeydown = function(e) {
+        if (
+            e.keyCode == 123 || // F12
+            (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Inspect
+            (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || // View Source
+            (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) || // Save Page
+            (e.ctrlKey && e.keyCode == 'C'.charCodeAt(0))    // Copy
+        ) {
+            return false;
+        }
+    };
+
+    // 3. Block Image Dragging (Stops people dragging photos to their desktop)
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', e => e.preventDefault());
+    });
+</script>
+    
 </body>
 </html>
