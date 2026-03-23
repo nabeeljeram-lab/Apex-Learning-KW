@@ -146,6 +146,22 @@
             .z-image { width: 100%; height: 300px; order: -1; }
             .section-padding { padding: 100px 0; }
             .booking-grid { grid-template-columns: 1fr; }
+/* --- Content Protection Layer --- */
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
+
+/* IMPORTANT: Re-enable selection for inputs so students can still type! */
+input, textarea, select {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+            
         }
     </style>
 </head>
@@ -533,6 +549,22 @@
         setupForm('bookingForm', 'bookingSubmit');
         setupForm('enquiryForm', 'enquirySubmit');
     </script>
+<script>
+    // Disable Right-Click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    }, false);
 
+    // Optional: Disable common "View Source" keyboard shortcuts
+    document.onkeydown = function(e) {
+        // Disable F12 (Dev Tools)
+        if(e.keyCode == 123) return false;
+        // Disable Ctrl+Shift+I (Inspect)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        // Disable Ctrl+U (View Source)
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+    };
+</script>
+        
 </body>
 </html>
