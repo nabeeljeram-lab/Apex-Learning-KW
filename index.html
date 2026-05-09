@@ -3,1020 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apex Learning - Real Ocean Journey">
-    <title>Apex Learning | Unlock Your Child's Potential</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-
+    <title>Apex Learning | Coming Soon</title>
     <style>
-
-
-
-/* FINAL: SOLID WHITE POWER TYPOGRAPHY */
-
-/* 1. Authority Headers (H1, H2, Portal Titles) */
-.apex-shiny-title, h1, h2 {
-    color: #ffffff !important;   /* SOLID WHITE */
-    text-shadow: none !important; /* NO GLOW */
-    background: none !important;  /* NO GRADIENT */
-    font-weight: 800 !important;  /* EXTRA-BOLD HEAVYWEIGHT */
-    letter-spacing: -0.02em !important; 
-    text-transform: uppercase;
-}
-
-/* 2. Product Names (Specialist, Momentum, Mastery, etc.) */
-.plan-title, .shiny-plan-name, h3 {
-    color: #ffffff !important;   /* SOLID WHITE */
-    text-shadow: none !important; /* NO GLOW */
-    font-weight: 700 !important;  /* BOLD INDUSTRIAL */
-    letter-spacing: -0.01em;
-    text-transform: none; 
-}
-/* GLOBAL SAVINGS HEADER SYSTEM */
-.savings-badge-navy {
-    background: #000040 !important; /* The specific Dark Navy from your Compass image */
-    color: #ffffff !important;      /* Pure White text */
-    font-size: 0.8rem;
-    font-weight: 900;
-    padding: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    border-bottom: 3.5px solid var(--c-surface); /* Matches the cyan border theme */
-    text-align: center;
-}
-
-
-/* GLOBAL APEX GLOW SYSTEM */
-.apex-shiny-title {
-    text-align: center; /* Requirement 1: Centered */
-    color: var(--c-surface);
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-    /* High-Intensity Glow matched to The Apex Compass */
-    text-shadow: 0 0 15px rgba(162, 238, 242, 0.7), 0 0 25px rgba(162, 238, 242, 0.3);
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-}
-
-.apex-subtitle {
-    text-align: center; /* Requirement 1: Centered */
-    font-size: 0.85rem;
-    color: var(--c-surface);
-    opacity: 0.8;
-    margin-bottom: 25px;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- START: PRODUCT 2 PRICE REFINEMENT --- */
-/* Scales prices to fit within column widths on a single row */
-#mentorship-packages .shiny-price { 
-    font-size: 2.2rem !important; /* Reduced from 3.2rem to ensure single-row fit */
-    margin: 20px 0; 
-    white-space: nowrap; /* Prevents price and 'KD' from splitting */
-    letter-spacing: -1px;
-}
-
-/* Specific scaling for the prominent Guardian card */
-#mentorship-packages .guardian-highlight .shiny-price {
-    font-size: 2.5rem !important; /* Slightly larger for the sentinel card but still fits */
-}
-
-/* Mobile adjustment to ensure readability on smaller screens */
-@media (max-width: 900px) {
-    #mentorship-packages .shiny-price {
-        font-size: 2.8rem !important; /* Returns to larger size when columns stack vertically */
-    }
-}
-/* --- END: PRODUCT 2 PRICE REFINEMENT --- */
-/* START: APEX COMPASS DESIGN REFINEMENTS */
-
-/* START: APEX COMPASS TITLE RADIANCE */
-
-/* Enhanced Radiance for Plan Names (Launchpad, Focus, Choice, Guardian) */
-.shiny-plan-name {
-    color: #008080 !important; /* Deep Teal [cite: 6] */
-    font-weight: 800 !important;
-    font-family: var(--font-heading);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    /* High-intensity glow for tier names */
-    text-shadow: 
-        0 0 5px rgba(162, 238, 242, 0.4), 
-        0 0 10px rgba(162, 238, 242, 0.2), 
-        0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: text-shadow 0.3s ease;
-}
-
-/* Intensified glow on hover */
-.table-column:hover .shiny-plan-name {
-    text-shadow: 
-        0 0 10px rgba(162, 238, 242, 0.7), 
-        0 0 20px rgba(162, 238, 242, 0.4);
-}
-
-/* High-Contrast Navy Savings Badge [cite: 7] */
-.savings-badge-navy {
-    background: #000040 !important; /* Dark Navy */
-    color: #ffffff !important; /* White text */
-    font-size: 0.8rem;
-    font-weight: 900;
-    padding: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    border-bottom: 3.5px solid var(--c-surface);
-    text-align: center;
-}
-
-/* END: APEX COMPASS TITLE RADIANCE */
-/* High-Contrast Navy Savings Badge [cite: 7] */
-.savings-badge-navy {
-    background: #000040 !important; /* Dark Navy [cite: 7] */
-    color: #ffffff !important; /* White text [cite: 7] */
-    font-size: 0.8rem;
-    font-weight: 900;
-    padding: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    border-bottom: 3.5px solid var(--c-surface);
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* END: APEX COMPASS DESIGN REFINEMENTS */
-	/* START: APEX COMPASS SPECIFIC UI */
-.savings-badge-navy {
-    background: #000040; /* Dark Navy Background */
-    color: #ffffff !important; /* White Text */
-    font-size: 0.8rem;
-    font-weight: 900;
-    padding: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    border-bottom: 3.5px solid var(--c-surface);
-    text-align: center;
-}
-/* END: APEX COMPASS SPECIFIC UI */
-        /* --- DESIGN SYSTEM: STANDARDIZED TROPICAL DEPTHS --- */
         :root {
-            --c-surface: #A2EEF2;       
-            --c-shallows: #48c6ef;      
-            --c-mid: #1a7cb5;           
-            --c-deep: #004e92;          
-            --c-abyss: #000428;         
-            --c-primary-dark: #003A6B;  
-            --white: #ffffff;
-            --font-heading: 'Inter', sans-serif; 
-            --font-body: 'Comfortaa', cursive; 
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-blur: 15px;
-            --glass-dark: rgba(0, 4, 40, 0.85);
+            /* The official Apex brand colors */
+            --c-bg: #0f172a; 
+            --c-text: #f8fafc;
+            --c-accent: #A2EEF2; 
         }
-
-        html { font-size: 100%; scroll-behavior: smooth; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
+        
         body {
-            font-family: var(--font-body); 
-            font-size: 1.125rem; 
-            line-height: 1.7;
-            font-weight: 400; 
-            color: var(--c-primary-dark); 
-            background: linear-gradient(to bottom, var(--c-surface) 0%, var(--c-shallows) 15%, var(--c-mid) 40%, var(--c-deep) 70%, var(--c-abyss) 100%);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
         }
 
-        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; letter-spacing: -0.5px; color: inherit; line-height: 1.2; }
-        h1 { font-size: 4rem; margin-bottom: 1.5rem; }
-        h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
-        h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        
-        p { margin-bottom: 1.5rem; opacity: 0.95; }
-        .lead-text { font-size: 1.25rem; }
-        .small-text { font-size: 0.9rem; opacity: 0.8; }
-        
-        .depth-light-text { color: var(--c-primary-dark); }
-        .depth-dark-text { color: var(--white); text-shadow: 0 2px 15px rgba(0,0,0,0.5); }
-        .depth-dark-text h3 { color: var(--c-surface); }
-
-        /* --- ANIMATIONS & LAYERS --- */
-        @keyframes driftSlow { 0% { background-position: 0% 0%; } 50% { background-position: 5% 2%; } 100% { background-position: 0% 0%; } }
-        @keyframes shimmer { 0% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.02); } 100% { opacity: 0.3; transform: scale(1); } }
-        .ocean-layer { position: absolute; left: 0; width: 100%; pointer-events: none; z-index: -1; background-size: cover; will-change: transform, background-position; }
-        .layer-surface { top: 0; height: 100vh; background-image: url('https://www.transparenttextures.com/patterns/water.png'); opacity: 0.4; mix-blend-mode: overlay; animation: driftSlow 30s infinite ease-in-out, shimmer 10s infinite ease-in-out; mask-image: linear-gradient(to bottom, black 20%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%); }
-        .layer-mid { top: 80vh; height: 200vh; background-image: url('https://www.transparenttextures.com/patterns/sandpaper.png'); opacity: 0.2; mix-blend-mode: soft-light; background-size: 500px 500px; animation: driftSlow 60s infinite linear reverse; mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%); }
-        .layer-abyss { bottom: 0; height: 150vh; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; mix-blend-mode: screen; animation: driftSlow 120s infinite linear; mask-image: linear-gradient(to top, black 40%, transparent 100%); -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%); }
-
-        /* --- LAYOUT & UTILITIES --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-        .section-padding { padding: 140px 0; }
-        .glass-content-box { background: rgba(0, 4, 40, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); }
-        .text-center-block { text-align: center; max-width: 800px; margin: 0 auto 40px auto; }
-
-        /* --- UI ELEMENTS --- */
-        .glass-card { background: var(--glass); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-top-color: rgba(255,255,255,0.4); border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: 0.3s; position: relative; overflow: hidden; height: 100%; }
-        .glass-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to bottom right, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg) translateY(-100%); transition: 0.5s; }
-        .glass-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
-        .glass-card:hover::after { transform: rotate(45deg) translateY(100%); }
-        
-        .btn { display: inline-block; padding: 18px 40px; border-radius: 50px; text-decoration: none; transition: 0.3s; cursor: pointer; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.15); text-align: center; font-family: var(--font-heading); font-weight: 600; }
-        .btn-depth { background: var(--c-primary-dark); color: var(--white); }
-        .btn-depth:hover { background: var(--c-deep); transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0, 58, 107, 0.3); }
-        .btn-surface { background: var(--white); color: var(--c-primary-dark); }
-        .btn-surface:hover { background: #f0faff; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(255,255,255,0.2); }
-        .btn-block { display: block; width: 100%; }
-        .btn:disabled { background: #666; cursor: not-allowed; }
-
-        /* --- HEADER & SIDE DRAWER --- */
-        .landing-header { position: fixed; top: 0; left: 0; width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: var(--glass); backdrop-filter: blur(var(--glass-blur)); border-bottom: 1px solid var(--glass-border); }
-        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; background: transparent; }
-        .logo-icon { height: 50px; width: auto; }
-        .menu-toggle { background: transparent; border: none; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 1001; }
-        .menu-toggle span { display: block; width: 30px; height: 3px; background-color: var(--c-primary-dark); border-radius: 3px; transition: 0.3s; }
-        
-        .side-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100vh; background: var(--glass-dark); backdrop-filter: blur(20px); border-left: 1px solid rgba(255,255,255,0.1); padding: 40px; display: flex; flex-direction: column; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); z-index: 1002; overflow-y: auto; }
-        .side-drawer.active { right: 0; }
-        .drawer-header { display: flex; justify-content: flex-end; margin-bottom: 40px; }
-        .close-btn { background: transparent; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
-        .drawer-links { list-style: none; flex-grow: 1; }
-        .drawer-links li { margin-bottom: 20px; }
-        .drawer-links a { color: var(--white); text-decoration: none; font-size: 1.5rem; transition: 0.3s; display: block; font-family: var(--font-heading); font-weight: 500; }
-        .drawer-links a:hover { color: var(--c-shallows); transform: translateX(10px); }
-        .drawer-bottom { margin-top: auto; }
-        .social-links { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-        .social-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; font-family: var(--font-heading); font-weight: 600; }
-        .social-icon:hover { background: var(--c-mid); transform: translateY(-3px); }
-        .menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transition: 0.3s; z-index: 1001; }
-        .menu-overlay.active { opacity: 1; pointer-events: auto; }
-
-        /* --- SECTION SPECIFIC LAYOUTS --- */
-        #hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero-text-box { max-width: 700px; margin: 0 auto 40px auto; }
-        
-        .z-row { display: flex; align-items: center; gap: 70px; }
-        .z-row.reverse { flex-direction: row-reverse; }
-        .z-image { flex: 1; height: 400px; border-radius: 30px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .z-text { flex: 1; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        #services .glass-card { background: rgba(0, 30, 60, 0.4); border-color: rgba(255,255,255,0.1); color: white; }
-        
-        .price-card { background: rgba(255,255,255,0.95); color: var(--c-abyss); padding: 50px 30px; border-radius: 30px; width: 320px; text-align: center; transition: 0.3s; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .price-card:hover { transform: scale(1.03); }
-        .price-card.featured { transform: scale(1.05); border: 4px solid var(--c-mid); }
-        .price-amount { font-family: var(--font-heading); font-size: 3rem; color: var(--c-deep); font-weight: 800; line-height: 1; margin-bottom: 10px; }
-        .features-list { list-style: none; text-align: left; margin-bottom: 30px; padding-left: 10px; color: #555; font-size: 0.95rem; }
-        .features-list li { margin-bottom: 10px; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
-
-        /* --- FORM ELEMENT CSS --- */
-        .booking-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; margin-top: 40px; }
-        .form-label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--c-surface); letter-spacing: 1px; font-family: var(--font-heading); }
-        .form-input { width: 100%; padding: 15px; border-radius: 12px; border: 2px solid transparent; background: rgba(255, 255, 255, 0.95); color: var(--c-abyss); font-family: var(--font-body); margin-bottom: 25px; transition: 0.3s; }
-        .form-input:focus { outline: none; border-color: var(--c-shallows); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(72, 198, 239, 0.3); }
-        .package-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-bottom: 30px; }
-        .pkg-card { background: rgba(255,255,255,0.05); padding: 20px 10px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; text-align: center; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
-        .pkg-card:hover { border-color: var(--c-surface); background: rgba(255,255,255,0.1); }
-        .pkg-card input { margin-bottom: 10px; transform: scale(1.3); }
-        .pkg-price { font-size: 1.5rem; color: var(--c-surface); font-family: var(--font-heading); font-weight: 800; }
-        
-        footer { text-align: center; padding: 80px 0; color: rgba(255,255,255,0.5); }
-
-        @media (max-width: 900px) {
-            body { font-size: 1.25rem; }
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2.25rem; }
-            h3 { font-size: 1.4rem; }
-            .z-row, .z-row.reverse { flex-direction: column; gap: 40px; }
-            .z-image { width: 100%; height: 300px; order: -1; }
-            .section-padding { padding: 100px 0; }
-            .booking-grid { grid-template-columns: 1fr; }
-/* --- Content Protection Layer --- */
-body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE/Edge */
-    user-select: none;         /* Standard */
-}
-
-/* IMPORTANT: Re-enable selection for inputs so students can still type! */
-input, textarea, select {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
-            
+        .container {
+            max-width: 600px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(162, 238, 242, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
         }
-.savings-badge-navy {
-    background: #000040; /* Dark Navy background */ 
-    color: #ffffff !important; /* White text */ 
-    font-size: 0.8rem;
-    font-weight: 900;
-    padding: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    border-bottom: 3.5px solid var(--c-surface);
-}   
 
- </style>
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: var(--c-accent);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .contact-box {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+
+        .contact-item {
+            margin: 18px 0;
+            font-size: 1.05rem;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .contact-item strong {
+            color: var(--c-accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a {
+            color: var(--c-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--c-accent);
+        }
+
+        /* Small animation for the page load */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-
-    <div class="ocean-layer layer-surface"></div>
-    <div class="ocean-layer layer-mid"></div>
-    <div class="ocean-layer layer-abyss"></div>
-
-    <header class="landing-header">
-        <a href="#hero" class="logo-container">
-            <img src="https://apexlearningkw.com/ALKW Logo.png" alt="Apex Learning Logo" class="logo-icon">
-        </a>
-        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
-    </header>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="side-drawer" id="sideDrawer">
-        <div class="drawer-header"><button class="close-btn" id="closeBtn">&times;</button></div>
-        <ul class="drawer-links">
-            <li><a href="#hero" class="drawer-link">Home</a></li>
-            <li><a href="#about-apex" class="drawer-link">About Apex</a></li>
-            <li><a href="#unique" class="drawer-link">Why APEX?</a></li>
-            <li><a href="#services" class="drawer-link">APEX Services</a></li>
-            <li><a href="#packages" class="drawer-link">APEX Products</a></li>
-            <li><a href="#tutors" class="drawer-link">The APEX Team</a></li>
-            <li><a href="/portal" class="drawer-link">Student Portal</a></li>
-            <li><a href="#contact" class="drawer-link">Contact Us</a></li>
-           
-        </ul>
-        <div class="drawer-bottom">
-            
-        </div>
-    </div>
-
-    <section id="hero" class="depth-light-text">
-        <div class="container" style="padding-top: 80px;">
-            <h1 class="hero-title">Academic Success<br>Depth of Understanding</h1>
-            <div class="hero-text-box lead-text">
-                <p>Stop the guessing game. We dive beneath the surface to identify <em>exactly</em> how your child learns, bridging the gap between confusion and clarity to unlock their full potential.</p>
-
-<div style="margin-top: 40px; text-align: center;">
-    <a href="#services" class="btn btn-depth" style="
-        display: inline-block;
-        padding: 18px 45px;
-        background: linear-gradient(180deg, #004e92 0%, #000428 100%);
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 1.1rem;
-        border-radius: 50px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;">
-        Apex Learning
-    </a>
-</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about-apex" class="section-padding depth-light-text">
-        <div class="container">
-            <h2 class="section-title">More Than Just Grades</h2>
-            <div class="z-row reverse">
-                <div class="z-text">
-                    <h3>Our Mission: Future-Proofing Your Child</h3>
-                    <p>We don't just teach for the test; we teach for life. We are driven by a sincere desire to empower students to think logically and independently for the greater good.</p>
-                    <h3>Building Agency & Autonomy</h3>
-                    <p>Forget spoon-feeding. Our approach actively promotes student agency and thinking autonomy. We build confident, independent learners ready to tackle any academic challenge on their own.</p>
-                </div>
-                <div class="z-image" style="display: flex; align-items: center; justify-content: center; color: var(--c-primary-dark); opacity: 0.4;">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path><path d="M10 2c1 .5 2 2 2 5"></path></svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="unique" class="section-padding depth-light-text">
-        <div class="container">
-            <h2 class="section-title">The Apex Advantage</h2>
-            <div class="z-row">
-                <div class="z-text">
-                    <h3>The 'Intellectual Empathy' Edge</h3>
-                    <p>This is our secret weapon. We don't just look at <em>what</em> your child got wrong; we dive deep to understand <em>how</em> they think. This allows us to pinpoint the root cause of misunderstanding and fix it permanently.</p>
-                    <h3>Total Visibility with Innovation</h3>
-                    <p>We combine cutting-edge AI tools with our proprietary, privatized feedback reporting system. This Intellectual Property ensures you are never in the dark about your child's progress, giving you complete peace of mind.</p>
-                </div>
-                <div class="z-image"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section-padding depth-dark-text">
+<body class="fade-in">
     <div class="container">
-        <h2 class="section-title">know what you need get what you want
-</h2>
+        <h1>Apex <span>Learning</span></h1>
         
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 60px;">
-    
-    <div class="glass-card service-portal" onclick="window.location.href='#packages'" style="cursor: pointer; padding: 50px 35px; border: 3.5px solid var(--c-surface); transition: all 0.4s ease;">
-        <h3 class="apex-shiny-title" style="text-align: center;">The Apex Way</h3>
-        <p class="apex-subtitle" style="text-align: center;">Elite MATHEMATICS Tutoring & CONTENT Mastery</p>
-        <p style="color: var(--white); line-height: 1.8; font-size: 1.05rem; opacity: 0.95; font-family: var(--font-body); text-align: left;">
-            This ELITE online tutoring service is focused on Mathematics mastery. Our APEX professionals build the cognitive architecture required to achieve your APEX performance. We don't just teach the curriculum; we teach the Apex Way—a proprietary, results-driven method ensuring your goals are met.
-
+        <p class="subtitle">
+            Our world-class digital ecosystem is currently under construction. 
+            We are preparing an unparalleled curriculum and portal experience for our students. We will be live shortly.
         </p>
-<div style="margin-top: auto; padding-top: 25px;">
-    <a href="#packages" class="btn btn-depth" style="
-        display: inline-block;
-        padding: 14px 30px;
-        background: linear-gradient(180deg, #004e92 0%, #000428 100%);
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 0.9rem;
-        border-radius: 50px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        transition: transform 0.3s ease;">
-        Explore The Apex Way →
-    </a>
-</div>    </div>
-
-   
-   <div class="glass-card service-portal" onclick="window.location.href='#mentorship-packages'" style="cursor: pointer; padding: 50px 35px; border: 3.5px solid var(--c-surface); transition: all 0.4s ease;">
-    <h3 class="apex-shiny-title" style="text-align: center;">The Apex Compass</h3>
-    <p class="apex-subtitle" style="text-align: center;">Academic Support and Mentorship</p>
-    <p style="color: var(--white); line-height: 1.8; font-size: 1.05rem; opacity: 0.95; font-family: var(--font-body); text-align: left;">
-       The APEX Compass service provides a total outsourced peace of mind by building Professional Students guiding and equipping them with the skills for life-long success. Our APEX team bridges the space between Parent, Guardian, PA, and Mentor. APEX bridges the gap between results and academic performance by providing the support every student needs.
-    </p>
-    <div style="margin-top: auto; padding-top: 25px;">
-    <a href="#mentorship-packages" class="btn btn-depth" style="
-        display: inline-block;
-        padding: 14px 30px;
-        background: linear-gradient(180deg, #004e92 0%, #000428 100%);
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 0.9rem;
-        border-radius: 50px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        transition: transform 0.3s ease;">
-        Explore The Apex Compass →
-    </a>
-</div>
-</div>
-
-</div>
-
-        </div>
-    </div>
-</section>
-
-   <section id="packages" class="section-padding depth-dark-text">
-    <div class="container">
         
-        
-
-
-        <div class="glass-card unified-table-container soft-sculpture">
-            <div class="table-header-crown">
-    <h3 class="apex-shiny-title" style="font-size: 2.4rem;">The Apex Way</h3>
-    <p class="apex-subtitle">Elite Online Mathematics Tutoring and Content Mastery</p>
-</div>
-
-            <div class="table-grid-system">
-                
-                <div class="table-column">
-<div style="height:0px; width: 100%; margin-bottom: 35px;"></div>
-                    <h3 class="plan-title">Specialist</h3>
-                    <div class="shiny-price">35 KD</div>
-                    <p class="validity-text">1 Session | 2 Weeks Validity</p>
-                    
-                    <div class="descriptor-box">
-                        <h4 class="archetype-header">The Perfectionist</h4>
-                        <p class="archetype-body">High-performers facing a specific, complex roadblock or immediate exam pressure.</p>
-                    </div>
-                    <button onclick="handlePurchase('35')" class="btn btn-depth btn-block">Select Plan</button>
-                </div>
-
-                <div class="table-column">
-    <div class="savings-badge-navy">~15% Savings</div>
-    <h3 class="plan-title" style="margin-top: 35px;">Momentum</h3>
-                    <div class="shiny-price">90 KD</div>
-                    <p class="validity-text">3 Sessions | 4 Weeks Validity</p>
-                    
-                    <div class="descriptor-box">
-                        <h4 class="archetype-header">The Assessment Achiever</h4>
-                        <p class="archetype-body">Students who need to translate knowledge into high exam scores through structured prep.</p>
-                    </div>
-                    <button onclick="handlePurchase('90')" class="btn btn-depth btn-block">Select Plan</button>
-                </div>
-
-                <div class="table-column">
-    <div class="savings-badge-navy">~30% Savings</div>
-    <h3 class="plan-title" style="margin-top: 35px;">Mastery</h3>
-                    <div class="shiny-price">200 KD</div>
-                    <p class="validity-text">8 Sessions | 8 Weeks Validity</p>
-                    
-                    <div class="descriptor-box">
-                        <h4 class="archetype-header">The Ambitious Builder</h4>
-                        <p class="archetype-body">Students aiming for top-tier university placement or managing major curriculum transitions.</p>
-                    </div>
-                    <button onclick="handlePurchase('200')" class="btn btn-depth btn-block">Select Plan</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mentorship-packages" style="margin-top: 80px;">
-    
-    <div style="text-align: center; margin-bottom: 50px;">
-        <p style="color: var(--c-surface); font-style: bold  ; font-size: 1.2rem; opacity: 0.9;">
-            Success is the sum of small efforts repeated day-in and day-out
-        </p>
-    </div>
-
-<div style="max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px;">
-    <h3 style="color: var(--c-surface); text-align: center; margin-bottom: 30px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 2px;">The Hybrid Role: 4-in-1 Academic Guardianship</h3>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-        
-        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1.5px solid rgba(162, 238, 242, 0.3);">
-            <h4 style="color: var(--c-surface); font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading);">THE PARENT (AUTHORITY)</h4>
-            <p style="color: var(--white); text-align: left; font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">
-                We take over the role of "academic enforcer." By handling the discipline and accountability, we remove friction from the home and allow you to simply be a parent again.
-            </p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1.5px solid rgba(162, 238, 242, 0.3);">
-            <h4 style="color: var(--c-surface); font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading);">THE GUARDIAN (OVERSIGHT)</h4>
-            <p style="color: var(--white); text-align: left; font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">
-                We provide holistic "protective oversight," monitoring stress levels, mental clarity, and academic safety to prevent burnout and ensure consistent wellbeing.
-            </p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1.5px solid rgba(162, 238, 242, 0.3);">
-            <h4 style="color: var(--c-surface); font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading);">THE PA (ADMINISTRATION)</h4>
-            <p style="color: var(--white); text-align: left; font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">
-                We act as your child's Personal Assistant. We surgically manage their Student Diary, deadlines, and hourly time-valuation to ensure zero wasted effort.
-            </p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1.5px solid rgba(162, 238, 242, 0.3);">
-            <h4 style="color: var(--c-surface); font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading);">THE MENTOR (STRATEGY)</h4>
-            <p style="color: var(--white); text-align: left; font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">
-                We provide the "Executive Vision." We bridge the gap between schoolwork and a future professional career, instilling the habits of elite diligence.
-            </p>
-        </div>
-
-    </div>
-</div>
-
-    <div class="glass-card unified-table-container soft-sculpture">
-        
-        <div class="table-header-crown">
-    <h3 class="apex-shiny-title" style="font-size: 2.4rem;">The Apex Compass</h3>
-    <p class="apex-subtitle">Academic Support and Mentorship</p>
-</div>
-
-        <div class="table-grid-system" style="display: flex; flex-wrap: wrap;">
+        <div class="contact-box">
+            <h3>Contact Us</h3>
             
-            <div class="table-column" style="flex: 1; min-width: 250px;">
-<div style="height:0px; width: 100%; margin-bottom: 35px;"></div>
-                <h3 class="plan-title shiny-title-teal">The Apex Launchpad</h3>
-                <div class="shiny-price">50 KD</div>
-                <p class="validity-text">1 Month</p>
-                <div class="descriptor-box">
-                    <h4 class="archetype-header">System Installation</h4>
-                    <p class="archetype-body" style="color: #808080;">Immediate injection of elite skills for independent carry-on.</p>
-                </div>
-                <button onclick="handlePurchase('50')" class="btn btn-depth btn-block">Select Plan</button>
-            </div>
-
-            <div class="table-column" style="flex: 1; min-width: 250px;">
-                <div class="savings-badge-navy">15% Savings</div>
-                <h3 class="plan-title shiny-title-teal" style="margin-top: 35px;">The Apex Focus</h3>
-                <div class="shiny-price">130 KD</div>
-                <p class="validity-text">3 Months (1 Quarter)</p>
-                <div class="descriptor-box">
-                    <h4 class="archetype-header">Turnaround & Rhythm</h4>
-                    <p class="archetype-body" style="color: #808080;">Goal-alignment for students who have fallen off slightly.</p>
-                </div>
-                <button onclick="handlePurchase('130')" class="btn btn-depth btn-block">Select Plan</button>
-            </div>
-
-            <div class="table-column" style="flex: 1; min-width: 250px;">
-                <div class="savings-badge-navy">20% Savings</div>
-                <h3 class="plan-title shiny-title-teal" style="margin-top: 35px;">The Apex Choice</h3>
-                <div class="shiny-price">240 KD</div>
-                <p class="validity-text">6 Months (1 Semester)</p>
-                <div class="descriptor-box">
-                    <h4 class="archetype-header">Grit & Consistency</h4>
-                    <p class="archetype-body" style="color: #808080;">Building a platform for students who win through systems, not luck.</p>
-                </div>
-                <button onclick="handlePurchase('240')" class="btn btn-depth btn-block">Select Plan</button>
-            </div>
-
-            <div class="table-column" style="flex: 1.2; min-width: 280px; background: rgba(162, 238, 242, 0.05); border: 4px solid var(--c-surface);">
-                <div class="savings-badge-navy">33% Savings (Best Value)</div>
-                <h3 class="plan-title shiny-title-teal" style="margin-top: 35px; font-size: 1.9rem;">The Apex Guardian</h3>
-                <div class="shiny-price" style="font-size: 3.5rem;">400 KD</div>
-                <p class="validity-text">12 Months (Full Year)</p>
-                <div class="descriptor-box">
-                    <h4 class="archetype-header">Total Guardianship</h4>
-                    <p class="archetype-body" style="color: #808080;">Full delegation of academic management to the Director/PA.</p>
-                </div>
-                <button onclick="handlePurchase('400')" class="btn btn-depth btn-block">Select Plan</button>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<style>
-    .soft-sculpture {
-        padding: 0 !important; 
-        /* WE REMOVE 'OVERFLOW: HIDDEN' TO ALLOW THE POP-OUT EFFECT */
-        background: rgba(255, 255, 255, 0.03) !important;
-        border-radius: 35px !important;
-        max-width: 1100px; 
-        margin: 0 auto 100px auto;
-        border: 3.5px solid var(--c-surface) !important; 
-        box-shadow: 0 0 30px rgba(162, 238, 242, 0.2);
-        position: relative;
-    }
-
-    .table-header-crown {
-        background: rgba(162, 238, 242, 0.12); 
-        padding: 50px 20px; 
-        text-align: center; 
-        border-bottom: 3.5px solid var(--c-surface);
-        /* Ensure the crown respects the border radius of the parent */
-        border-top-left-radius: 31px;
-        border-top-right-radius: 31px;
-    }
-
-    .table-grid-system {
-        display: flex; /* Flex is more stable than grid for independent column scaling */
-        flex-wrap: wrap;
-    }
-
-    .table-column {
-        flex: 1;
-        min-width: 300px;
-        padding: 80px 40px; 
-        text-align: center; 
-        display: flex; 
-        flex-direction: column; 
-        position: relative;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border-right: 3.5px solid var(--c-surface);
-        background: transparent;
-    }
-
-    .table-column:last-child { 
-        border-right: none; 
-    }
-
-    /* --- THE FIX: CLEAN POP-OUT HOVER --- */
-    .table-column:hover {
-        background: rgba(162, 238, 242, 0.1);
-        transform: scale(1.04); /* Pops out of the screen */
-        z-index: 100; /* Moves in front of everything */
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        border-radius: 20px; /* Rounds the column itself during pop-out */
-        border-right-color: transparent; /* Prevents line ghosting on hover */
-    }
-
-    /* --- SHINY WHITE BADGES & PRICE --- */
-    .savings-badge-filled {
-        background: var(--c-surface); 
-        /* SHINY WHITE SAVINGS FONT */
-        color: #ffffff !important; 
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        font-size: 0.85rem; 
-        font-weight: 900; 
-        padding: 14px; 
-        text-transform: uppercase; 
-        letter-spacing: 3px; 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%;
-        border-bottom: 3.5px solid var(--c-surface);
-    }
-
-    .shiny-price { 
-        margin: 25px 0; 
-        font-size: 3.2rem; 
-        color: #ffffff !important; 
-        font-family: var(--font-heading); 
-        font-weight: 800;
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-
-    /* --- ARCHETYPE TYPOGRAPHY --- */
-    .plan-title { color: var(--c-surface); font-size: 1.7rem; letter-spacing: 2px; }
-    .validity-text { color: var(--white); font-size: 0.9rem; margin-bottom: 45px; opacity: 0.8; font-weight: 700; }
-    .descriptor-box { flex-grow: 1; margin-bottom: 50px; }
-    .archetype-header { color: var(--c-surface); font-size: 1.3rem; margin-bottom: 15px; font-family: var(--font-heading); text-transform: uppercase; }
-    .archetype-body { color: var(--c-surface); font-size: 1.05rem; line-height: 1.8; opacity: 0.95; font-family: var(--font-body); }
-
-    @media (max-width: 900px) {
-        .table-column { 
-            flex: 1 1 100%; 
-            border-right: none !important; 
-            border-bottom: 3.5px solid var(--c-surface); 
-        }
-        .table-column:last-child { border-bottom: none; }
-        .table-column:hover { transform: scale(1.02); }
-    }
-</style>
-
-    <section id="careers" class="section-padding depth-dark-text">
-        <div class="container">
-             <h2 class="section-title">Join an Elite Team</h2>
-             <div class="z-row">
-                 <div class="z-text">
-                    <div class="glass-content-box">
-                        <h3>Calling Sincere Educators</h3>
-                        <p>Are you ready to make a real difference? We are looking for passionate educators to join our mission.</p>
-                        <ul style="list-style: none; padding-left: 10px; margin-bottom: 30px; opacity: 0.95;">
-                            <li style="margin-bottom: 15px;"><strong>The Standard:</strong> Professional commitment, contractual obligations, and owning necessary PC resources.</li>
-                            <li style="margin-bottom: 15px;"><strong>The Platform:</strong> Build your personal brand by creating weekly educational content for our YouTube channel.</li>
-                            <li style="margin-bottom: 15px;"><strong>The Reward:</strong> Competitive pay with lucrative incentive bonuses and "Success Bonuses" when your students achieve their goals.</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-surface">Contact Us</a>
-                    </div>
-                 </div>
-                 <div class="z-image" style="height: 400px;"></div>
-             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding depth-dark-text" style="padding-bottom: 60px;">
-        <div class="container">
-            <h2 class="section-title">Secure Your Lesson Today</h2>
-            <div class="text-center-block lead-text">
-                <p>Don't let another term pass with uncertainty. Book below or send us a quick enquiry to start the Apex difference.</p>
+            <div class="contact-item">
+                <strong>Email</strong> 
+                <a href="mailto:info@apexlearningkw.com">info@apexlearningkw.com</a>
             </div>
             
-            <div class="booking-grid">
-                <div class="glass-content-box" style="padding: 40px 30px;">
-                    <h3 style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">Student Booking Form</h3>
-                    <form id="bookingForm">
-                        <input type="hidden" name="form_type" value="booking">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div>
-                                <label class="form-label">Student Name</label>
-                                <input type="text" name="Student Name" class="form-input" required>
-                            </div>
-                            <div>
-                                <label class="form-label">Grade Level</label>
-                                <select name="Grade Level" class="form-input" required>
-                                    <option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
-                                    <option>Grade 11</option><option>Grade 12</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="form-label">Email Address</label>
-                                <input type="email" name="Email Address" class="form-input" required>
-                            </div>
-                            <div>
-                                <label class="form-label">Mobile (With Code)</label>
-                                <input type="tel" name="Mobile" class="form-input" placeholder="+965 ..." required>
-                            </div>
-                        </div>
-
-                        <label class="form-label" style="margin-top: 10px;">Academic Requirements & Procedures</label>
-                        <p class="small-text" style="margin-bottom: 10px;">Describe the procedures or share the topics that you need assistance with. Include details such as: Curriculum, current grade (in symbol or percentage).</p>
-                        <textarea name="Requirements" class="form-input" rows="4" required></textarea>
-
-                        <label class="form-label">Select Learning Package</label>
-                        <div class="package-options">
-                            <label class="pkg-card">
-                                <input type="radio" name="Package" value="20 KD - 1 Session" checked>
-                                <span class="pkg-price">20 KD</span>
-                                <span class="small-text">1 Session</span>
-                            </label>
-                            <label class="pkg-card">
-                                <input type="radio" name="Package" value="50 KD - 3 Sessions">
-                                <span class="pkg-price">50 KD</span>
-                                <span class="small-text">3 Sessions</span>
-                            </label>
-                            <label class="pkg-card" style="border: 2px solid var(--c-surface);">
-                                <input type="radio" name="Package" value="110 KD - 7 Sessions">
-                                <span class="pkg-price">110 KD</span>
-                                <span class="small-text">7 Sessions</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" id="bookingSubmit" class="btn btn-surface btn-block" style="font-size: 1.2rem;">Proceed to Payment</button>
-                    </form>
-                </div>
-
-                <div>
-                    <div class="glass-content-box">
-    <h3 style="color: var(--c-surface); margin-bottom: 10px;">General Enquiry</h3>
-    
-    <div style="background: rgba(162, 238, 242, 0.1); border-left: 3px solid var(--c-surface); padding: 10px 15px; margin-bottom: 25px;">
-        <p class="small-text" style="margin-bottom: 0; line-height: 1.5; color: var(--white);">
-            <strong>Have a specific enquiry?</strong> Send us a message below. We will respond within <strong>24 hours</strong>.
-        </p>
-    </div>
-
-    <form id="enquiryForm">
-        <input type="hidden" name="form_type" value="enquiry">
-        
-        <label class="form-label">Your Email</label>
-        <input type="email" name="Your Email" class="form-input" placeholder="email@example.com" required>
-        
-        <label class="form-label">Message</label>
-        <textarea name="Message" class="form-input" rows="4" placeholder="How can we help?" required></textarea>
-        
-        <button type="submit" id="enquirySubmit" class="btn btn-surface btn-block" style="background: transparent; border: 2px solid var(--c-surface); color: var(--c-surface);">Send Enquiry</button>
-    </form>
-</div>
-                    
-                    <div style="margin-top: 30px; text-align: center;">
-                        <p class="small-text" style="margin-bottom: 15px;">Or contact us directly:</p>
-                        <div style="display: flex; gap: 15px; justify-content: center;">
-                            <a href="#" class="social-icon" title="WhatsApp">WA</a>
-                            <a href="mailto:info@apexlearningkw.com" class="social-icon" title="Email">EM</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<div class="trust-bar" style="text-align: center; padding: 30px 20px; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
-    <p class="small-text" style="margin-bottom: 20px; letter-spacing: 1px; opacity: 0.8;">SECURE PAYMENTS & LOCAL TRUST</p>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 25px; flex-wrap: wrap; opacity: 0.9;">
-        <span style="font-weight: 800; font-size: 14px; color: #fff;">KNET</span>
-        <span style="font-weight: 800; font-size: 14px; color: #fff;">Apple Pay</span>
-        <span style="font-weight: 800; font-size: 14px; color: #fff;">Google Pay</span>
-        <span style="font-weight: 800; font-size: 14px; color: #fff;">VISA</span>
-        <span style="font-weight: 800; font-size: 14px; color: #fff;">Mastercard</span>
-        <span style="font-size: 20px;" title="Secure SSL Encryption">🔒</span>
-    </div>
-</div>
-    <footer>
-        <footer style="padding: 60px 20px; background: #0a0a0a; color: white; border-top: 1px solid rgba(255,255,255,0.1);">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-        
-        <div>
-            <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--f-primary);">Apex Learning</h4>
-            <p class="small-text" style="line-height: 1.8; opacity: 0.8;">
-                <strong>Operated by:</strong> Apex Learning KW (Pty) Ltd. <br>
-                <strong>Location:</strong> Kuwait <br>
-                <strong>Contact:</strong> info@apexlearningkw.com <br>
-                <strong>Compliance:</strong> Kuwait Decree Law 10/2026 
-            </p>
-        </div>
-
-        <div>
-            <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--f-primary);">Legal & Policies</h4>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.7;">Terms of Service </a></li>
-                <li style="margin-bottom: 12px;"><a href="refund-policy.html" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.7;">Refund & Cancellation </a></li>
-                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.7;">Privacy Policy </a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--f-primary);">Support</h4>
-            <p class="small-text" style="opacity: 0.7; line-height: 1.8;">
-                Have questions? Reach out to our team. We typically respond within 24 hours.
-            </p>
+       
+            
+            
         </div>
     </div>
-
-    <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.4;">
-        <p style="font-size: 12px;">&copy; 2026 Apex Learning KW (PTY)LTD. "Success is achieved through intentional planning and support" </p>
-    </div>
-</footer>
-
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const sideDrawer = document.getElementById('sideDrawer');
-        const closeBtn = document.getElementById('closeBtn');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const drawerLinks = document.querySelectorAll('.drawer-link');
-
-        function openMenu() { sideDrawer.classList.add('active'); menuOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeMenu() { sideDrawer.classList.remove('active'); menuOverlay.classList.remove('active'); document.body.style.overflow = 'auto'; }
-        
-        menuToggle.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-        
-        drawerLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // --- GOOGLE SHEETS CONNECTION LOGIC ---
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyxw0zdbdH9QHKN5kUGsM8IPW-S29jb1zRrbrDd8mmS_zMXP_2B77KyUe0nJh43LSK8/exec';
-
-        function setupForm(formId, buttonId) {
-            const form = document.getElementById(formId);
-            const btn = document.getElementById(buttonId);
-
-            form.addEventListener('submit', e => {
-                e.preventDefault();
-                btn.disabled = true;
-                btn.innerText = "Submitting...";
-
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => {
-                        btn.innerText = "Success!";
-                        form.reset();
-                        if(formId === 'bookingForm') {
-    // TEST MODE: No redirect, just an alert to confirm the data sent
-    alert("Test Successful: Booking data sent to Google Sheets!");
-    form.reset();
-    btn.disabled = false;
-    btn.innerText = "Proceed to Payment";
-}
-                    })
-                    .catch(error => {
-                        console.error('Error!', error.message);
-                        btn.disabled = false;
-                        btn.innerText = "Try Again";
-                    });
-            });
-        }
-
-        // Initialize the bridge for both forms
-        setupForm('bookingForm', 'bookingSubmit');
-        setupForm('enquiryForm', 'enquirySubmit');
-    </script>
-<script>
-    // Disable Right-Click context menu
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    }, false);
-
-    // Optional: Disable common "View Source" keyboard shortcuts
-    document.onkeydown = function(e) {
-        // Disable F12 (Dev Tools)
-        if(e.keyCode == 123) return false;
-        // Disable Ctrl+Shift+I (Inspect)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-        // Disable Ctrl+U (View Source)
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-    };
-</script>
-
-        <script>
-    // 1. Disable Right-Click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // 2. Disable Common "Copy/Inspect" Shortcuts
-    document.onkeydown = function(e) {
-        // Disable F12
-        if(e.keyCode == 123) return false;
-        // Disable Ctrl+Shift+I (Inspect)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-        // Disable Ctrl+Shift+C (Element Selector)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-        // Disable Ctrl+Shift+J (Console)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-        // Disable Ctrl+U (View Source)
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-        // Disable Ctrl+S (Save Page)
-        if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;
-    };
-</script>
-
-    <script>
-		function handlePurchase(planPrice) {
-    // This logs the intent and redirects to the signup page 
-    // passing the price as a 'plan' parameter
-    window.location.href = `signup.html?plan=${planPrice}`;
-		}	</script>
-}
-
 </body>
 </html>
