@@ -767,6 +767,7 @@
         }
         .sub-tier-card:hover { border-color: var(--c-surface); background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); }
         .sub-tier-card.selected { border-color: var(--c-surface); background: rgba(162, 238, 242, 0.12); box-shadow: 0 0 20px rgba(162, 238, 242, 0.25); }
+        .sub-tier-card input[type="radio"] { position: absolute; top: 20px; right: 20px; transform: scale(1.3); accent-color: var(--c-mid); }
         .sub-price { font-size: 2.2rem; font-weight: 800; color: var(--white); font-family: var(--font-heading); line-height: 1.1; margin: 10px 0; }
         .sub-price span { font-size: 0.9rem; font-weight: 400; color: var(--c-surface); }
 
@@ -874,6 +875,20 @@
         .chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px 0; }
         .chip { background: rgba(255, 255, 255, 0.15); color: var(--c-surface); border: 1px solid var(--c-surface); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-heading); }
 
+        /* Footer Legal Links Styling */
+        .footer-legal-link {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.25s ease;
+            display: inline-block;
+        }
+        .footer-legal-link:hover {
+            color: var(--c-surface);
+            transform: translateX(4px);
+            text-decoration: underline;
+        }
+
         @media (max-width: 900px) {
             h1 { font-size: 2.7rem; }
             h2 { font-size: 2rem; }
@@ -961,21 +976,21 @@
                     <div class="bubble-card">
                         <span class="bubble-tag">The Marketplace Flaw</span>
                         <p class="bubble-text">
-                            Most tutoring platforms treat education like an open classifieds board.
+                            Most tutoring platforms treat education like an open classifieds board[cite: 1, 2].
                         </p>
                     </div>
 
                     <div class="bubble-card">
                         <span class="bubble-tag">The Family Dilemma</span>
                         <p class="bubble-text">
-                            Families spend hours scrolling through hundreds of generic bios, gambling on whether a tutor’s teaching style will get the desired results for their child.
+                            Families spend hours scrolling through hundreds of generic bios, gambling on whether a tutor’s teaching style will get the desired results for their child[cite: 2].
                         </p>
                     </div>
 
                     <div class="bubble-card">
                         <span class="bubble-tag">The Educator Friction</span>
                         <p class="bubble-text">
-                            Tutors, meanwhile, spend uncompensated hours marketing themselves, negotiating rates, and teaching students whose learning styles don’t match their strengths.
+                            Tutors, meanwhile, spend uncompensated hours marketing themselves, negotiating rates, and teaching students whose learning styles don’t match their strengths[cite: 1, 2].
                         </p>
                     </div>
                 </div>
@@ -1856,22 +1871,26 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH CONNECTED LEGAL POLICIES -->
     <footer style="padding: 60px 20px; background: #0a0a0a; color: white; border-top: 1px solid rgba(255,255,255,0.1);">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
             <div>
                 <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--font-heading);">Apex Learning</h4>
                 <p class="small-text" style="line-height: 1.8; opacity: 0.8;">
                     <strong>Location:</strong> Kuwait <br>
-                    <strong>Contact:</strong> info@apexlearningkw.com <br>
+                    <strong>Contact:</strong> <a href="mailto:info@apexlearningkw.com" style="color: inherit; text-decoration: none;">info@apexlearningkw.com</a> <br>
                     <strong>Governance:</strong> Strict Administrative Match Protocol
                 </p>
             </div>
             <div>
                 <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--font-heading);">Legal & Policies</h4>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 12px;"><a href="terms.html" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.7;">Terms of Service</a></li>
-                    <li style="margin-bottom: 12px;"><a href="refund-policy.html" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.7;">Blind Matching & Privacy Protocols</a></li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="refund-policy.html" class="footer-legal-link">Blind Matching & Privacy Protocols</a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -1881,8 +1900,11 @@
                 </p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.4;">
-            <p style="font-size: 12px;">&copy; 2026 Apex Learning KW. All rights reserved. Free matching service for students; subscription required for verified tutors.</p>
+        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.5;">
+            <p style="font-size: 12px; line-height: 1.7;">
+                &copy; 2026 Apex Learning (Pty) Ltd. CIPC Registration No: 2026 / 262544 / 07. All rights reserved.<br>
+                Free diagnostic matching service for students; recurring platform listing subscription required for verified tutors.
+            </p>
         </div>
     </footer>
 
@@ -1891,7 +1913,7 @@
         // LIVE GOOGLE APPS SCRIPT WEB APP ENDPOINT
         const DB_API_URL = "https://script.google.com/macros/s/AKfycbxP5uITX-dpAbonKZ6QPRO78H08aYYzV-LO25MQqrKfewa7kc5Tr4Km8YptkHZ1gTEqSg/exec";
 
-        // VERIFIED LEMON SQUEEZY CHECKOUT URLS
+        // LEMON SQUEEZY CHECKOUT URLS
         const LEMON_WEEKLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/4eb664b8-b3c2-4b18-b918-ffda2d72bce6";
         const LEMON_MONTHLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/7b4960f8-c07d-452c-85cd-45c6e115f66a";
 
@@ -2129,7 +2151,7 @@
             const email = document.getElementById('profileContactEmail')?.value || '';
             const baseUrl = planTier === 'Weekly' ? LEMON_WEEKLY_URL : LEMON_MONTHLY_URL;
             
-            // Explicitly pass test mode flag & prefill email without any iframe overlay conflicts
+            // Includes test=true for testing sandbox approval
             const separator = baseUrl.includes('?') ? '&' : '?';
             const emailParam = email ? `&checkout[email]=${encodeURIComponent(email)}` : '';
             const targetUrl = `${baseUrl}${separator}test=true${emailParam}`;
@@ -2296,7 +2318,6 @@
             const feedback = document.getElementById('saveFeedback');
             const form = new FormData(tutorForm);
 
-            // Validate password for new registrations
             const pass = document.getElementById('tutorPasswordInput')?.value || "password123";
             const passConfirm = document.getElementById('tutorPasswordConfirm')?.value;
 
@@ -2338,7 +2359,6 @@
                     feedback.innerText = "✓ Profile recorded! Choose your plan below...";
                     feedback.style.display = 'block';
 
-                    // Launch the explicit plan selection screen
                     setTimeout(() => {
                         feedback.style.display = 'none';
                         openPlanModal();
