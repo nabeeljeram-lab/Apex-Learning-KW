@@ -823,6 +823,115 @@
             transform: translateY(-4px);
         }
 
+        /* --- INTERACTIVE LEGAL & PRIVACY POPUP MODAL --- */
+        .legal-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 4, 40, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .legal-modal-overlay.active {
+            display: flex;
+        }
+        .legal-modal-card {
+            background: linear-gradient(145deg, rgba(0, 4, 40, 0.98) 0%, rgba(0, 78, 146, 0.95) 100%);
+            border: 2px solid var(--c-surface);
+            border-radius: 24px;
+            max-width: 850px;
+            width: 100%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+            overflow: hidden;
+        }
+        .legal-modal-header {
+            padding: 20px 28px;
+            border-bottom: 1.5px solid rgba(162, 238, 242, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 4, 40, 0.6);
+        }
+        .legal-modal-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--white);
+            font-family: var(--font-heading);
+        }
+        .legal-modal-tabs {
+            display: flex;
+            gap: 10px;
+            padding: 12px 28px;
+            background: rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto;
+        }
+        .legal-tab-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .legal-tab-btn:hover {
+            color: var(--c-surface);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .legal-tab-btn.active {
+            color: var(--c-primary-dark);
+            background: var(--c-surface);
+        }
+        .legal-modal-body {
+            padding: 28px;
+            overflow-y: auto;
+            color: var(--white);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .legal-modal-body h4 {
+            color: var(--c-surface);
+            font-size: 1.15rem;
+            margin: 20px 0 8px 0;
+            font-family: var(--font-heading);
+        }
+        .legal-modal-body h4:first-child {
+            margin-top: 0;
+        }
+        .legal-modal-body p {
+            margin-bottom: 14px;
+            opacity: 0.92;
+        }
+        .legal-modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        .legal-modal-body li {
+            margin-bottom: 6px;
+        }
+        .legal-modal-footer {
+            padding: 16px 28px;
+            border-top: 1.5px solid rgba(162, 238, 242, 0.2);
+            display: flex;
+            justify-content: flex-end;
+            background: rgba(0, 4, 40, 0.6);
+        }
+
         /* --- FORM CONTROLS & CARDS --- */
         .form-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
         .form-label { display: block; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--c-surface); letter-spacing: 1px; font-family: var(--font-heading); margin-bottom: 8px; }
@@ -880,6 +989,7 @@
             color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
             font-size: 14px;
+            cursor: pointer;
             transition: color 0.2s ease;
         }
         .footer-legal-link:hover {
@@ -1817,6 +1927,29 @@
         </div>
     </div>
 
+    <!-- INTERACTIVE LEGAL & PRIVACY POPUP MODAL -->
+    <div id="legalModalOverlay" class="legal-modal-overlay">
+        <div class="legal-modal-card">
+            <div class="legal-modal-header">
+                <h3 id="legalModalMainTitle">Legal & Regulatory Documentation</h3>
+                <button class="close-btn" onclick="closeLegalModal()" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="legal-modal-tabs">
+                <button type="button" id="tabLegalTerms" class="legal-tab-btn" onclick="switchLegalModalTab('terms')">Terms of Service</button>
+                <button type="button" id="tabLegalRefund" class="legal-tab-btn" onclick="switchLegalModalTab('refund')">Refund & Cancellation</button>
+                <button type="button" id="tabLegalPrivacy" class="legal-tab-btn active" onclick="switchLegalModalTab('privacy')">Privacy Policy</button>
+            </div>
+            
+            <div id="legalModalBody" class="legal-modal-body">
+                <!-- Content injected dynamically via JavaScript -->
+            </div>
+
+            <div class="legal-modal-footer">
+                <button type="button" class="btn btn-surface" style="padding: 8px 24px; font-size: 0.85rem;" onclick="closeLegalModal()">Close Window</button>
+            </div>
+        </div>
+    </div>
+
     <!-- GENERAL INQUIRY & DIRECT CONTACT -->
     <section id="contact" class="section-padding depth-dark-text" style="padding-bottom: 80px;">
         <div class="container">
@@ -1885,13 +2018,13 @@
                 <h4 style="color: var(--c-surface); margin-bottom: 20px; font-family: var(--font-heading);">Legal & Policies</h4>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 12px;">
-                        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                        <a href="terms.html" class="footer-legal-link" onclick="openLegalModal('terms', event)">Terms of Service</a>
                     </li>
                     <li style="margin-bottom: 12px;">
-                        <a href="refund-policy.html" class="footer-legal-link">Refund & Cancellation</a>
+                        <a href="refund-policy.html" class="footer-legal-link" onclick="openLegalModal('refund', event)">Refund & Cancellation</a>
                     </li>
                     <li style="margin-bottom: 12px;">
-                        <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+                        <a href="privacy-policy.html" class="footer-legal-link" onclick="openLegalModal('privacy', event)">Privacy Policy</a>
                     </li>
                 </ul>
             </div>
@@ -1915,6 +2048,85 @@
         // LEMON SQUEEZY CHECKOUT URLS (TEST MODE ACTIVE WHILE ACCOUNT PERMISSION IS PENDING)
         const LEMON_WEEKLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/4eb664b8-b3c2-4b18-b918-ffda2d72bce6";
         const LEMON_MONTHLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/7b4960f8-c07d-452c-85cd-45c6e115f66a";
+
+        // LEGAL MODAL DATA CONTENT
+        const LEGAL_DATA = {
+            privacy: {
+                title: "Privacy Policy & Blind Matching Protocols",
+                html: `
+                    <h4>1. Scope & Responsible Entity</h4>
+                    <p>Apex Learning KW (Pty) Ltd (CIPC Registration: <strong>2026 / 262544 / 07</strong>) operates <code>apexlearningkw.com</code>. We comply with South African <strong>POPIA (Protection of Personal Information Act No. 4 of 2013)</strong>, <strong>ECTA (Act 25 of 2002)</strong>, and Kuwait <strong>CITRA Data Privacy & Protection Regulations</strong> alongside <strong>Law No. 20 of 2014</strong>.</p>
+                    
+                    <h4>2. Data Collected</h4>
+                    <p>We collect essential academic and intake data including names, grade levels, student/parent emails, WhatsApp contact numbers, Kuwait residential areas, curriculum tracks, and pedagogical notes. For educators, we collect verified credentials, CVs, hourly rate floors/targets, and teaching archetypes.</p>
+
+                    <h4>3. The Blind Matching Confidentiality Protocol</h4>
+                    <p>To eliminate commercial bias and protect privacy, educator profiles and family phone numbers are never published on open directories. Details are exchanged strictly after mutual fit and agreed rates are brokered.</p>
+
+                    <h4>4. Cross-Border Transfers & Payments</h4>
+                    <p>Data is stored on secured Google Workspace cloud infrastructure outside Kuwait. Payment transactions for tutor platform listings are processed exclusively via Lemon Squeezy (Merchant of Record). We never collect, process, or store credit card details.</p>
+
+                    <h4>5. User Rights & Contact</h4>
+                    <p>You may request data access, correction, or profile erasure at any time by contacting our administrative desk at <a href="mailto:info@apexlearningkw.com" style="color: var(--c-surface);">info@apexlearningkw.com</a>.</p>
+                `
+            },
+            terms: {
+                title: "Terms of Service",
+                html: `
+                    <h4>1. Scope of Service</h4>
+                    <p>Apex Learning KW operates an independent academic concierge and matchmaking desk in Kuwait, registered under <strong>Apex Learning KW (Pty) Ltd</strong> (CIPC: <strong>2026 / 262544 / 07</strong>).</p>
+
+                    <h4>2. Free Family Intake & Zero Commission</h4>
+                    <p>Student matching is 100% free for families. Apex Learning charges <strong>0% commission</strong> on hourly lessons. All instructional fees are paid directly between the client and educator.</p>
+
+                    <h4>3. Tutor Platform Listing Subscriptions</h4>
+                    <p>Tutors maintain active matching eligibility through a recurring Weekly (3 KD / ~$10 USD) or Monthly (10 KD / ~$33 USD) listing subscription billed via Lemon Squeezy. Subscriptions auto-renew until cancelled via the self-service portal.</p>
+
+                    <h4>4. Independent Contractor Status</h4>
+                    <p>Tutors are independent educators, not employees or agents of Apex Learning. Apex Learning is not liable for private financial transactions or lesson scheduling conflicts conducted outside platform listing billing.</p>
+                `
+            },
+            refund: {
+                title: "Refund & Cancellation Policy",
+                html: `
+                    <h4>1. Tutor Listing Subscriptions</h4>
+                    <p>Listing memberships cover immediate digital credentialing and placement pool activation. Tutors may cancel recurring billing anytime without penalty. Because digital performance begins immediately, subscriptions are non-refundable once processed.</p>
+
+                    <h4>2. Hourly Lesson Refunds</h4>
+                    <p>Because Apex Learning collects 0% commission and never holds instructional fees, all lesson rescheduling, package billing, and lesson refunds must be handled directly between the parent and the educator.</p>
+
+                    <h4>3. Technical & Billing Errors</h4>
+                    <p>Verified duplicate transactions or administrative errors will be refunded immediately upon notifying <a href="mailto:info@apexlearningkw.com" style="color: var(--c-surface);">info@apexlearningkw.com</a> with your Lemon Squeezy Order ID within 14 days.</p>
+                `
+            }
+        };
+
+        function openLegalModal(section, e) {
+            if (e) e.preventDefault();
+            switchLegalModalTab(section);
+            document.getElementById('legalModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legalModalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchLegalModalTab(tabKey) {
+            const data = LEGAL_DATA[tabKey] || LEGAL_DATA.privacy;
+            document.getElementById('legalModalMainTitle').innerText = data.title;
+            document.getElementById('legalModalBody').innerHTML = data.html;
+
+            document.getElementById('tabLegalTerms').className = 'legal-tab-btn' + (tabKey === 'terms' ? ' active' : '');
+            document.getElementById('tabLegalRefund').className = 'legal-tab-btn' + (tabKey === 'refund' ? ' active' : '');
+            document.getElementById('tabLegalPrivacy').className = 'legal-tab-btn' + (tabKey === 'privacy' ? ' active' : '');
+        }
+
+        // Close on background click
+        document.getElementById('legalModalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeLegalModal();
+        });
 
         // Navigation Drawer
         const menuToggle = document.getElementById('menuToggle');
