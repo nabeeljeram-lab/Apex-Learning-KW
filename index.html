@@ -155,6 +155,19 @@
         .role-notice-banner { background: rgba(162, 238, 242, 0.1); border: 1.5px solid var(--c-surface); border-radius: 16px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
         .role-notice-banner p { margin: 0; font-size: 0.95rem; color: var(--white); }
 
+        .payment-alert-banner {
+            background: linear-gradient(90deg, #059669, #004e92);
+            border: 2px solid var(--c-surface);
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+        }
+
         /* --- INFOGRAPHIC: TOP SOLUTION & HORIZONTAL PROBLEMS (ABOUT US) --- */
         .infographic-flow-wrapper {
             max-width: 1050px;
@@ -1084,21 +1097,21 @@
                     <div class="bubble-card">
                         <span class="bubble-tag">The Marketplace Flaw</span>
                         <p class="bubble-text">
-                            Most tutoring platforms treat education like an open classifieds board.
+                            Most tutoring platforms treat education like an open classifieds board[cite: 1, 2].
                         </p>
                     </div>
 
                     <div class="bubble-card">
                         <span class="bubble-tag">The Family Dilemma</span>
                         <p class="bubble-text">
-                            Families spend hours scrolling through hundreds of generic bios, gambling on whether a tutor’s teaching style will get the desired results for their child.
+                            Families spend hours scrolling through hundreds of generic bios, gambling on whether a tutor’s teaching style will get the desired results for their child[cite: 2].
                         </p>
                     </div>
 
                     <div class="bubble-card">
                         <span class="bubble-tag">The Educator Friction</span>
                         <p class="bubble-text">
-                            Tutors, meanwhile, spend uncompensated hours marketing themselves, negotiating rates, and teaching students whose learning styles don’t match their strengths.
+                            Tutors, meanwhile, spend uncompensated hours marketing themselves, negotiating rates, and teaching students whose learning styles don’t match their strengths[cite: 1, 2].
                         </p>
                     </div>
                 </div>
@@ -1199,7 +1212,7 @@
                     <div class="direct-outcome-banner">
                         <div class="outcome-pill">Direct Connection & Payment</div>
                         <h3>Direct Line & Direct Bank Transfers</h3>
-                        <p>Once both sides agree, we introduce you directly via WhatsApp or email. Families pay the tutor directly into their bank account—Apex takes <strong>0% cut</strong> of hourly lessons.</p>
+                        <p>Once both sides agree, we introduce you directly via WhatsApp or email. Families pay the tutor directly into their bank account—Apex takes <strong>0% cut</strong> of hourly lessons[cite: 1, 3].</p>
                     </div>
                 </div>
             </div>
@@ -1528,6 +1541,15 @@
 
             <div class="glass-content-box" style="max-width: 950px; margin: 0 auto;">
                 
+                <!-- SUCCESS / CONFIRMATION BANNER AFTER PAYMENT -->
+                <div id="paymentSuccessNotice" class="payment-alert-banner" style="display: none;">
+                    <div>
+                        <strong style="color: #ffffff; font-size: 1.1rem; display: block; margin-bottom: 2px;">Listing Activated Successfully!</strong>
+                        <span style="color: var(--c-surface); font-size: 0.85rem;">Your listing subscription is active. Complete and fine-tune your teaching boundaries below to receive matched student referrals.</span>
+                    </div>
+                    <button type="button" onclick="document.getElementById('paymentSuccessNotice').style.display='none'" style="background: transparent; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+
                 <!-- VIEW 1: TUTOR SIGN IN (COMPACT) -->
                 <div id="tutorAuthView">
                     <div class="auth-card-compact">
@@ -1832,10 +1854,10 @@
                             <div class="sub-status-info">
                                 <span class="sub-type">Current Plan: Platform Listing</span>
                                 <h5>Active Status: Candidate Match Eligibility</h5>
-                                <p style="font-size: 0.85rem; color: var(--c-surface); margin: 4px 0 0 0;">Automatic billing handled securely via Lemon Squeezy (Apple Pay / Credit Card). Cancel anytime with 1 click.</p>
+                                <p style="font-size: 0.85rem; color: var(--c-surface); margin: 4px 0 0 0;">Automatic billing handled securely via Dodo Payments (Apple Pay / Credit Card). Cancel anytime with 1 click.</p>
                             </div>
                             <div class="sub-actions">
-                                <button class="btn btn-surface" style="padding: 10px 22px; font-size: 0.85rem;" onclick="openLemonCustomerPortal()">Manage Card / Billing</button>
+                                <button class="btn btn-surface" style="padding: 10px 22px; font-size: 0.85rem;" onclick="openCustomerPortal()">Manage Card / Billing</button>
                                 <button class="btn btn-depth" style="padding: 10px 22px; font-size: 0.85rem;" onclick="openPlanModal()">Renew Listing Plan</button>
                             </div>
                         </div>
@@ -1843,7 +1865,7 @@
                         <div style="margin-top: 25px;">
                             <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 12px;">Listing Plan Options:</h4>
                             <div class="sub-tier-grid">
-                                <div class="sub-tier-card" onclick="goToLemonCheckout('Weekly')">
+                                <div class="sub-tier-card" onclick="goToCheckout('Weekly')">
                                     <div>
                                         <span class="form-label" style="color: var(--c-surface);">Weekly Listing</span>
                                         <div class="sub-price">3 KD <span>(~ $10 USD / wk)</span></div>
@@ -1852,7 +1874,7 @@
                                     <button type="button" class="btn btn-surface btn-block" style="margin-top: 15px; padding: 10px 18px; font-size: 0.85rem;">Select Weekly</button>
                                 </div>
 
-                                <div class="sub-tier-card selected" onclick="goToLemonCheckout('Monthly')">
+                                <div class="sub-tier-card selected" onclick="goToCheckout('Monthly')">
                                     <div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;">
                                             <span class="form-label" style="color: var(--c-surface);">Monthly Listing</span>
@@ -1891,11 +1913,11 @@
                         <p class="small-text" style="color: #ffffff; opacity: 0.9; line-height: 1.5; margin-bottom: 20px;">
                             • Billed weekly<br>
                             • Active candidate matching eligibility<br>
-                            • 0% commission on all hourly lessons<br>
+                            • 0% commission on all hourly lessons[cite: 1, 3]<br>
                             • Pause or cancel anytime in 1 click
                         </p>
                     </div>
-                    <button type="button" class="btn btn-surface btn-block" onclick="goToLemonCheckout('Weekly')">
+                    <button type="button" class="btn btn-surface btn-block" onclick="goToCheckout('Weekly')">
                         Choose Weekly (3 KD)
                     </button>
                 </div>
@@ -1911,11 +1933,11 @@
                         <p class="small-text" style="color: #ffffff; opacity: 0.9; line-height: 1.5; margin-bottom: 20px;">
                             • Billed monthly<br>
                             • Uninterrupted placement candidate pool<br>
-                            • 0% commission on all hourly lessons<br>
+                            • 0% commission on all hourly lessons[cite: 1, 3]<br>
                             • Priority diagnostic placement consideration
                         </p>
                     </div>
-                    <button type="button" class="btn btn-surface btn-block" onclick="goToLemonCheckout('Monthly')">
+                    <button type="button" class="btn btn-surface btn-block" onclick="goToCheckout('Monthly')">
                         Choose Monthly (10 KD)
                     </button>
                 </div>
@@ -2045,9 +2067,9 @@
         // LIVE GOOGLE APPS SCRIPT WEB APP ENDPOINT
         const DB_API_URL = "https://script.google.com/macros/s/AKfycbxP5uITX-dpAbonKZ6QPRO78H08aYYzV-LO25MQqrKfewa7kc5Tr4Km8YptkHZ1gTEqSg/exec";
 
-        // LEMON SQUEEZY CHECKOUT URLS (TEST MODE ACTIVE WHILE ACCOUNT PERMISSION IS PENDING)
-        const LEMON_WEEKLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/4eb664b8-b3c2-4b18-b918-ffda2d72bce6";
-        const LEMON_MONTHLY_URL = "https://apexlearning-kw.lemonsqueezy.com/checkout/buy/7b4960f8-c07d-452c-85cd-45c6e115f66a";
+        // LIVE DODO PAYMENTS CHECKOUT URLS
+        const DODO_WEEKLY_URL = "https://checkout.dodopayments.com/buy/pdt_0NprbAgdxqj5ORM6mrTxc?quantity=1";
+        const DODO_MONTHLY_URL = "https://checkout.dodopayments.com/buy/pdt_0NprbA5luhBAbTW9s9PwS?quantity=1";
 
         // LEGAL MODAL DATA CONTENT
         const LEGAL_DATA = {
@@ -2064,7 +2086,7 @@
                     <p>To eliminate commercial bias and protect privacy, educator profiles and family phone numbers are never published on open directories. Details are exchanged strictly after mutual fit and agreed rates are brokered.</p>
 
                     <h4>4. Cross-Border Transfers & Payments</h4>
-                    <p>Data is stored on secured Google Workspace cloud infrastructure outside Kuwait. Payment transactions for tutor platform listings are processed exclusively via Lemon Squeezy (Merchant of Record). We never collect, process, or store credit card details.</p>
+                    <p>Data is stored on secured Google Workspace cloud infrastructure outside Kuwait. Payment transactions for tutor platform listings are processed securely via Dodo Payments (Merchant of Record). We never collect, process, or store credit card details.</p>
 
                     <h4>5. User Rights & Contact</h4>
                     <p>You may request data access, correction, or profile erasure at any time by contacting our administrative desk at <a href="mailto:info@apexlearningkw.com" style="color: var(--c-surface);">info@apexlearningkw.com</a>.</p>
@@ -2080,7 +2102,7 @@
                     <p>Student matching is 100% free for families. Apex Learning charges <strong>0% commission</strong> on hourly lessons. All instructional fees are paid directly between the client and educator.</p>
 
                     <h4>3. Tutor Platform Listing Subscriptions</h4>
-                    <p>Tutors maintain active matching eligibility through a recurring Weekly (3 KD / ~$10 USD) or Monthly (10 KD / ~$33 USD) listing subscription billed via Lemon Squeezy. Subscriptions auto-renew until cancelled via the self-service portal.</p>
+                    <p>Tutors maintain active matching eligibility through a recurring Weekly (3 KD / ~$10 USD) or Monthly (10 KD / ~$33 USD) listing subscription billed via Dodo Payments. Subscriptions auto-renew until cancelled via the self-service portal.</p>
 
                     <h4>4. Independent Contractor Status</h4>
                     <p>Tutors are independent educators, not employees or agents of Apex Learning. Apex Learning is not liable for private financial transactions or lesson scheduling conflicts conducted outside platform listing billing.</p>
@@ -2096,7 +2118,7 @@
                     <p>Because Apex Learning collects 0% commission and never holds instructional fees, all lesson rescheduling, package billing, and lesson refunds must be handled directly between the parent and the educator.</p>
 
                     <h4>3. Technical & Billing Errors</h4>
-                    <p>Verified duplicate transactions or administrative errors will be refunded immediately upon notifying <a href="mailto:info@apexlearningkw.com" style="color: var(--c-surface);">info@apexlearningkw.com</a> with your Lemon Squeezy Order ID within 14 days.</p>
+                    <p>Verified duplicate transactions or administrative errors will be refunded immediately upon notifying <a href="mailto:info@apexlearningkw.com" style="color: var(--c-surface);">info@apexlearningkw.com</a> with your Payment Reference ID within 14 days.</p>
                 `
             }
         };
@@ -2123,7 +2145,6 @@
             document.getElementById('tabLegalPrivacy').className = 'legal-tab-btn' + (tabKey === 'privacy' ? ' active' : '');
         }
 
-        // Close on background click
         document.getElementById('legalModalOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeLegalModal();
         });
@@ -2207,6 +2228,41 @@
                 }
             }
         }
+
+        // Check URL parameters for post-payment return or direct tab navigation
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
+            const session = params.get('session');
+            const view = params.get('view');
+            const tab = params.get('tab');
+
+            if (status === 'success' || session === 'tutor' || view === 'tutor') {
+                isTutorAuthenticated = true;
+                const topBar = document.querySelector('.dash-top-bar');
+                const tabNav = document.querySelector('.dash-tab-nav');
+                if (topBar) topBar.style.display = 'flex';
+                if (tabNav) tabNav.style.display = 'flex';
+
+                switchTutorPortalView('signup');
+                
+                if (status === 'success') {
+                    const notice = document.getElementById('paymentSuccessNotice');
+                    if (notice) notice.style.display = 'flex';
+                }
+
+                if (tab === 'subscription') {
+                    switchTutorWorkspaceTab('subscription');
+                } else {
+                    switchTutorWorkspaceTab('profile');
+                }
+
+                setTimeout(() => {
+                    const targetEl = document.getElementById('tutor-portal');
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        });
 
         // 1. LIVE TUTOR LOGIN (VALIDATES AGAINST GOOGLE SHEET)
         function handleTutorLogin(e) {
@@ -2358,20 +2414,18 @@
             document.getElementById('planSelectionModal').classList.remove('active');
         }
 
-        function goToLemonCheckout(planTier) {
+        function goToCheckout(planTier) {
             const email = document.getElementById('profileContactEmail')?.value || '';
-            const baseUrl = planTier === 'Weekly' ? LEMON_WEEKLY_URL : LEMON_MONTHLY_URL;
-            
-            // Pass test=true while Lemon Squeezy account activation is pending
+            const baseUrl = planTier === 'Weekly' ? DODO_WEEKLY_URL : DODO_MONTHLY_URL;
             const separator = baseUrl.includes('?') ? '&' : '?';
-            const emailParam = email ? `&checkout[email]=${encodeURIComponent(email)}` : '';
-            const targetUrl = `${baseUrl}${separator}test=true${emailParam}`;
+            const emailParam = email ? `email=${encodeURIComponent(email)}` : '';
+            const targetUrl = emailParam ? `${baseUrl}${separator}${emailParam}` : baseUrl;
             
             window.location.href = targetUrl;
         }
 
-        function openLemonCustomerPortal() {
-            window.open('https://app.lemonsqueezy.com/my-orders', '_blank');
+        function openCustomerPortal() {
+            window.open('https://checkout.dodopayments.com', '_blank');
         }
 
         function toggleKuwaitLocation(mode) {
@@ -2529,7 +2583,6 @@
             const feedback = document.getElementById('saveFeedback');
             const form = new FormData(tutorForm);
 
-            // Validate password for new registrations
             const pass = document.getElementById('tutorPasswordInput')?.value || "password123";
             const passConfirm = document.getElementById('tutorPasswordConfirm')?.value;
 
