@@ -1300,17 +1300,17 @@
 
                     <div class="tutor-offer-pop-card">
                         <div style="font-size: 0.74rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading); margin-bottom: 1px;">
-                            Tutor Subscription &mdash; Welcome Plan Available
+                            Platform Listing Plans: <strong>3 KD / week</strong> (~$10 USD) or <strong>10 KD / month</strong> (~$33 USD)
                         </div>
                         <div style="font-size: 0.65rem; color: #475569; font-family: var(--font-heading); line-height: 1.25;">
-                            (Keep 100% of your negotiated hourly rates)
+                            (0% Commission — Keep 100% of your negotiated hourly rates. Cancel anytime.)
                         </div>
-                        <div class="tutor-offer-badge-float">★ First-Time Welcome Offer Eligible</div>
+                        <div class="tutor-offer-badge-float">★ Transparent Upfront Pricing</div>
                     </div>
                 </div>
 
                 <div style="text-align: right; padding-right: 10px;">
-                    <span class="cta-subtext-note">See flexible subscription plans</span>
+                    <span class="cta-subtext-note">3 KD/wk or 10 KD/mo • Cancel anytime in 1 click</span>
                 </div>
             </div>
         </div>
@@ -1849,6 +1849,15 @@
 
                     <!-- PANE 2: COMPLETE RESTORED TUTOR REGISTRATION & PROFILE FORM -->
                     <div id="paneProfile">
+                        <!-- ITEM 3: UPFRONT PRICING BANNER -->
+                        <div id="upfrontPricingBanner" style="background:#f0f9ff; border:2px solid var(--c-dark-navy); border-radius:14px; padding:14px 18px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                            <div>
+                                <span style="background:var(--c-dark-navy); color:#ffffff; font-family:var(--font-heading); font-size:0.65rem; font-weight:800; padding:2px 8px; border-radius:20px; text-transform:uppercase; letter-spacing:0.5px;">0% Commission Model</span>
+                                <h4 style="font-size:1rem; margin:4px 0 2px 0;">Transparent Platform Listing Subscriptions</h4>
+                                <p style="font-size:0.8rem; color:var(--c-sub-navy); margin:0;">You keep <strong>100% of your hourly tutoring earnings</strong>. Activate your verified placement listing after registration for <strong>3 KD / week</strong> (~$10 USD) or <strong>10 KD / month</strong> (~$33 USD). Cancel anytime.</p>
+                            </div>
+                        </div>
+
                         <div style="margin-bottom: 16px;">
                             <h4 id="formModeTitle" style="font-size: 1.25rem; margin-bottom: 2px;">Tutor Sign Up & Registration</h4>
                             <p class="small-text" style="color: #64748b; margin: 0;">Fill out your teaching profile below to register for candidate matching placement.</p>
@@ -1895,22 +1904,29 @@
 
                             <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">2. Experience, Rates & Modality</h3>
                             
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                            <!-- ITEM 11: SEPARATED & CLARIFIED HOURLY RATE INPUTS -->
+                            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 14px; align-items: start;">
                                 <div>
                                     <label class="form-label">Years of Tutoring Experience</label>
                                     <input type="number" name="experience_years" class="form-input" min="0" max="40" value="5" required>
                                 </div>
                                 <div>
-                                    <label class="form-label">Hourly Rate Bounds (KD / hour)</label>
-                                    <div style="display: flex; gap: 8px;">
-                                        <input type="number" name="rate_floor" class="form-input" placeholder="Floor (e.g. 20)" value="20" style="margin-bottom: 0;">
-                                        <input type="number" name="rate_target" class="form-input" placeholder="Ideal (e.g. 30)" value="30" style="margin-bottom: 0;">
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                        <div>
+                                            <label class="form-label">Minimum Acceptable Rate (KD / hr)</label>
+                                            <input type="number" name="rate_floor" class="form-input" placeholder="e.g., 15" value="20" style="margin-bottom: 4px;" required>
+                                            <small style="color: #64748b; font-size: 0.68rem; display: block; line-height: 1.25;">Lowest hourly rate you will accept (e.g., 15 KD/hr)</small>
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Preferred Target Rate (KD / hr)</label>
+                                            <input type="number" name="rate_target" class="form-input" placeholder="e.g., 25" value="30" style="margin-bottom: 4px;" required>
+                                            <small style="color: #64748b; font-size: 0.68rem; display: block; line-height: 1.25;">Ideal rate we negotiate for you (e.g., 25 KD/hr)</small>
+                                        </div>
                                     </div>
-                                    <small style="color: #64748b; font-size: 0.68rem;">Minimum floor & ideal target for rate brokerage</small>
                                 </div>
                             </div>
 
-                            <div style="margin-top: 10px;">
+                            <div style="margin-top: 14px;">
                                 <label class="form-label">Delivery Mode Capability</label>
                                 <div class="checkbox-group-grid" style="margin-bottom: 14px;">
                                     <label class="checkbox-pill"><input type="checkbox" name="tutor_mode" value="Online" checked> Online</label>
@@ -2067,13 +2083,13 @@
 
                             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
                                 <button type="submit" id="saveProfileBtn" class="btn btn-navy" style="flex: 2;">
-                                    Complete Sign Up & Choose Plan
+                                    Complete Sign Up & Enter Portal
                                 </button>
                                 <button type="button" class="btn btn-outline-cyan" style="flex: 1;" onclick="openPlanModal()">
                                     Pay / Renew Listing
                                 </button>
                             </div>
-                            <div id="saveFeedback" style="text-align: center; margin-top: 12px; color: #059669; font-weight: 700; display: none;">✓ Profile saved in database! Match desk records updated.</div>
+                            <div id="saveFeedback" style="text-align: center; margin-top: 12px; color: #059669; font-weight: 700; display: none;">✓ Profile saved! Entering your portal...</div>
                         </form>
                     </div>
 
@@ -2086,9 +2102,13 @@
                                 <p class="small-text" style="margin:0; color:#64748b;">Automatic billing handled securely via Creem (Apple Pay / Credit Card). Cancel anytime with 1 click.</p>
                             </div>
                             <div style="display:flex; gap:8px;">
-                                <button class="btn btn-white" onclick="openCustomerPortal()">Manage Card / Billing</button>
-                                <button class="btn btn-navy" onclick="openPlanModal()">Renew Listing Plan</button>
+                                <button type="button" class="btn btn-white" onclick="openCustomerPortal()">Manage Card / Billing &rarr;</button>
+                                <button type="button" class="btn btn-navy" onclick="openPlanModal()">Renew Listing Plan</button>
                             </div>
+                        </div>
+
+                        <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:10px; padding:12px 16px; margin-top:12px; font-size:0.8rem; color:var(--c-sub-navy);">
+                            <strong>Self-Service Billing & 1-Click Cancellation:</strong> Clicking <em>"Manage Card / Billing"</em> opens the secure Creem Customer Portal (<a href="https://www.creem.io/my-orders/login" target="_blank" rel="noopener" style="color:#0284c7; font-weight:700;">creem.io/my-orders/login</a>). Enter the email address you used at checkout to receive an instant login link where you can update your payment method, download invoices, or cancel your subscription anytime without penalty.
                         </div>
 
                         <div style="margin-top: 18px;">
@@ -2138,6 +2158,20 @@
                         <div>
                             <label class="form-label">Email Address</label>
                             <input type="email" name="Your Email" class="form-input" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label class="form-label">WhatsApp / Mobile Number (With Country Code)</label>
+                            <input type="tel" name="Sender WhatsApp" class="form-input" placeholder="+965 ..." required>
+                        </div>
+                        <div>
+                            <label class="form-label">Preferred Method of Communication</label>
+                            <div class="checkbox-group-grid" style="margin-bottom: 14px;">
+                                <label class="checkbox-pill"><input type="radio" name="contact_pref_comm" value="WhatsApp" checked> WhatsApp</label>
+                                <label class="checkbox-pill"><input type="radio" name="contact_pref_comm" value="Email"> Email</label>
+                            </div>
                         </div>
                     </div>
 
@@ -2319,6 +2353,7 @@
             const passwordWrapper = document.getElementById('passwordFieldsWrapper');
             const passInput = document.getElementById('tutorPasswordInput');
             const passConfirm = document.getElementById('tutorPasswordConfirm');
+            const pricingBanner = document.getElementById('upfrontPricingBanner');
 
             if (view === 'signin') {
                 authView.style.display = 'block';
@@ -2334,6 +2369,7 @@
                 if (isTutorAuthenticated) {
                     topBar.style.display = 'flex';
                     tabNav.style.display = 'flex';
+                    if (pricingBanner) pricingBanner.style.display = 'none';
                     formTitle.innerText = "Profile Settings & Match Calibration";
                     saveBtn.innerText = "Save Changes & Update Match Pool Data";
                     passwordWrapper.style.display = 'none';
@@ -2342,8 +2378,9 @@
                 } else {
                     topBar.style.display = 'none';
                     tabNav.style.display = 'none';
+                    if (pricingBanner) pricingBanner.style.display = 'flex';
                     formTitle.innerText = "Tutor Sign Up & Registration";
-                    saveBtn.innerText = "Complete Sign Up & Choose Plan";
+                    saveBtn.innerText = "Complete Sign Up & Enter Portal";
                     passwordWrapper.style.display = 'grid';
                     passInput.setAttribute('required', 'required');
                     passConfirm.setAttribute('required', 'required');
@@ -2507,7 +2544,7 @@
         }
 
         function openCustomerPortal() {
-            window.open('https://www.creem.io', '_blank');
+            window.open('https://www.creem.io/my-orders/login', '_blank');
         }
 
         function toggleKuwaitLocation(mode) {
@@ -2618,6 +2655,7 @@
             btn.innerText = "Transmitting to Matching Pool...";
 
             const formData = new FormData(studentForm);
+            const studentPrefCommEl = studentForm.querySelector('input[name="student_pref_comm"]:checked');
             const payload = {
                 action: "student_intake",
                 submitter_role: formData.get("submitter_role") || "Parent",
@@ -2626,10 +2664,16 @@
                 grade_level: formData.get("grade_level") || "",
                 contact_email: formData.get("contact_email") || "",
                 contact_whatsapp: formData.get("contact_whatsapp") || "",
+                student_pref_comm: studentPrefCommEl ? studentPrefCommEl.value : "WhatsApp",
                 curriculum: formData.get("curriculum") || "",
                 subject: formData.get("subject") || "",
                 delivery_mode: formData.get("delivery_mode") || "Online",
-                kuwait_area: formData.get("kuwait_area") || ""
+                kuwait_area: formData.get("kuwait_area") || "",
+                student_scenarios: Array.from(document.querySelectorAll('input[name="student_scenario"]:checked')).map(el => el.value).join(', '),
+                student_typology: Array.from(document.querySelectorAll('input[name="student_typology"]:checked')).map(el => el.value).join(', '),
+                requested_tutor_archetypes: Array.from(document.querySelectorAll('input[name="requested_tutor_archetypes"]:checked')).map(el => el.value).join(', '),
+                diagnostic_notes: formData.get("diagnostic_notes") || "",
+                availability: formData.get("availability") || ""
             };
 
             fetch(DB_API_URL, {
@@ -2659,7 +2703,7 @@
             });
         });
 
-        // Tutor Profile Save
+        // Tutor Profile Save (Fixed and fully operational with immediate portal access)
         document.getElementById('tutorProfileForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const saveBtn = document.getElementById('saveProfileBtn');
@@ -2673,46 +2717,51 @@
             }
 
             saveBtn.disabled = true;
-            saveBtn.innerText = "Saving Profile...";
+            saveBtn.innerText = "Saving Profile & Entering Portal...";
 
             const form = new FormData(this);
+            const fullNameVal = form.get("tutor_full_name") || "";
+            const emailVal = document.getElementById('profileContactEmail').value;
+
             const payload = {
                 action: "tutor_save_profile",
-                email: document.getElementById('profileContactEmail').value,
+                email: emailVal,
                 password: pass,
-                fullName: form.get("tutor_full_name"),
-                whatsapp: form.get("tutor_contact_whatsapp"),
-                experienceYears: form.get("experience_years"),
-                rateFloor: form.get("rate_floor"),
-                rateTarget: form.get("rate_target"),
+                fullName: fullNameVal,
+                whatsapp: form.get("tutor_contact_whatsapp") || "",
+                experienceYears: form.get("experience_years") || "0",
+                rateFloor: form.get("rate_floor") || "0",
+                rateTarget: form.get("rate_target") || "0",
                 deliveryMode: Array.from(document.querySelectorAll('input[name="tutor_mode"]:checked')).map(el => el.value).join(', '),
                 curriculums: Array.from(document.querySelectorAll('input[name="curriculums"]:checked')).map(el => el.value).join(', '),
-                subjects: form.get("subjects_offered"),
-                archetype: Array.from(document.querySelectorAll('input[name="tutor_self_archetype"]:checked')).map(el => el.value).join(', ')
+                subjects: form.get("subjects_offered") || "",
+                archetype: Array.from(document.querySelectorAll('input[name="tutor_self_archetype"]:checked')).map(el => el.value).join(', '),
+                preferredStudents: Array.from(document.querySelectorAll('input[name="tutor_preferred_students"]:checked')).map(el => el.value).join(', ')
             };
 
             fetch(DB_API_URL, { method: "POST", body: JSON.stringify(payload) })
             .then(res => res.json())
             .then(data => {
                 saveBtn.disabled = false;
-                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Choose Plan";
-                if (!isTutorAuthenticated) {
-                    feedback.innerText = "✓ Profile recorded! Choose your plan below...";
-                    feedback.style.display = 'block';
-                    setTimeout(() => {
-                        feedback.style.display = 'none';
-                        openPlanModal();
-                    }, 500);
-                } else {
-                    feedback.innerText = "✓ Changes recorded successfully in database!";
-                    feedback.style.display = 'block';
-                    setTimeout(() => { feedback.style.display = 'none'; }, 2500);
-                }
+                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Enter Portal";
+                
+                // Grant immediate portal access
+                isTutorAuthenticated = true;
+                document.getElementById('displayTutorEmail').innerText = `${fullNameVal} (${emailVal})`;
+                feedback.innerText = "✓ Account created! Entering your portal...";
+                feedback.style.display = 'block';
+
+                setTimeout(() => {
+                    feedback.style.display = 'none';
+                    switchTutorPortalView('signup');
+                    switchTutorWorkspaceTab('matches');
+                    document.getElementById('tutor-portal').scrollIntoView({ behavior: 'smooth' });
+                }, 1000);
             })
             .catch(err => {
                 console.error(err);
                 saveBtn.disabled = false;
-                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Choose Plan";
+                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Enter Portal";
                 alert("Network error saving profile. Please check connection.");
             });
         });
@@ -2724,10 +2773,13 @@
             btn.disabled = true;
             btn.innerText = "Sending Message...";
 
+            const prefCommEl = this.querySelector('input[name="contact_pref_comm"]:checked');
             const payload = {
                 action: "contact_inquiry",
                 sender_name: this.querySelector('input[name="Sender Name"]').value,
                 email: this.querySelector('input[name="Your Email"]').value,
+                whatsapp: this.querySelector('input[name="Sender WhatsApp"]')?.value || "",
+                pref_comm: prefCommEl ? prefCommEl.value : "WhatsApp",
                 subject: this.querySelector('input[name="Subject"]').value,
                 message: this.querySelector('textarea[name="Message"]').value
             };
