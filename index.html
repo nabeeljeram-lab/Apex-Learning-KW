@@ -2,130 +2,2836 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Learning | Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Apex Learning - Precision Academic Matching Platform in Kuwait. Free diagnostic matching for families and verified educator listing.">
+    <title>Apex Learning | WE Find The Best Matching Tutor For You</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
+        /* --- DESIGN SYSTEM: VIBRANT SKY BLUEPRINT --- */
         :root {
-            /* The official Apex brand colors */
-            --c-bg: #0f172a; 
-            --c-text: #f8fafc;
-            --c-accent: #A2EEF2; 
+            --c-surface: #A2EEF2;       
+            --c-shallows: #7ee0ee;      
+            --c-mid: #48c6ef;           
+            --c-deep: #1a7cb5;          
+            --c-dark-navy: #001f3f;     
+            --c-sub-navy: #0b3456;      
+            --white: #ffffff;
+            --font-heading: 'Inter', sans-serif; 
+            --font-body: 'Comfortaa', cursive; 
+            --glass-card: rgba(255, 255, 255, 0.95);
+            --glass-card-hover: rgba(255, 255, 255, 0.98);
+            --card-border: #ffffff;
+            --card-shadow: 0 8px 24px rgba(0, 31, 63, 0.08);
         }
-        
+
+        html { font-size: 100%; scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--c-bg);
-            color: var(--c-text);
+            font-family: var(--font-body); 
+            font-size: 1rem; 
+            line-height: 1.5;
+            font-weight: 400; 
+            color: var(--c-sub-navy); 
+            background: linear-gradient(180deg, #A2EEF2 0%, #7ee0ee 25%, #66d6ec 60%, #4ec9ea 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- EMBEDDED HIGH-DEFINITION MATHEMATICAL BLUEPRINT WALLPAPER --- */
+        .site-doodle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            background-repeat: repeat;
+            background-size: 340px 340px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='none' stroke='%23001f3f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M25 120 L65 45 L80 53 L40 128 Z'/%3E%3Cpath d='M65 45 L73 28 L88 36 L80 53'/%3E%3Cpath d='M25 120 L18 135 L40 128 Z'/%3E%3Cpath d='M44 85 L59 93'/%3E%3Cpath d='M160 25 L240 25 L240 56 L160 56 Z'/%3E%3Cpath d='M175 25 L175 38 M190 25 L190 34 M205 25 L205 38 M220 25 L220 34 M235 25 L235 38'/%3E%3Cpath d='M275 95 L325 65 L285 118 L300 102 L275 95 Z'/%3E%3Cpath d='M325 65 L300 102'/%3E%3Cpath d='M30 215 L100 215 L30 285 Z'/%3E%3Cpath d='M42 227 L75 227 L42 260 Z'/%3E%3Cpath d='M180 195 L200 155 L220 195'/%3E%3Cpath d='M190 175 L210 175'/%3E%3Ccircle cx='200' cy='152' r='4'/%3E%3Cpath d='M130 145 Q 145 130 160 145 T 190 145'/%3E%3Ccircle cx='270' cy='190' r='12'/%3E%3Cpath d='M265 190 L275 190 M270 185 L270 195'/%3E%3Cpath d='M100 295 L115 305 L130 295'/%3E%3Cpath d='M280 250 Q 300 240 320 260'/%3E%3Ctext x='245' y='295' font-family='sans-serif' font-size='15' font-weight='bold' fill='%23001f3f' stroke='none'%3E%CF%80%3C/text%3E%3Ctext x='70' y='175' font-family='sans-serif' font-size='13' font-weight='bold' fill='%23001f3f' stroke='none'%3Ex%C2%B2%3C/text%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+        .section-padding { padding: 60px 0; }
+
+        h1, h2, h3, h4 { 
+            font-family: var(--font-heading); 
+            font-weight: 800; 
+            letter-spacing: -0.02em; 
+            line-height: 1.25; 
+            color: var(--c-dark-navy) !important;
+        }
+
+        h1 { font-size: 2.6rem; }
+        h2 { font-size: 2rem; margin-bottom: 12px; text-align: center; }
+        h3 { font-size: 1.2rem; margin-bottom: 6px; }
+
+        p { margin-bottom: 1rem; opacity: 0.95; }
+        .lead-text { font-size: 1.05rem; color: var(--c-sub-navy); }
+        .small-text { font-size: 0.82rem; opacity: 0.85; }
+
+        .section-header-wrap {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 30px auto;
+        }
+
+        .section-kicker-badge {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--c-dark-navy);
+            border: 2.5px solid var(--c-dark-navy);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.74rem;
+            padding: 3px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0, 31, 63, 0.08);
+        }
+
+        .blueprint-card {
+            background: var(--glass-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .blueprint-card:hover {
+            background: var(--glass-card-hover);
+            box-shadow: 0 14px 34px rgba(0, 31, 63, 0.1);
+        }
+
+        /* --- BUTTONS --- */
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 6px; 
+            padding: 11px 24px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            transition: all 0.25s ease; 
+            cursor: pointer; 
+            border: none; 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            font-size: 0.88rem; 
+            letter-spacing: 0.2px;
+        }
+
+        .btn-navy {
+            background: var(--c-dark-navy);
+            color: #ffffff !important;
+            box-shadow: 0 6px 14px rgba(0, 31, 63, 0.18);
+        }
+
+        .btn-navy:hover {
+            background: #001226;
+            transform: translateY(-2.5px);
+            box-shadow: 0 8px 20px rgba(0, 31, 63, 0.25);
+        }
+
+        .btn-outline-cyan {
+            background: var(--c-surface);
+            color: var(--c-dark-navy) !important;
+            border: 2.5px solid var(--c-dark-navy);
+            box-shadow: 0 4px 12px rgba(0, 31, 63, 0.08);
+        }
+
+        .btn-outline-cyan:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 31, 63, 0.12);
+        }
+
+        .btn-white {
+            background: #ffffff;
+            color: var(--c-dark-navy) !important;
+            border: 2px solid rgba(0, 31, 63, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 31, 63, 0.06);
+        }
+
+        .btn-white:hover {
+            border-color: var(--c-dark-navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-block { display: flex; width: 100%; }
+
+        /* --- RESPONSIVE HEADER --- */
+        .landing-header { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 70px;
+            padding: 0 24px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            z-index: 1000; 
+            background: rgba(162, 238, 242, 0.92); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1.5px solid rgba(0, 31, 63, 0.12); 
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 8px; text-decoration: none; z-index: 1002; }
+        .logo-icon { height: 38px; width: auto; }
+
+        .desktop-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .desktop-nav-links a {
+            color: var(--c-dark-navy);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.86rem;
+            transition: color 0.2s ease;
+        }
+
+        .desktop-nav-links a:hover {
+            color: #0284c7;
+            text-decoration: underline;
+        }
+
+        .header-actions-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-tutor-signup-btn {
+            background: #2b7bb9;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(43, 123, 185, 0.2);
+            white-space: nowrap;
+        }
+
+        .header-tutor-signup-btn:hover {
+            background: #1f649a;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle { 
+            display: none;
+            background: transparent; 
+            border: none; 
+            cursor: pointer; 
+            padding: 6px; 
+            z-index: 1003; 
+            width: 36px;
+            height: 36px;
+            position: relative;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            gap: 5px; 
+        }
+
+        .menu-toggle span { 
+            display: block; 
+            width: 22px; 
+            height: 2.5px; 
+            background-color: var(--c-dark-navy); 
+            border-radius: 3px; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+        }
+
+        .menu-toggle.is-active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+        .menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.is-active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+        .side-drawer { 
+            position: fixed; 
+            top: 0; 
+            right: -100%; 
+            width: 100%; 
+            max-width: 320px; 
+            height: 100vh; 
+            background: #001f3f; 
+            backdrop-filter: blur(28px); 
+            -webkit-backdrop-filter: blur(28px);
+            border-left: 1.5px solid rgba(162, 238, 242, 0.25); 
+            padding: 85px 24px 30px 24px; 
+            display: flex; 
+            flex-direction: column; 
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1); 
+            z-index: 1001; 
+            overflow-y: auto; 
+            box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .side-drawer.active { right: 0; }
+        .drawer-links { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+        .drawer-links a { color: var(--white); text-decoration: none; font-size: 1.15rem; transition: 0.25s; display: block; font-family: var(--font-heading); font-weight: 600; }
+        .drawer-links a:hover { color: var(--c-surface); transform: translateX(6px); }
+
+        .menu-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 4, 40, 0.7); 
+            backdrop-filter: blur(4px);
+            opacity: 0; 
+            pointer-events: none; 
+            transition: opacity 0.3s ease; 
+            z-index: 1000; 
+        }
+
+        .menu-overlay.active { opacity: 1; pointer-events: auto; }
+
+        /* --- COMPACT HERO DUAL-STREAM SECTION --- */
+        .hero-dual-stream-section {
+            position: relative;
+            padding: 95px 20px 25px 20px;
+            min-height: calc(100vh - 70px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            z-index: 2;
+        }
+
+        .hero-centered-head {
             text-align: center;
-            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto 18px auto;
         }
 
-        .container {
-            max-width: 600px;
-            padding: 50px 40px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(162, 238, 242, 0.1);
+        .hero-title-modern {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+            line-height: 1.2;
+            color: var(--c-dark-navy) !important;
+            text-transform: none !important;
+            letter-spacing: -0.03em !important;
+            margin: 0 auto;
+        }
+
+        .hero-streams-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1160px;
+            margin: 0 auto;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .hero-stream-col {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- SPEECH BUBBLE & PATH SYSTEM (OPTION A BALANCED ALIGNMENT) --- */
+        .speech-bubble-anchor {
+            background: #ffffff;
+            border: 3px solid #ff9d42;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
+            padding: 14px 18px;
+            box-shadow: 0 8px 20px rgba(0, 31, 63, 0.05);
+            position: relative;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            text-align: left;
+            min-height: 82px;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        .speech-bubble-anchor.families { border-color: #ffa33c; }
+        .speech-bubble-anchor.tutors { border-color: #3b82f6; flex-direction: row-reverse; }
+
+        .bubble-content-side {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .bubble-accent-tag {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+            color: var(--c-dark-navy);
+            margin-bottom: 2px;
+            border-bottom: 3px solid #001f3f;
+            padding-bottom: 1px;
+            text-transform: uppercase;
+        }
+
+        .bubble-lead-desc {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            color: var(--c-sub-navy);
+            line-height: 1.35;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Perfectly Balanced Hero Inline CTAs */
+        .hero-inline-cta {
+            background: var(--c-dark-navy);
+            color: #ffffff !important;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 9px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 31, 63, 0.2);
+            transition: all 0.2s ease;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .hero-inline-cta:hover {
+            transform: translateY(-1px);
+            background: #001226;
+        }
+
+        .hero-inline-cta.tutor-btn {
+            background: var(--c-surface);
+            color: var(--c-dark-navy) !important;
+            border: 2px solid var(--c-dark-navy);
+        }
+        .hero-inline-cta.tutor-btn:hover {
+            background: #ffffff;
+        }
+
+        .road-bubble-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .road-bubble-flow::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 14px;
+            bottom: 14px;
+            width: 2px;
+            background: var(--c-dark-navy);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .pipeline-card-step {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            padding: 10px 16px;
+            box-shadow: 0 4px 12px rgba(0, 31, 63, 0.04);
+            transition: transform 0.2s ease;
+        }
+
+        .pipeline-card-step:hover {
+            transform: translateY(-1.5px);
+        }
+
+        .pipeline-card-step::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 24px;
+            border-width: 6px 6px 0;
+            border-style: solid;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .pipeline-card-step:last-child::after {
+            display: none;
+        }
+
+        .pipeline-card-step.families-coral { 
+            background: #FFE3E8; border-color: #FFA3A3; 
+        }
+        .pipeline-card-step.families-coral::after { border-color: #FFE3E8 transparent; }
+        
+        .pipeline-card-step.families-amber { 
+            background: #FFEFE2; border-color: #FFC08A; 
+        }
+        .pipeline-card-step.families-amber::after { border-color: #FFEFE2 transparent; }
+
+        .pipeline-card-step.families-sky { 
+            background: #E1EFFF; border-color: #9ECBFF; 
+        }
+
+        .pipeline-card-step.tutors-green { 
+            background: #E2FCEF; border-color: #8CEAB1; 
+        }
+        .pipeline-card-step.tutors-green::after { border-color: #E2FCEF transparent; }
+
+        .pipeline-card-step.tutors-amber { 
+            background: #FFF2E2; border-color: #ffd8a8; 
+        }
+        .pipeline-card-step.tutors-amber::after { border-color: #FFF2E2 transparent; }
+
+        .pipeline-card-step.tutors-purple { 
+            background: #F7E5FF; border-color: #E4B4FC; 
+        }
+
+        .step-icon-wrap {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 3px 8px rgba(0, 31, 63, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .step-info-node {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            line-height: 1.35;
+            color: var(--c-dark-navy);
+            text-align: left;
+        }
+
+        .step-info-node strong { font-weight: 800; }
+        .step-info-node span { color: var(--c-sub-navy); font-weight: 500; }
+
+        .matching-module-card,
+        .agency-hub-window {
+            width: 100%;
+            background: var(--glass-card);
+            backdrop-filter: blur(14px);
+            border-radius: 16px;
+            border: 2px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+            padding: 14px;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .matching-module-card { min-height: 175px; }
+        .agency-hub-window { min-height: 175px; }
+
+        .matching-module-title {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--c-dark-navy);
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .matching-sub-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mini-profile-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 8px 10px;
+            box-shadow: 0 2px 6px rgba(0, 31, 63, 0.03);
+        }
+
+        .mini-tutor-matched-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 31, 63, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .tutor-crest-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: #001f3f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+            box-shadow: inset 0 2px 4px rgba(0, 31, 63, 0.08);
+        }
+
+        .mini-tutor-info { width: 100%; }
+
+        .matching-arrow-node {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--c-dark-navy);
+            opacity: 0.5;
+            text-align: center;
+        }
+
+        .window-top-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 6px;
+        }
+
+        .window-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+        .agency-hub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .agency-hub-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--c-dark-navy);
+            margin: 0;
+        }
+
+        .agency-subject-badges {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .agency-subject-badge {
+            height: 22px;
+            padding: 0 6px;
+            border-radius: 20px;
+            border: 1px solid #cbd5e1;
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            background: #f8fafc;
+            color: var(--c-dark-navy);
+        }
+
+        .agency-subject-badge.verified-count {
+            background: #001f3f;
+            color: #ffffff;
+            border: none;
+        }
+
+        .agency-hub-desc {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            color: var(--c-sub-navy);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .agency-security-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #e8f3fc;
+            color: var(--c-dark-navy);
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-size: 0.72rem;
+            font-family: var(--font-heading);
             font-weight: 700;
         }
 
-        h1 span {
-            color: var(--c-accent);
+        .tutor-offer-pop-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 8px 10px;
+            margin-top: 10px;
+            position: relative;
         }
 
-        p.subtitle {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            line-height: 1.6;
-            margin-bottom: 40px;
+        .tutor-offer-badge-float {
+            position: absolute;
+            bottom: -7px;
+            right: 8px;
+            background: #f59e0b;
+            color: #000428;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.55rem;
+            padding: 1px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.25);
         }
 
-        .contact-box {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+        /* Subtext note below right button */
+        .cta-subtext-note {
+            font-family: var(--font-heading);
+            font-size: 0.68rem;
+            color: var(--c-sub-navy);
+            font-weight: 600;
+            margin-top: 4px;
+            text-align: right;
+            display: block;
         }
 
-        .contact-box h3 {
-            margin-bottom: 20px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-        }
-
-        .contact-item {
-            margin: 18px 0;
-            font-size: 1.05rem;
+        /* --- SECTION 2: ABOUT US --- */
+        .infographic-flow-wrapper {
+            max-width: 1050px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            align-items: center;
         }
 
-        .contact-item strong {
-            color: var(--c-accent);
-            font-size: 0.9rem;
+        .solution-anchor-card {
+            width: 100%;
+            background: var(--glass-card);
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .solution-headline {
+            color: var(--c-dark-navy) !important;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin: 0 auto;
+            max-width: 880px;
+        }
+
+        .solution-headline strong {
+            color: #0284c7;
+            font-weight: 800;
+        }
+
+        .flow-branch-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 12px 0;
+        }
+
+        .flow-branch-line {
+            width: 2px;
+            height: 18px;
+            background: var(--c-dark-navy);
+            opacity: 0.4;
+        }
+
+        .flow-connector-pulse {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--c-dark-navy);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 800;
+            box-shadow: 0 3px 10px rgba(0, 31, 63, 0.15);
+        }
+
+        .flow-branch-caption {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--c-dark-navy);
+            font-weight: 800;
+            font-family: var(--font-heading);
+            margin-top: 4px;
+        }
+
+        .problems-horizontal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            width: 100%;
+        }
+
+        .bubble-card {
+            background: var(--glass-card);
+            border: 1.5px solid var(--card-border);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--card-shadow);
+            transition: all 0.2s ease;
+        }
+
+        .bubble-card:hover {
+            transform: translateY(-2px);
+            background: var(--glass-card-hover);
+        }
+
+        .bubble-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: #0284c7;
+            margin-bottom: 6px;
+            font-family: var(--font-heading);
         }
 
-        a {
-            color: var(--c-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .bubble-text {
+            margin: 0;
+            font-size: 0.84rem;
+            line-height: 1.45;
+            color: var(--c-sub-navy);
             font-weight: 500;
         }
 
-        a:hover {
-            color: var(--c-accent);
+        /* --- SECTION 3: WHAT WE DO --- */
+        .mission-hero-card {
+            background: var(--glass-card);
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 22px;
         }
 
-        /* Small animation for the page load */
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
+        .mission-statement {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.45;
+            color: var(--c-dark-navy);
+            margin: 0;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .two-sided-flow-wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flow-streams-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            width: 100%;
+        }
+
+        .stream-panel {
+            background: rgba(255, 255, 255, 0.88);
+            border: 1.5px solid var(--card-border);
+            border-radius: 16px;
+            padding: 18px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stream-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            margin-bottom: 6px;
+        }
+
+        .tag-student { background: #059669; color: #ffffff; }
+        .tag-tutor { background: var(--c-dark-navy); color: var(--c-surface); }
+
+        .stream-title {
+            color: var(--c-dark-navy) !important;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-weight: 800 !important;
+            text-align: center;
+        }
+
+        .flow-mini-card {
+            width: 100%;
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            box-shadow: 0 2px 6px rgba(0, 31, 63, 0.03);
+        }
+
+        .mini-card-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--c-dark-navy);
+            color: var(--c-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            font-family: var(--font-heading);
+        }
+
+        .flow-mini-card h4 {
+            font-size: 0.84rem;
+            color: var(--c-dark-navy);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .flow-mini-card p {
+            font-size: 0.76rem;
+            color: var(--c-sub-navy);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .funnel-bridge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 14px 0;
+        }
+
+        .bridge-line { flex: 1; height: 1.5px; background: var(--c-dark-navy); opacity: 0.3; }
+
+        .bridge-center-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            color: var(--c-dark-navy);
+            padding: 0 10px;
+            font-family: var(--font-heading);
+            text-align: center;
+        }
+
+        .convergence-hub-card {
+            width: 100%;
+            background: var(--glass-card);
+            border: 2px solid var(--card-border);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .hub-triplet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+        .triplet-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            box-shadow: 0 2px 6px rgba(0, 31, 63, 0.03);
+        }
+
+        .triplet-item strong { color: var(--c-dark-navy); font-size: 0.78rem; font-family: var(--font-heading); margin-bottom: 2px; }
+        .triplet-item span { color: var(--c-sub-navy); font-size: 0.72rem; line-height: 1.3; }
+
+        .direct-outcome-banner {
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid var(--c-dark-navy);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* --- FORMS & SELECTION MATRICES --- */
+        .form-label { display: block; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--c-dark-navy); letter-spacing: 0.6px; font-family: var(--font-heading); margin-bottom: 4px; }
+        .form-input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1.5px solid #cbd5e1; background: #ffffff; color: var(--c-dark-navy); font-family: var(--font-body); margin-bottom: 14px; transition: 0.3s; }
+        .form-input:focus { outline: none; border-color: #0284c7; box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15); }
+
+        .checkbox-group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-bottom: 16px; }
+        .checkbox-pill { display: flex; align-items: center; gap: 6px; background: #ffffff; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #e2e8f0; cursor: pointer; transition: 0.2s; font-size: 0.84rem; color: var(--c-dark-navy); }
+        .checkbox-pill:hover { border-color: var(--c-dark-navy); background: #f8fafc; }
+        .checkbox-pill input { transform: scale(1.05); accent-color: var(--c-dark-navy); cursor: pointer; }
+
+        .selection-card-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 18px; }
+        .option-card {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            background: #ffffff;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.25s ease;
+        }
+        .option-card:hover { border-color: var(--c-dark-navy); transform: translateX(2px); }
+        .option-card.checked { border-color: var(--c-dark-navy); background: #f0f9ff; box-shadow: 0 0 0 2px var(--c-dark-navy); }
+        .option-card input { width: 15px; height: 15px; margin-top: 2px; accent-color: var(--c-dark-navy); flex-shrink: 0; }
+        .option-label { font-size: 0.86rem; font-weight: 800; color: var(--c-dark-navy); margin-bottom: 2px; font-family: var(--font-heading); }
+        .option-description { font-size: 0.78rem; color: var(--c-sub-navy); line-height: 1.35; }
+
+        /* --- TUTOR PORTAL STYLES --- */
+        .portal-mode-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .mode-toggle-btn { background: #ffffff; border: 2px solid var(--c-dark-navy); color: var(--c-dark-navy); padding: 8px 18px; border-radius: 50px; cursor: pointer; font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; transition: 0.25s; }
+        .mode-toggle-btn.active { background: var(--c-dark-navy); color: #ffffff; }
+
+        .dash-top-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+        .dash-welcome { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--c-dark-navy); font-family: var(--font-heading); font-weight: 700; }
+        .dash-name { font-size: 1.2rem; color: var(--c-dark-navy); margin: 2px 0; }
+
+        .dash-tab-nav { display: flex; gap: 8px; margin-bottom: 18px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; overflow-x: auto; }
+        .dash-tab-btn { background: transparent; border: none; color: #64748b; font-size: 0.82rem; font-weight: 700; font-family: var(--font-heading); padding: 6px 12px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: 0.25s; white-space: nowrap; }
+        .dash-tab-btn:hover { color: var(--c-dark-navy); background: #f1f5f9; }
+        .dash-tab-btn.active { color: #ffffff; background: var(--c-dark-navy); }
+
+        .sub-tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 18px; }
+        .sub-tier-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 16px; cursor: pointer; transition: all 0.25s ease; position: relative; }
+        .sub-tier-card:hover { border-color: var(--c-dark-navy); transform: translateY(-2px); }
+        .sub-tier-card.selected { border-color: var(--c-dark-navy); background: #f0f9ff; box-shadow: 0 0 0 2px var(--c-dark-navy); }
+        .sub-price { font-size: 1.6rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading); margin: 6px 0; }
+
+        /* --- MODALS --- */
+        .plan-modal-overlay, .legal-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 31, 63, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .plan-modal-overlay.active, .legal-modal-overlay.active { display: flex; }
+        .plan-modal-card, .legal-modal-card { background: #ffffff; border: 2.5px solid var(--c-dark-navy); border-radius: 20px; max-width: 750px; width: 100%; padding: 28px 20px; box-shadow: 0 20px 50px rgba(0, 31, 63, 0.3); text-align: center; }
+
+        .plan-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 10px 0; text-align: left; }
+        .plan-box { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+        .plan-box:hover { border-color: var(--c-dark-navy); background: #f0f9ff; }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            padding: 40px 20px;
+            background: #001226;
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-legal-link { color: #cbd5e1; text-decoration: none; font-size: 13px; cursor: pointer; transition: color 0.2s ease; }
+        .footer-legal-link:hover { color: var(--c-surface); text-decoration: underline; }
+
+        @media (max-width: 950px) {
+            .desktop-nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            .hero-dual-stream-section { padding-top: 95px; }
+            .hero-streams-grid { grid-template-columns: 1fr; gap: 24px; }
+            .speech-bubble-anchor { flex-direction: column; text-align: center; }
+            .hero-inline-cta { width: 100%; margin-top: 6px; }
+            .cta-subtext-note { text-align: center; position: relative; top: auto; margin-top: 4px; }
+            .problems-horizontal-grid, .flow-streams-grid, .hub-triplet, .plan-choice-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 500px) {
+            .landing-header { padding: 0 16px; }
+            .hero-title-modern { font-size: 1.6rem; }
+            .matching-sub-grid { grid-template-columns: 1fr; gap: 5px; }
+            .matching-arrow-node { transform: rotate(90deg); margin: 3px 0; }
         }
     </style>
 </head>
-<body class="fade-in">
-    <div class="container">
-        <h1>Apex <span>Learning</span></h1>
-        
-        <p class="subtitle">
-            Our world-class digital ecosystem is currently under construction. 
-            We are preparing an unparalleled curriculum and portal experience for our students. We will be live shortly.
-        </p>
-        
-        <div class="contact-box">
-            <h3>Contact Us</h3>
-            
-            <div class="contact-item">
-                <strong>Email</strong> 
-                <a href="mailto:info@apexlearningkw.com">info@apexlearningkw.com</a>
+<body>
+
+    <!-- Unified Blueprint Doodle Background Pattern -->
+    <div class="site-doodle-bg"></div>
+
+    <!-- RESPONSIVE HEADER WITH MOBILE TRIGGER -->
+    <header class="landing-header">
+        <a href="#hero" class="logo-container">
+            <img src="https://apexlearningkw.com/ALKW Logo.png" alt="Apex Learning Logo" class="logo-icon">
+        </a>
+
+        <!-- Desktop Navigation Bar -->
+        <ul class="desktop-nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-apex">About Us</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#student-portal">Find Your Tutor</a></li>
+            <li><a href="#tutor-portal" onclick="navigateToTutorPortal('signin')">Tutor Sign In</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Direct Tutor Registration CTA -->
+        <div class="header-actions-group">
+            <a href="#tutor-portal" class="header-tutor-signup-btn" onclick="navigateToTutorPortal('signup')">
+                Tutor Sign Up &rarr;
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAYS -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer" aria-label="Mobile Navigation">
+        <ul class="drawer-links">
+            <li><a href="#hero" class="drawer-link">Home</a></li>
+            <li><a href="#about-apex" class="drawer-link">About Apex</a></li>
+            <li><a href="#what-we-do" class="drawer-link">What We Do</a></li>
+            <li><a href="#student-portal" class="drawer-link">Find Your Tutor</a></li>
+            <li><a href="#tutor-portal" class="drawer-link" onclick="navigateToTutorPortal('signin')">Tutor Sign In</a></li>
+            <li><a href="#tutor-portal" class="drawer-link" onclick="navigateToTutorPortal('signup')" style="color: var(--c-surface);">Tutor Registration</a></li>
+            <li><a href="#contact" class="drawer-link">Contact Administration</a></li>
+        </ul>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+            <a href="#student-portal" class="btn btn-outline-cyan btn-block drawer-link" style="font-size: 0.8rem;">Find Tutor (100% Free)</a>
+            <a href="#tutor-portal" class="btn btn-navy btn-block drawer-link" onclick="navigateToTutorPortal('signup')" style="font-size: 0.8rem;">Tutor Sign Up (Join Pool)</a>
+        </div>
+    </aside>
+
+    <!-- SECTION 1: COMPACT HERO DUAL-STREAM ARCHITECTURE (OPTION A BALANCED CTAs) -->
+    <section id="hero" class="hero-dual-stream-section">
+        <div class="hero-centered-head">
+            <h1 class="hero-title-modern">
+                We handpick certified educators to match your child’s learning style.
+            </h1>
+        </div>
+
+        <div class="hero-streams-grid">
+            <!-- LEFT COLUMN: FOR PARENTS & FAMILIES -->
+            <div class="hero-stream-col">
+                <div class="speech-bubble-anchor families">
+                    <div class="bubble-content-side">
+                        <div class="bubble-accent-tag">FOR PARENTS & FAMILIES</div>
+                        <p class="bubble-lead-desc">Our diagnostic tool matches you with our certified experts.</p>
+                    </div>
+                    <div>
+                        <a href="#student-portal" class="hero-inline-cta">Find Your Tutor &mdash; Free</a>
+                    </div>
+                </div>
+
+                <div class="road-bubble-flow">
+                    <div class="pipeline-card-step families-coral">
+                        <div class="step-icon-wrap" style="color: #FF4F79;">🎯</div>
+                        <div class="step-info-node">
+                            <strong>Free Cognitive Assessment</strong> — <span>Identify how your child learns</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-card-step families-amber">
+                        <div class="step-icon-wrap" style="color: #FF9D42;">📋</div>
+                        <div class="step-info-node">
+                            <strong>Diagnostic Matching</strong> — <span>We search and identify certified experts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-card-step families-sky">
+                        <div class="step-icon-wrap" style="color: #3B82F6;">🛡️</div>
+                        <div class="step-info-node">
+                            <strong>Verified Match Found</strong> — <span>We pair you with a tutor that suits your child's learning needs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Preview Device (Matching Module) -->
+                <div class="matching-module-card">
+                    <div class="matching-module-title">Matching Module</div>
+                    <div class="matching-sub-grid">
+                        <div class="mini-profile-card">
+                            <svg class="spectrum-meter-svg-mini" viewBox="0 0 200 110" fill="none" style="width:100%; height:45px;">
+                                <path d="M 25 100 A 75 75 0 0 1 50 48" stroke="#ff6b6b" stroke-width="18" stroke-linecap="round"/>
+                                <path d="M 58 41 A 75 75 0 0 1 95 25" stroke="#feca57" stroke-width="18"/>
+                                <path d="M 105 25 A 75 75 0 0 1 142 41" stroke="#48dbfb" stroke-width="18"/>
+                                <path d="M 150 48 A 75 75 0 0 1 175 100" stroke="#1dd1a1" stroke-width="18" stroke-linecap="round"/>
+                                <circle cx="100" cy="85" r="20" fill="#7ed6df"/>
+                                <circle cx="94" cy="82" r="2.5" fill="#002244"/>
+                                <circle cx="106" cy="82" r="2.5" fill="#002244"/>
+                                <path d="M 96 90 Q 100 94 104 90" stroke="#002244" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                            <div style="font-size: 0.55rem; color: #718096; font-family: var(--font-heading); margin-bottom: 2px;">Learner Profile:</div>
+                            <div style="font-size: 0.7rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading); margin-bottom: 3px;">Visual/Spatial</div>
+                            
+                            <div style="display:flex; align-items:center; gap:4px; margin-bottom:2px;">
+                                <span style="font-size:0.55rem;">🧩</span>
+                                <div style="flex:1; height:4px; background:#edf2f7; border-radius:10px; overflow:hidden;"><div style="width:85%; height:100%; background:#a27bfa;"></div></div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:4px; margin-bottom:2px;">
+                                <span style="font-size:0.55rem;">✏️</span>
+                                <div style="flex:1; height:4px; background:#edf2f7; border-radius:10px; overflow:hidden;"><div style="width:65%; height:100%; background:#ff9f43;"></div></div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:4px;">
+                                <span style="font-size:0.55rem;">🧪</span>
+                                <div style="flex:1; height:4px; background:#edf2f7; border-radius:10px; overflow:hidden;"><div style="width:45%; height:100%; background:#1dd1a1;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="matching-arrow-node">&rarr;</div>
+
+                        <!-- Vetted Educator Card -->
+                        <div class="mini-tutor-matched-card">
+                            <div class="tutor-crest-badge">🎓</div>
+                            <div class="mini-tutor-info">
+                                <div style="font-size: 0.78rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading);">Sarah M.</div>
+                                <div style="font-size: 0.62rem; color: #64748b; font-family: var(--font-heading); margin-bottom: 1px;">Certified Educator</div>
+                                <div style="color: #f59e0b; font-size: 0.65rem; letter-spacing: 1px;">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: FOR CERTIFIED TUTORS -->
+            <div class="hero-stream-col">
+                <div class="speech-bubble-anchor tutors">
+                    <div>
+                        <a href="#tutor-portal" class="hero-inline-cta tutor-btn" onclick="navigateToTutorPortal('signup')">Apply & Join Our Agency</a>
+                    </div>
+                    <div class="bubble-content-side">
+                        <div class="bubble-accent-tag" style="border-bottom-color: #3B82F6;">FOR CERTIFIED TUTORS</div>
+                        <p class="bubble-lead-desc">We are your management agency. We handle finding clients, negotiating best rates, and follow-ups.</p>
+                    </div>
+                </div>
+
+                <div class="road-bubble-flow">
+                    <div class="pipeline-card-step tutors-green">
+                        <div class="step-icon-wrap" style="color: #10B981;">📢</div>
+                        <div class="step-info-node">
+                            <strong>Client Generation</strong> — <span>We find the ideal students for you</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-card-step tutors-amber">
+                        <div class="step-icon-wrap" style="color: #F59E0B;">🤝</div>
+                        <div class="step-info-node">
+                            <strong>Strategic Rate Negotiation</strong> — <span>We lock in premium rates</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-card-step tutors-purple">
+                        <div class="step-icon-wrap" style="color: #A855F7;">📅</div>
+                        <div class="step-info-node">
+                            <strong>Daily Agency Admin & Follow-ups</strong> — <span>You focus 100% on teaching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Preview Device (Agency Hub Window) -->
+                <div class="agency-hub-window">
+                    <div>
+                        <div class="window-top-bar">
+                            <div class="window-dot" style="background: #ef4444;"></div>
+                            <div class="window-dot" style="background: #f59e0b;"></div>
+                            <div class="window-dot" style="background: #10b981;"></div>
+                        </div>
+
+                        <div class="agency-hub-header">
+                            <h4 class="agency-hub-title">Agency hub</h4>
+                            <div class="agency-subject-badges">
+                                <span class="agency-subject-badge" title="Mathematics">∑ Math</span>
+                                <span class="agency-subject-badge" title="Science">⚛ Sci</span>
+                                <span class="agency-subject-badge verified-count">+40 Verified</span>
+                            </div>
+                        </div>
+
+                        <div class="agency-hub-desc">Earnings going 100% directly to the tutor</div>
+
+                        <div class="agency-security-pill">
+                            <span>🛡️</span> Payment Protection <span>✓</span>
+                        </div>
+                    </div>
+
+                    <div class="tutor-offer-pop-card">
+                        <div style="font-size: 0.74rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading); margin-bottom: 1px;">
+                            Tutor Subscription &mdash; Welcome Plan Available
+                        </div>
+                        <div style="font-size: 0.65rem; color: #475569; font-family: var(--font-heading); line-height: 1.25;">
+                            (Keep 100% of your negotiated hourly rates)
+                        </div>
+                        <div class="tutor-offer-badge-float">★ First-Time Welcome Offer Eligible</div>
+                    </div>
+                </div>
+
+                <div style="text-align: right; padding-right: 10px;">
+                    <span class="cta-subtext-note">See flexible subscription plans</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT US -->
+    <section id="about-apex" class="section-padding">
+        <div class="container">
+            <div class="section-header-wrap">
+                <span class="section-kicker-badge">Diagnostic Approach</span>
+                <h2>About Apex Learning</h2>
+                <p class="lead-text">Eliminating the gamble of generic tutoring directories through scientific matching.</p>
+            </div>
+
+            <div class="infographic-flow-wrapper">
+                <div class="solution-anchor-card">
+                    <span class="section-kicker-badge" style="background:#e0f2fe; color:#0284c7; border:none; margin-bottom:6px;">The Apex Solution</span>
+                    <h3 class="solution-headline">
+                        This matching service was built to replace the trial-and-error matching process with a <strong>diagnostic precision approach</strong> to matching students with tutors.
+                    </h3>
+                </div>
+
+                <div class="flow-branch-connector">
+                    <div class="flow-branch-line"></div>
+                    <div class="flow-connector-pulse">&darr;</div>
+                    <span class="flow-branch-caption">The Flaws We Solve</span>
+                </div>
+
+                <div class="problems-horizontal-grid">
+                    <div class="bubble-card">
+                        <span class="bubble-tag">The Marketplace Flaw</span>
+                        <p class="bubble-text">
+                            Most tutoring platforms treat education like an open classifieds board where anyone can post an ad without verification.
+                        </p>
+                    </div>
+
+                    <div class="bubble-card">
+                        <span class="bubble-tag">The Family Dilemma</span>
+                        <p class="bubble-text">
+                            Families spend hours scrolling through hundreds of generic bios, gambling on whether a tutor’s style will actually click.
+                        </p>
+                    </div>
+
+                    <div class="bubble-card">
+                        <span class="bubble-tag">The Educator Friction</span>
+                        <p class="bubble-text">
+                            Tutors spend uncompensated hours marketing themselves, haggling over rates, and teaching students outside their pedagogical strength.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHAT WE DO -->
+    <section id="what-we-do" class="section-padding">
+        <div class="container">
+            <div class="section-header-wrap">
+                <span class="section-kicker-badge">Precision Concierge</span>
+                <h2>What We Do</h2>
+            </div>
+
+            <div class="what-we-do-container">
+                <div class="mission-hero-card">
+                    <p class="mission-statement">
+                        We connect students with vetted educators based on how the student learns, the learning challenges they face, their academic needs and goals, and the teaching style they respond best to.
+                    </p>
+                </div>
+
+                <div class="two-sided-flow-wrap">
+                    <div class="flow-streams-grid">
+                        <div class="stream-panel">
+                            <span class="stream-tag tag-student">Students & Parents (Free)</span>
+                            <h3 class="stream-title">Your Learning Profile</h3>
+
+                            <div class="flow-mini-card">
+                                <div class="mini-card-icon">1</div>
+                                <div>
+                                    <h4>Tell Us Your Needs</h4>
+                                    <p>Share where you are struggling, how you learn best, and your target budget.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 6px 0; color: var(--c-dark-navy); font-weight:800;">&darr;</div>
+
+                            <div class="flow-mini-card">
+                                <div class="mini-card-icon">2</div>
+                                <div>
+                                    <h4>Pick Your Preferred Style</h4>
+                                    <p>Select the personality that clicks—patient guide, motivator, or diagnostic specialist.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stream-panel">
+                            <span class="stream-tag tag-tutor">Verified Educators</span>
+                            <h3 class="stream-title">Teaching Strengths</h3>
+
+                            <div class="flow-mini-card">
+                                <div class="mini-card-icon">1</div>
+                                <div>
+                                    <h4>Verified Credentials</h4>
+                                    <p>Experienced subject teachers with proven track records across AP, IB, and British tracks.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 6px 0; color: var(--c-dark-navy); font-weight:800;">&darr;</div>
+
+                            <div class="flow-mini-card">
+                                <div class="mini-card-icon">2</div>
+                                <div>
+                                    <h4>Teaching Archetype & Rates</h4>
+                                    <p>Educators outline how they teach and the hourly rate they require for their expertise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="funnel-bridge">
+                        <div class="bridge-line"></div>
+                        <div class="bridge-center-tag">✦ WHERE WE MEET IN THE MIDDLE ✦</div>
+                        <div class="bridge-line"></div>
+                    </div>
+
+                    <div class="convergence-hub-card">
+                        <span class="section-kicker-badge" style="margin-bottom: 6px;">Apex Match & Negotiation Desk</span>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">We Find the Fit & Broker the Rate</h3>
+                        <p style="font-size: 0.84rem; max-width: 760px; margin: 0 auto 16px auto; color: var(--c-sub-navy);">No awkward haggling. We review both sides, lock in an aligned match, and negotiate a rate fair to both family and educator.</p>
+                        
+                        <div class="hub-triplet">
+                            <div class="triplet-item">
+                                <strong>1. Personality Fit</strong>
+                                <span>Matching how the student learns with how the tutor teaches.</span>
+                            </div>
+                            <div class="triplet-item">
+                                <strong>2. Rate Agreement</strong>
+                                <span>We broker the hourly rate upfront on behalf of both sides.</span>
+                            </div>
+                            <div class="triplet-item">
+                                <strong>3. Full Transparency</strong>
+                                <span>Both parties review and confirm before any contacts are shared.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 10px 0; color: var(--c-dark-navy); font-weight:800; font-size:1.2rem;">&darr;</div>
+
+                    <div class="direct-outcome-banner">
+                        <span style="background:#059669; color:#fff; font-size:0.7rem; font-weight:800; padding:3px 10px; border-radius:20px; text-transform:uppercase; display:inline-block; margin-bottom:4px;">Direct Connection & Remittance</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Direct Line & Direct Bank Transfers</h3>
+                        <p style="margin: 0 auto; max-width: 780px; font-size: 0.84rem; color: var(--c-sub-navy);">Once both sides agree, we introduce you directly via WhatsApp or email. Families pay the tutor directly into their bank account—Apex takes <strong>0% cut</strong> of hourly lessons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FREE STUDENT / PARENT INTAKE -->
+    <section id="student-portal" class="section-padding">
+        <div class="container">
+            <div class="section-header-wrap">
+                <span class="section-kicker-badge">100% Free Service For Families</span>
+                <h2>Find Your Tutor</h2>
+                <p class="lead-text">Detail your learning dimensions and goals below. Our academic directors pair you directly with a verified subject specialist.</p>
+            </div>
+
+            <div class="blueprint-card" style="max-width: 900px; margin: 0 auto;">
+                <div style="background:#f0fdf4; border:1.5px solid #059669; border-radius:12px; padding:12px; margin-bottom:18px; display:flex; align-items:center; gap:10px;">
+                    <span style="font-size: 1.25rem;">🛡️</span>
+                    <p style="margin:0; font-size:0.84rem; color:#065f46;"><strong>Zero Placement Fees:</strong> Submitting a match request is completely free. Tutor profiles remain blind to families to maintain objective diagnostic integrity and eliminate commercial bias.</p>
+                </div>
+
+                <form id="studentIntakeForm">
+                    <div>
+                        <label class="form-label">Who is completing this match request?</label>
+                        <div class="checkbox-group-grid" style="margin-bottom: 16px;">
+                            <label class="checkbox-pill">
+                                <input type="radio" name="submitter_role" value="Parent" checked onchange="toggleSubmitterRole(this.value)"> 
+                                Parent / Guardian (Signing up for my child)
+                            </label>
+                            <label class="checkbox-pill">
+                                <input type="radio" name="submitter_role" value="Student" onchange="toggleSubmitterRole(this.value)"> 
+                                Student (Signing up for myself)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label class="form-label" id="primaryNameLabel">Parent / Guardian Name</label>
+                            <input type="text" name="contact_name" class="form-input" placeholder="Full name" required>
+                        </div>
+                        <div id="childNameWrapper">
+                            <label class="form-label">Student / Child's Name</label>
+                            <input type="text" name="student_name" id="studentNameInput" class="form-input" placeholder="Child's full name" required>
+                        </div>
+                        <div id="gradeLevelWrapper">
+                            <label class="form-label">Student's Grade Level</label>
+                            <select name="grade_level" class="form-input" required>
+                                <option value="" disabled selected>Select Grade</option>
+                                <option>Grade 8</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12 / Senior</option>
+                                <option>University Undergraduate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label class="form-label">Contact Email Address</label>
+                            <input type="email" name="contact_email" class="form-input" placeholder="email@example.com" required>
+                        </div>
+                        <div>
+                            <label class="form-label">WhatsApp Number (With Country Code)</label>
+                            <input type="tel" name="contact_whatsapp" class="form-input" placeholder="+965 ..." required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Preferred Method of Communication</label>
+                        <div class="checkbox-group-grid" style="margin-bottom: 16px;">
+                            <label class="checkbox-pill"><input type="radio" name="student_pref_comm" value="WhatsApp" checked> WhatsApp</label>
+                            <label class="checkbox-pill"><input type="radio" name="student_pref_comm" value="Email"> Email</label>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label class="form-label">Curriculum Framework</label>
+                            <select name="curriculum" class="form-input" required>
+                                <option value="" disabled selected>Select Curriculum</option>
+                                <option>American Diploma (Common Core / AP)</option>
+                                <option>British (IGCSE / AS / A-Levels)</option>
+                                <option>International Baccalaureate (IB DP/MYP)</option>
+                                <option>Kuwait National Curriculum</option>
+                                <option>University Undergraduate</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Target Subject</label>
+                            <input type="text" name="subject" class="form-input" placeholder="e.g., Precalculus, AP Physics, Chemistry" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Delivery Mode Preference</label>
+                        <div class="checkbox-group-grid">
+                            <label class="checkbox-pill"><input type="radio" name="delivery_mode" value="Online" checked onchange="toggleKuwaitLocation(this.value)"> Online (Interactive)</label>
+                            <label class="checkbox-pill"><input type="radio" name="delivery_mode" value="In-person" onchange="toggleKuwaitLocation(this.value)"> In-Person (Kuwait)</label>
+                            <label class="checkbox-pill"><input type="radio" name="delivery_mode" value="Hybrid" onchange="toggleKuwaitLocation(this.value)"> Hybrid / Flexible</label>
+                        </div>
+                    </div>
+
+                    <div id="kuwaitLocationWrapper" style="display:none;">
+                        <label class="form-label">Select Your Residential Area in Kuwait (For In-Person Tutoring)</label>
+                        <select name="kuwait_area" id="kuwaitAreaSelect" class="form-input">
+                            <option value="" disabled selected>Choose Area / Governorate...</option>
+                            <optgroup label="Capital Governorate (Al Asimah)">
+                                <option>Kuwait City / Sharq</option>
+                                <option>Abdullah Al-Salem</option>
+                                <option>Shamiya</option>
+                                <option>Rawda</option>
+                                <option>Adailiya</option>
+                                <option>Khaldiya</option>
+                                <option>Kaifan</option>
+                                <option>Yarmouk</option>
+                                <option>Qurtoba</option>
+                                <option>Surra</option>
+                                <option>Dasman / Bneid Al-Qar</option>
+                            </optgroup>
+                            <optgroup label="Hawally Governorate">
+                                <option>Jabriya</option>
+                                <option>Salmiya</option>
+                                <option>Bayan</option>
+                                <option>Mishref</option>
+                                <option>Rumaithiya</option>
+                                <option>Hawally</option>
+                                <option>Salwa</option>
+                                <option>Shaab</option>
+                                <option>Zahra</option>
+                                <option>Siddiq</option>
+                                <option>Salam</option>
+                                <option>Hadiya</option>
+                                <option>Shuhada</option>
+                            </optgroup>
+                            <optgroup label="Mubarak Al-Kabeer Governorate">
+                                <option>Sabah Al-Salem</option>
+                                <option>Mubarak Al-Kabeer</option>
+                                <option>Qurain</option>
+                                <option>Adan</option>
+                                <option>Qusoor</option>
+                                <option>Messila</option>
+                                <option>Funaitees</option>
+                                <option>Abu Fatira</option>
+                            </optgroup>
+                            <optgroup label="Ahmadi Governorate">
+                                <option>Fahaheel</option>
+                                <option>Ahmadi</option>
+                                <option>Mangaf</option>
+                                <option>Mahboula</option>
+                                <option>Abu Halifa</option>
+                                <option>Egaila</option>
+                                <option>Fintas</option>
+                                <option>Sabah Al-Ahmad</option>
+                            </optgroup>
+                            <optgroup label="Farwaniya Governorate">
+                                <option>Farwaniya</option>
+                                <option>Khaitan</option>
+                                <option>Andalus</option>
+                                <option>Ishbiliya</option>
+                                <option>Omariya</option>
+                                <option>Rabiya</option>
+                                <option>Rehab</option>
+                                <option>Sabah Al-Nasser</option>
+                                <option>Abdullah Al-Mubarak</option>
+                            </optgroup>
+                            <optgroup label="Jahra Governorate">
+                                <option>Jahra</option>
+                                <option>Saad Al-Abdullah</option>
+                                <option>Oyoun</option>
+                                <option>Waha</option>
+                                <option>Nasseem</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Requested Tutoring Scenarios (Select all that apply)</label>
+                        <div class="checkbox-group-grid">
+                            <label class="checkbox-pill"><input type="checkbox" name="student_scenario" value="Once-off lessons"> Once-Off Lessons</label>
+                            <label class="checkbox-pill"><input type="checkbox" name="student_scenario" value="Weekly/Regularly" checked> Weekly / Regularly</label>
+                            <label class="checkbox-pill"><input type="checkbox" name="student_scenario" value="Assessment/Exam prep"> Assessment / Exam Prep</label>
+                            <label class="checkbox-pill"><input type="checkbox" name="student_scenario" value="Any / Flexible"> Any / Flexible</label>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                            <label class="form-label">What type of student is being supported? (Select one or more)</label>
+                            <span style="font-size:0.7rem; font-weight:800; background:#e2e8f0; padding:2px 8px; border-radius:10px; color:var(--c-dark-navy);" id="studentTypeCounter">0 selected</span>
+                        </div>
+                        <div class="selection-card-grid">
+                            <label class="option-card" for="stud_diligent">
+                                <input type="checkbox" id="stud_diligent" name="student_typology" value="The Diligent Student" data-summary="Diligent (High effort, ceiling/anxiety)">
+                                <div class="option-details">
+                                    <span class="option-label">The Diligent Student</span>
+                                    <span class="option-description">Works hard, completes assignments, but battles test anxiety, ceilings, or brute-force memorization.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="stud_gifted">
+                                <input type="checkbox" id="stud_gifted" name="student_typology" value="The Gifted Student" data-summary="Gifted (Fast mastery, needs rigor)">
+                                <div class="option-details">
+                                    <span class="option-label">The Gifted Student</span>
+                                    <span class="option-description">Grasps standard curricula effortlessly, but risks disengagement without advanced rigor.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="stud_skills">
+                                <input type="checkbox" id="stud_skills" name="student_typology" value="The Student in Need of Academic Skills" data-summary="Needs Skills (Executive function/planning)">
+                                <div class="option-details">
+                                    <span class="option-label">The Student in Need of Academic Skills</span>
+                                    <span class="option-description">Capable of understanding subject material, but struggles with the operational side of school: organizing study schedules, managing deadlines, note-taking, and tracking deliverables.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="stud_coaching">
+                                <input type="checkbox" id="stud_coaching" name="student_typology" value="The Student in Need of Academic Coaching" data-summary="Needs Coaching (Accountability/mindset)">
+                                <div class="option-details">
+                                    <span class="option-label">The Student in Need of Academic Coaching</span>
+                                    <span class="option-description">Needs high-level accountability, goal setting, mindset calibration, and execution follow-through.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="stud_correcting">
+                                <input type="checkbox" id="stud_correcting" name="student_typology" value="The Student Needing Academic Correcting / Strengthening" data-summary="Correcting/Gap-Fill (Prerequisite remediation)">
+                                <div class="option-details">
+                                    <span class="option-label">The Student Needing Academic Remediation</span>
+                                    <span class="option-description">Has hidden prerequisite gaps or misconceptions that undermine current performance.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                            <label class="form-label">Select the type of tutor that you need (Select one or more)</label>
+                            <span style="font-size:0.7rem; font-weight:800; background:#e2e8f0; padding:2px 8px; border-radius:10px; color:var(--c-dark-navy);" id="tutorNeedCounter">0 selected</span>
+                        </div>
+                        <div class="selection-card-grid">
+                            <label class="option-card" for="req_doctor">
+                                <input type="checkbox" id="req_doctor" name="requested_tutor_archetypes" value="The Content Specialist" data-summary="Content Specialist ('The Academic Doctor')">
+                                <div class="option-details">
+                                    <span class="option-label">The Content Specialist ("The Academic Doctor")</span>
+                                    <span class="option-description">Operates with diagnostic precision. Pinpoints exact deficits and targets root causes.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="req_skills">
+                                <input type="checkbox" id="req_skills" name="requested_tutor_archetypes" value="The Academic Skills / Executive Function Specialist" data-summary="Skills Specialist (Workflows/systems)">
+                                <div class="option-details">
+                                    <span class="option-label">The Academic Skills / Executive Function Specialist</span>
+                                    <span class="option-description">Specializes in the mechanics of learning. Focuses on planning, workflow systems, structured note-taking, exam roadmaps, and independent study habits.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="req_motivator">
+                                <input type="checkbox" id="req_motivator" name="requested_tutor_archetypes" value="The Excellent Motivator" data-summary="The Motivator">
+                                <div class="option-details">
+                                    <span class="option-label">The Excellent Motivator</span>
+                                    <span class="option-description">High-energy and inspiring. Builds confidence and eliminates defeatist mindsets.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card" for="req_calm">
+                                <input type="checkbox" id="req_calm" name="requested_tutor_archetypes" value="The Calm Guide" data-summary="Calm Guide">
+                                <div class="option-details">
+                                    <span class="option-label">The Calm & Patient Guide</span>
+                                    <span class="option-description">Methodical and reassuring. Creates a low-pressure environment for anxious learners.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="diagnosticOutputPanel" class="diagnostic-output-panel" style="background:#ffffff; border:2px solid var(--c-dark-navy); border-radius:12px; padding:14px; margin-bottom:16px; display:none;">
+                        <h4 style="margin-bottom: 6px;">✓ Compiled Diagnostic Framework</h4>
+                        <p style="margin-bottom: 3px; font-size: 0.8rem; color: var(--c-dark-navy); font-weight: 700;">Selected Student Dimensions:</p>
+                        <div id="studentChips" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;"></div>
+                        <p style="margin-bottom: 3px; font-size: 0.8rem; color: var(--c-dark-navy); font-weight: 700;">Requested Tutor Competencies:</p>
+                        <div id="tutorChips" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;"></div>
+                        <div id="pedagogicalRecommendation" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 8px; font-size:0.84rem; color:var(--c-sub-navy);"></div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Topic Procedures & Learning Roadblocks</label>
+                        <textarea name="diagnostic_notes" class="form-input" rows="4" placeholder="Detail specific procedures, formulas, or question sets you need help with (e.g., trigonometric identities, limits, stoichiometry)..." required></textarea>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Scheduling Availability</label>
+                        <input type="text" name="availability" class="form-input" placeholder="e.g., Sun & Wed after 5:00 PM, Saturday mornings" required>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button type="submit" id="studentSubmitBtn" class="btn btn-navy" style="flex: 2;">Submit Free Match Request</button>
+                        <button type="button" id="studentResetBtn" class="btn btn-white" style="flex: 1;">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FULLY FUNCTIONAL TUTOR REGISTRATION & WORKSPACE -->
+    <section id="tutor-portal" class="section-padding">
+        <div class="container">
+            <div class="section-header-wrap">
+                <span class="section-kicker-badge">Verified Educator Workspace</span>
+                <h2>Tutor Portal</h2>
+                <p class="lead-text">Join Kuwait's vetted candidate pool. Maintain an active platform listing to receive qualified student placements with 0% commission on hourly lessons.</p>
+            </div>
+
+            <div class="portal-mode-toggle">
+                <button type="button" class="mode-toggle-btn active" id="btnToggleAuth" onclick="switchTutorPortalView('signin')">Tutor Sign In</button>
+                <button type="button" class="mode-toggle-btn" id="btnToggleProfile" onclick="switchTutorPortalView('signup')">Tutor Sign Up</button>
+            </div>
+
+            <div class="blueprint-card" style="max-width: 950px; margin: 0 auto;">
+                
+                <div id="paymentSuccessNotice" class="payment-alert-banner" style="display: none; background:#f0fdf4; border:1.5px solid #059669; color:#065f46; border-radius:12px; padding:12px; margin-bottom:16px; align-items:center; justify-content:space-between;">
+                    <div>
+                        <strong style="display:block; margin-bottom:2px;">Listing Activated Successfully!</strong>
+                        <span style="font-size:0.8rem;">Your listing subscription is active. Complete and fine-tune your teaching boundaries below to receive matched student referrals.</span>
+                    </div>
+                    <button type="button" onclick="document.getElementById('paymentSuccessNotice').style.display='none'" style="background:transparent; border:none; font-size:1.25rem; cursor:pointer;">&times;</button>
+                </div>
+
+                <!-- VIEW 1: TUTOR SIGN IN -->
+                <div id="tutorAuthView">
+                    <div class="auth-card-compact" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:24px; max-width:400px; margin:0 auto;">
+                        <h3 style="font-size: 1.15rem; text-align: center; margin-bottom: 4px;">Tutor Sign In</h3>
+                        <p style="text-align: center; font-size: 0.8rem; color: #64748b; margin-bottom: 16px;">Access your profile, update your availability, or track your student matching statuses.</p>
+                        
+                        <form id="tutorLoginForm" onsubmit="handleTutorLogin(event)">
+                            <div>
+                                <label class="form-label">Email Address</label>
+                                <input type="email" id="authEmail" class="form-input" placeholder="email@example.com" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Password / Access Code</label>
+                                <input type="password" id="authPassword" class="form-input" placeholder="••••••••" required>
+                            </div>
+                            <button type="submit" id="btnSignInSubmit" class="btn btn-navy btn-block" style="margin-top: 6px;">Sign In to Portal</button>
+                            <p style="font-size: 0.78rem; text-align: center; margin-top: 14px;">
+                                New to Apex? <a href="javascript:void(0)" onclick="switchTutorPortalView('signup')" style="color: #0284c7; font-weight: 700; text-decoration: underline;">Register your profile (Tutor Sign Up)</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: TUTOR REGISTRATION & WORKSPACE -->
+                <div id="tutorProfileView" style="display: none;">
+                    
+                    <!-- TOP WORKSPACE STATUS BAR (FOR LOGGED-IN TUTORS) -->
+                    <div class="dash-top-bar" id="tutorWorkspaceTopBar" style="display: none;">
+                        <div>
+                            <span class="dash-welcome">Logged in as:</span>
+                            <h3 id="displayTutorEmail" class="dash-name">tutor@apexlearningkw.com</h3>
+                            <span class="dash-meta">Verified Candidate Pool</span>
+                        </div>
+                        <div class="dash-actions">
+                            <span class="status-pill status-active">● Active Listing</span>
+                            <button type="button" class="btn btn-white" onclick="handleTutorLogout()" style="padding: 5px 12px; font-size: 0.72rem;">Sign Out</button>
+                        </div>
+                    </div>
+
+                    <!-- TAB NAVIGATION -->
+                    <div class="dash-tab-nav" id="tutorWorkspaceTabs" style="display: none;">
+                        <button type="button" class="dash-tab-btn active" id="tabBtnMatches" onclick="switchTutorWorkspaceTab('matches')">Matching Pipeline <span class="tab-counter" style="background:#e2e8f0; padding:2px 5px; border-radius:10px; font-size:0.7rem;">0 Active</span></button>
+                        <button type="button" class="dash-tab-btn" id="tabBtnProfile" onclick="switchTutorWorkspaceTab('profile')">Profile & Rates</button>
+                        <button type="button" class="dash-tab-btn" id="tabBtnSubscription" onclick="switchTutorWorkspaceTab('subscription')">Subscription & Billing</button>
+                    </div>
+
+                    <!-- PANE 1: MATCHING PIPELINE -->
+                    <div id="paneMatches" style="display: none;">
+                        <div style="margin-bottom: 12px;">
+                            <h4 style="margin-bottom: 2px;">Student Matching & Referral Pipeline</h4>
+                            <p class="small-text">Real-time statuses for student match cases assigned to you by the Apex Administrative Desk.</p>
+                        </div>
+                        <div class="match-card-list">
+                            <p style="padding: 20px; text-align: center; color: #64748b;">Sign in to view your real-time candidate match pipeline.</p>
+                        </div>
+                    </div>
+
+                    <!-- PANE 2: COMPLETE RESTORED TUTOR REGISTRATION & PROFILE FORM -->
+                    <div id="paneProfile">
+                        <div style="margin-bottom: 16px;">
+                            <h4 id="formModeTitle" style="font-size: 1.25rem; margin-bottom: 2px;">Tutor Sign Up & Registration</h4>
+                            <p class="small-text" style="color: #64748b; margin: 0;">Fill out your teaching profile below to register for candidate matching placement.</p>
+                        </div>
+
+                        <form id="tutorProfileForm">
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 14px;">1. Contact & Referral Channels</h3>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" name="tutor_full_name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" name="tutor_contact_email" id="profileContactEmail" class="form-input" placeholder="email@example.com" required>
+                                </div>
+                            </div>
+
+                            <div id="passwordFieldsWrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label">Create Password</label>
+                                    <input type="password" name="tutor_password" id="tutorPasswordInput" class="form-input" placeholder="At least 6 characters" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" id="tutorPasswordConfirm" class="form-input" placeholder="Re-type password" required>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label">WhatsApp Number (With Country Code)</label>
+                                    <input type="tel" name="tutor_contact_whatsapp" class="form-input" placeholder="+965 ..." required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Preferred Referral Channel</label>
+                                    <div class="checkbox-group-grid" style="margin-bottom: 0;">
+                                        <label class="checkbox-pill"><input type="radio" name="tutor_pref_comm" value="WhatsApp" checked> WhatsApp</label>
+                                        <label class="checkbox-pill"><input type="radio" name="tutor_pref_comm" value="Email"> Email</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">2. Experience, Rates & Modality</h3>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label">Years of Tutoring Experience</label>
+                                    <input type="number" name="experience_years" class="form-input" min="0" max="40" value="5" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Hourly Rate Bounds (KD / hour)</label>
+                                    <div style="display: flex; gap: 8px;">
+                                        <input type="number" name="rate_floor" class="form-input" placeholder="Floor (e.g. 20)" value="20" style="margin-bottom: 0;">
+                                        <input type="number" name="rate_target" class="form-input" placeholder="Ideal (e.g. 30)" value="30" style="margin-bottom: 0;">
+                                    </div>
+                                    <small style="color: #64748b; font-size: 0.68rem;">Minimum floor & ideal target for rate brokerage</small>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 10px;">
+                                <label class="form-label">Delivery Mode Capability</label>
+                                <div class="checkbox-group-grid" style="margin-bottom: 14px;">
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_mode" value="Online" checked> Online</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_mode" value="In-person" checked> In-Person (Kuwait)</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Tutoring Scenarios Offered (Select all that apply)</label>
+                                <div class="checkbox-group-grid">
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_scenarios" value="Once-off lessons" checked> Once-off Lessons</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_scenarios" value="Weekly/Regularly" checked> Weekly / Regularly</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_scenarios" value="Assessment/Exam prep" checked> Assessment Prep</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="tutor_scenarios" value="Any / Flexible" checked> Any / Flexible</label>
+                                </div>
+                            </div>
+
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">3. Vetting & Verification</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label">CV / Resume Upload (PDF / DOCX)</label>
+                                    <input type="file" id="tutorCV" class="form-input" style="padding: 8px; background: #ffffff;" accept=".pdf,.doc,.docx">
+                                    <p class="small-text" style="margin-top: -10px; margin-bottom: 12px; color: #64748b;">Current File: <span id="cvFileNameDisplay">No file chosen</span></p>
+                                </div>
+                                <div>
+                                    <label class="form-label">Professional References</label>
+                                    <input type="text" name="references" class="form-input" placeholder="Name, Title, Institution, Contact">
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 18px;">
+                                <label class="checkbox-pill" style="align-items: flex-start;">
+                                    <input type="checkbox" name="cert_guarantee" checked required style="margin-top: 3px;">
+                                    <span><strong>Credential Guarantee:</strong> I certify that all university degree credentials, certifications, and teaching histories submitted are authentic and subject to administrative vetting.</span>
+                                </label>
+                            </div>
+
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">4. Curriculums & Subjects</h3>
+                            <div>
+                                <label class="form-label">Curriculums You Are Able to Tutor (Select all that apply)</label>
+                                <div class="checkbox-group-grid">
+                                    <label class="checkbox-pill"><input type="checkbox" name="curriculums" value="American AP" checked> American AP</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="curriculums" value="British IGCSE" checked> British IGCSE / A-Levels</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="curriculums" value="IB DP" checked> International Baccalaureate (IB)</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="curriculums" value="Kuwait National"> Kuwait National</label>
+                                    <label class="checkbox-pill"><input type="checkbox" name="curriculums" value="University"> University Undergraduate</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Subjects Offered</label>
+                                <input type="text" name="subjects_offered" class="form-input" placeholder="e.g., Precalculus, AP Calculus AB/BC, AP Physics 1" required>
+                            </div>
+
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">5. Archetype & Student Specialization</h3>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                                    <label class="form-label">What type of tutor are you? (Select one or more)</label>
+                                    <span style="font-size:0.65rem; font-weight:800; background:#e2e8f0; padding:2px 8px; border-radius:10px; color:var(--c-dark-navy);" id="tutorSelfCounter">0 selected</span>
+                                </div>
+                                <div class="selection-card-grid">
+                                    <label class="option-card" for="self_doctor">
+                                        <input type="checkbox" id="self_doctor" name="tutor_self_archetype" value="The Content Specialist" checked>
+                                        <div class="option-details">
+                                            <span class="option-label">The Content Specialist ("The Academic Doctor")</span>
+                                            <span class="option-description">Operates with diagnostic precision. Pinpoints exact prerequisite deficits and delivers targeted intervention.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="self_skills">
+                                        <input type="checkbox" id="self_skills" name="tutor_self_archetype" value="The Academic Skills / Executive Function Specialist">
+                                        <div class="option-details">
+                                            <span class="option-label">The Academic Skills / Executive Function Specialist</span>
+                                            <span class="option-description">Specializes in the mechanics of learning. Focuses on planning, workflow systems, structured note-taking, exam roadmaps, and independent study habits.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="self_motivator">
+                                        <input type="checkbox" id="self_motivator" name="tutor_self_archetype" value="The Excellent Motivator">
+                                        <div class="option-details">
+                                            <span class="option-label">The Excellent Motivator</span>
+                                            <span class="option-description">High-energy and inspiring. Builds self-efficacy and pushes students toward ambitious personal goals.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="self_calm">
+                                        <input type="checkbox" id="self_calm" name="tutor_self_archetype" value="The Calm & Patient Guide">
+                                        <div class="option-details">
+                                            <span class="option-label">The Calm & Patient Guide</span>
+                                            <span class="option-description">Methodical and reassuring. Creates a low-pressure environment for anxious or overwhelmed learners.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                                    <label class="form-label">Select the type of student that you are best able to assist (Select one or more)</label>
+                                    <span style="font-size:0.65rem; font-weight:800; background:#e2e8f0; padding:2px 8px; border-radius:10px; color:var(--c-dark-navy);" id="tutorPrefCounter">0 selected</span>
+                                </div>
+                                <div class="selection-card-grid">
+                                    <label class="option-card" for="pref_diligent">
+                                        <input type="checkbox" id="pref_diligent" name="tutor_preferred_students" value="The Diligent Student" checked>
+                                        <div class="option-details">
+                                            <span class="option-label">The Diligent Student</span>
+                                            <span class="option-description">Works hard, completes assignments, but battles test anxiety, ceilings, or brute-force memorization.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="pref_gifted">
+                                        <input type="checkbox" id="pref_gifted" name="tutor_preferred_students" value="The Gifted Student" checked>
+                                        <div class="option-details">
+                                            <span class="option-label">The Gifted Student</span>
+                                            <span class="option-description">Grasps concepts quickly, needs advanced rigor, and requires resilience coaching for complex roadblocks.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="pref_skills">
+                                        <input type="checkbox" id="pref_skills" name="tutor_preferred_students" value="The Student in Need of Academic Skills">
+                                        <div class="option-details">
+                                            <span class="option-label">The Student in Need of Academic Skills</span>
+                                            <span class="option-description">Understands material, but struggles with the operational side: schedules, deadlines, notes, deliverables.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="pref_coaching">
+                                        <input type="checkbox" id="pref_coaching" name="tutor_preferred_students" value="The Student in Need of Academic Coaching">
+                                        <div class="option-details">
+                                            <span class="option-label">The Student in Need of Academic Coaching</span>
+                                            <span class="option-description">Needs accountability, goal setting, mindset calibration, and execution follow-through.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="option-card" for="pref_correcting">
+                                        <input type="checkbox" id="pref_correcting" name="tutor_preferred_students" value="The Student Needing Academic Correcting / Strengthening" checked>
+                                        <div class="option-details">
+                                            <span class="option-label">The Student Needing Academic Correcting / Strengthening</span>
+                                            <span class="option-description">Has hidden prerequisite gaps or misconceptions that undermine current classroom performance.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">6. Profile Bio & Methodology</h3>
+                            <div>
+                                <label class="form-label">Profile Description & Approach</label>
+                                <textarea name="profile_desc" class="form-input" rows="3" placeholder="Summarize your instructional philosophy..." required></textarea>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Teaching History & Experience Details</label>
+                                <textarea name="teaching_history" class="form-input" rows="4" placeholder="Detail past educational roles, schools, years of classroom experience..." required></textarea>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+                                <button type="submit" id="saveProfileBtn" class="btn btn-navy" style="flex: 2;">
+                                    Complete Sign Up & Choose Plan
+                                </button>
+                                <button type="button" class="btn btn-outline-cyan" style="flex: 1;" onclick="openPlanModal()">
+                                    Pay / Renew Listing
+                                </button>
+                            </div>
+                            <div id="saveFeedback" style="text-align: center; margin-top: 12px; color: #059669; font-weight: 700; display: none;">✓ Profile saved in database! Match desk records updated.</div>
+                        </form>
+                    </div>
+
+                    <!-- PANE 3: LISTING SUBSCRIPTION & BILLING -->
+                    <div id="paneSubscription" style="display: none;">
+                        <div class="subscription-status-card" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:12px; padding:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                            <div>
+                                <span style="font-size:0.7rem; font-weight:800; text-transform:uppercase; color:var(--c-dark-navy);">Current Plan: Platform Listing</span>
+                                <h5 style="margin:2px 0; font-size:1rem;">Active Status: Candidate Match Eligibility</h5>
+                                <p class="small-text" style="margin:0; color:#64748b;">Automatic billing handled securely via Creem (Apple Pay / Credit Card). Cancel anytime with 1 click.</p>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <button class="btn btn-white" onclick="openCustomerPortal()">Manage Card / Billing</button>
+                                <button class="btn btn-navy" onclick="openPlanModal()">Renew Listing Plan</button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 18px;">
+                            <div class="sub-tier-grid">
+                                <div class="sub-tier-card" onclick="goToCheckout('Weekly')">
+                                    <span class="form-label">Weekly Listing</span>
+                                    <div class="sub-price">3 KD <span style="font-size:0.78rem; color:#64748b;">(~ $10 USD / wk)</span></div>
+                                    <p class="small-text">Auto-renews weekly. Keeps listing active in match pool. Cancel or pause anytime in 1 click.</p>
+                                    <button type="button" class="btn btn-navy btn-block" style="margin-top: 12px; padding: 8px 14px; font-size: 0.8rem;">Select Weekly</button>
+                                </div>
+
+                                <div class="sub-tier-card selected" onclick="goToCheckout('Monthly')">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span class="form-label">Monthly Listing</span>
+                                        <span style="background:var(--c-surface); color:var(--c-dark-navy); font-size:0.65rem; font-weight:800; padding:2px 6px; border-radius:8px;">Best Value</span>
+                                    </div>
+                                    <div class="sub-price">10 KD <span style="font-size:0.78rem; color:#64748b;">(~ $33 USD / mo)</span></div>
+                                    <p class="small-text">Auto-renews monthly. Continuous active listing with zero interruption in referrals. Cancel anytime.</p>
+                                    <button type="button" class="btn btn-navy btn-block" style="margin-top: 12px; padding: 8px 14px; font-size: 0.8rem;">Select Monthly</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT ADMINISTRATION -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header-wrap">
+                <span class="section-kicker-badge">Help Desk</span>
+                <h2>Contact Administration</h2>
+                <p class="lead-text">Have procedural questions regarding diagnostic matching, rate structures, or credential checks? Connect with our team.</p>
             </div>
             
-       
-            
-            
+            <div class="blueprint-card" style="max-width: 820px; margin: 0 auto;">
+                <form id="enquiryForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label class="form-label">Your Name</label>
+                            <input type="text" name="Sender Name" class="form-input" placeholder="Full name" required>
+                        </div>
+                        <div>
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="Your Email" class="form-input" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Subject</label>
+                        <input type="text" name="Subject" class="form-input" placeholder="Message subject..." required>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Message</label>
+                        <textarea name="Message" class="form-input" rows="4" placeholder="Detail your administrative or operational question..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="enquirySubmit" class="btn btn-navy btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE BAR -->
+    <div class="trust-bar" style="text-align: center; padding: 24px 20px; border-top: 1.5px solid rgba(0, 31, 63, 0.1); background: rgba(255,255,255,0.4); position: relative; z-index: 2;">
+        <p class="small-text" style="margin-bottom: 12px; letter-spacing: 1.2px; opacity: 0.85; font-family: var(--font-heading); text-transform: uppercase; font-weight: 700; color: var(--c-dark-navy);">Regional Financial Compliance & Secure Infrastructure</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <span style="font-weight: 800; font-size: 13px; color: var(--c-dark-navy);">Apple Pay</span>
+            <span style="font-weight: 800; font-size: 13px; color: var(--c-dark-navy);">Google Pay</span>
+            <span style="font-weight: 800; font-size: 13px; color: var(--c-dark-navy);">VISA</span>
+            <span style="font-weight: 800; font-size: 13px; color: var(--c-dark-navy);">Mastercard</span>
+            <span style="font-size: 16px;" title="Encrypted Connection">🔒</span>
         </div>
     </div>
+
+    <!-- MODAL: PLAN SELECTION -->
+    <div id="planSelectionModal" class="plan-modal-overlay">
+        <div class="plan-modal-card">
+            <span class="section-kicker-badge">Listing Activation</span>
+            <h2 style="font-size: 1.6rem; margin-bottom: 6px;">Select Your Platform Plan</h2>
+            <p class="small-text" style="color: #64748b; max-width: 580px; margin: 0 auto;">
+                Your tutor profile is saved in our database. Choose your membership tier to activate your listing for student matching. Cancel or pause anytime.
+            </p>
+
+            <div class="plan-choice-grid">
+                <div class="plan-box">
+                    <div>
+                        <span class="form-label">Weekly Listing</span>
+                        <div class="sub-price">3 KD <span style="font-size:0.78rem; color:#64748b;">(~ $10 USD / wk)</span></div>
+                        <p class="small-text">
+                            • Billed weekly<br>
+                            • Active candidate matching eligibility<br>
+                            • 0% commission on all hourly lessons<br>
+                            • Pause or cancel anytime in 1 click
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-navy btn-block" onclick="goToCheckout('Weekly')">Choose Weekly (3 KD)</button>
+                </div>
+
+                <div class="plan-box" style="border-color: var(--c-dark-navy); background: #f0f9ff;">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span class="form-label">Monthly Listing</span>
+                            <span style="background:var(--c-surface); color:var(--c-dark-navy); font-size:0.65rem; font-weight:800; padding:2px 6px; border-radius:8px;">Best Value</span>
+                        </div>
+                        <div class="sub-price">10 KD <span style="font-size:0.78rem; color:#64748b;">(~ $33 USD / mo)</span></div>
+                        <p class="small-text">
+                            • Billed monthly<br>
+                            • Uninterrupted candidate placement pool<br>
+                            • 0% commission on all hourly lessons<br>
+                            • Priority diagnostic placement consideration
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-navy btn-block" onclick="goToCheckout('Monthly')">Choose Monthly (10 KD)</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-white" onclick="closePlanModal()" style="margin-top: 8px;">Review Profile Changes</button>
+        </div>
+    </div>
+
+    <!-- MODAL: LEGAL POLICIES -->
+    <div id="legalModalOverlay" class="legal-modal-overlay">
+        <div class="legal-modal-card" style="text-align: left; max-height:85vh; display:flex; flex-direction:column; padding:0; overflow:hidden;">
+            <div style="padding:16px 20px; background:#f8fafc; border-bottom:1.5px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                <h3 id="legalModalMainTitle" style="margin:0; font-size:1.1rem;">Legal Documentation</h3>
+                <button onclick="closeLegalModal()" style="background:transparent; border:none; font-size:1.6rem; cursor:pointer;">&times;</button>
+            </div>
+            <div style="display:flex; gap:8px; padding:10px 20px; border-bottom:1px solid #e2e8f0;">
+                <button type="button" id="tabLegalTerms" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('terms')">Terms of Service</button>
+                <button type="button" id="tabLegalRefund" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('refund')">Refund Policy</button>
+                <button type="button" id="tabLegalPrivacy" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('privacy')">Privacy Policy</button>
+            </div>
+            <div id="legalModalBody" style="padding:20px; overflow-y:auto; line-height:1.6; font-size:0.86rem;"></div>
+            <div style="padding:12px 20px; background:#f8fafc; border-top:1.5px solid #e2e8f0; text-align:right;">
+                <button type="button" class="btn btn-navy" onclick="closeLegalModal()">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
+            <div>
+                <h4 style="color: var(--c-surface) !important; margin-bottom: 12px;">Apex Learning</h4>
+                <p class="small-text" style="color: #cbd5e1; line-height: 1.7;">
+                    Operated by: Apex Learning KW (Pty) Ltd.<br>
+                    Location: Kuwait<br>
+                    Contact: info@apexlearningkw.com<br>
+                    Compliance: Kuwait Decree Law 10/2026
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--c-surface) !important; margin-bottom: 12px;">Legal & Policies</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 6px;"><a href="terms.html" class="footer-legal-link" onclick="openLegalModal('terms', event)">Terms of Service</a></li>
+                    <li style="margin-bottom: 6px;"><a href="refund-policy.html" class="footer-legal-link" onclick="openLegalModal('refund', event)">Refund & Cancellation</a></li>
+                    <li style="margin-bottom: 6px;"><a href="privacy-policy.html" class="footer-legal-link" onclick="openLegalModal('privacy', event)">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--c-surface) !important; margin-bottom: 12px;">Quality Verification</h4>
+                <p class="small-text" style="color: #cbd5e1; line-height: 1.7;">
+                    All registered educators submit verified credentials and references before activation in the candidate pool.
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-size: 11px;">
+            &copy; 2026 Apex Learning KW (Pty) Ltd. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC & LIVE DATABASE INTEGRATION -->
+    <script>
+        const DB_API_URL = "https://script.google.com/macros/s/AKfycbxP5uITX-dpAbonKZ6QPRO78H08aYYzV-LO25MQqrKfewa7kc5Tr4Km8YptkHZ1gTEqSg/exec";
+        const CREEM_WEEKLY_URL = "https://www.creem.io/test/payment/prod_4JmauGZPMVECOGb49X0tTm";
+        const CREEM_MONTHLY_URL = "https://www.creem.io/test/payment/prod_6c2YGpuNxJQ3jjMoQsSXyU";
+
+        const LEGAL_DATA = {
+            privacy: {
+                title: "Privacy Policy & Blind Matching Protocols",
+                html: `
+                    <h4>1. Scope & Responsible Entity</h4>
+                    <p>Apex Learning KW (Pty) Ltd (CIPC Registration: <strong>2026 / 262544 / 07</strong>) operates <code>apexlearningkw.com</code>. We comply with South African <strong>POPIA (Protection of Personal Information Act No. 4 of 2013)</strong>, <strong>ECTA (Act 25 of 2002)</strong>, and Kuwait <strong>CITRA Data Privacy & Protection Regulations</strong> alongside <strong>Law No. 20 of 2014</strong>.</p>
+                    <h4>2. Data Collected</h4>
+                    <p>On student match forms, we collect submitter names, contact emails, WhatsApp details, and school grade information. We record subject requests, curriculum requirements, scheduling availability, and self-disclosed behavioral and archetype classifications.</p>
+                    <h4>3. Vetting File Attachments & Educational Transcripts</h4>
+                    <p>Educators must upload verified credentials, certificates, and resumés. Files are processed via encrypted cloud storage and are reviewed only by authorized Apex academic administrators.</p>
+                    <h4>4. Match Objective Safeguards (Blind Verification)</h4>
+                    <p>Matches are based entirely on objective diagnostic variables. Tutor names and profile data remain obscured until matches are completed to guarantee meritocracy and exclude commercial favoritism.</p>
+                `
+            },
+            terms: {
+                title: "Terms of Service",
+                html: `
+                    <h4>1. Scope of Service</h4>
+                    <p>Apex Learning KW operates an independent academic concierge and matchmaking desk in Kuwait, registered under <strong>Apex Learning KW (Pty) Ltd</strong> (CIPC: <strong>2026 / 262544 / 07</strong>).</p>
+                    <h4>2. Zero Lesson Commissions</h4>
+                    <p>Student matching is 100% free for families. Apex Learning charges <strong>0% commission</strong> on hourly lessons. All instructional fees are paid directly between the client and educator.</p>
+                    <h4>3. Platform Listing Subscriptions</h4>
+                    <p>Tutors maintain active matching eligibility through a recurring Weekly (3 KD / ~$10 USD) or Monthly (10 KD / ~$33 USD) listing subscription billed via Creem. Subscriptions auto-renew until cancelled via the self-service portal.</p>
+                `
+            },
+            refund: {
+                title: "Refund, Cancellation & Remittance Terms",
+                html: `
+                    <h4>1. Platform Listing Refunds</h4>
+                    <p>Listing memberships cover immediate digital credentialing and placement pool activation. Tutors may cancel recurring billing anytime without penalty via the customer portal.</p>
+                    <h4>2. Direct Lesson Remittances</h4>
+                    <p>Because Apex Learning collects 0% commission and never holds instructional fees, all lesson rescheduling, package billing, and lesson refunds must be handled directly between the parent and the educator.</p>
+                `
+            }
+        };
+
+        function openLegalModal(section, e) {
+            if (e) e.preventDefault();
+            switchLegalModalTab(section);
+            document.getElementById('legalModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legalModalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function switchLegalModalTab(tabKey) {
+            const data = LEGAL_DATA[tabKey] || LEGAL_DATA.privacy;
+            document.getElementById('legalModalMainTitle').innerText = data.title;
+            document.getElementById('legalModalBody').innerHTML = data.html;
+
+            document.getElementById('tabLegalTerms').className = 'btn btn-white' + (tabKey === 'terms' ? ' btn-navy' : '');
+            document.getElementById('tabLegalRefund').className = 'btn btn-white' + (tabKey === 'refund' ? ' btn-navy' : '');
+            document.getElementById('tabLegalPrivacy').className = 'btn btn-white' + (tabKey === 'privacy' ? ' btn-navy' : '');
+        }
+
+        document.getElementById('legalModalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeLegalModal();
+        });
+
+        // Mobile Nav Drawer Logic
+        const menuToggle = document.getElementById('menuToggle');
+        const sideDrawer = document.getElementById('sideDrawer');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const drawerLinks = document.querySelectorAll('.drawer-link');
+
+        function toggleMenu() {
+            const isOpen = sideDrawer.classList.contains('active');
+            if (isOpen) { closeMenu(); } else { openMenu(); }
+        }
+
+        function openMenu() {
+            menuToggle.classList.add('is-active');
+            sideDrawer.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            menuToggle.classList.remove('is-active');
+            sideDrawer.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        drawerLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        function navigateToTutorPortal(targetView) {
+            closeMenu();
+            switchTutorPortalView(targetView);
+            const portalSection = document.getElementById('tutor-portal');
+            if (portalSection) portalSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleSubmitterRole(role) {
+            const primaryNameLabel = document.getElementById('primaryNameLabel');
+            const childNameWrapper = document.getElementById('childNameWrapper');
+            const studentNameInput = document.getElementById('studentNameInput');
+
+            if (role === 'Parent') {
+                primaryNameLabel.innerText = 'Parent / Guardian Name';
+                childNameWrapper.style.display = 'block';
+                studentNameInput.setAttribute('required', 'required');
+            } else {
+                primaryNameLabel.innerText = 'Student Full Name';
+                childNameWrapper.style.display = 'none';
+                studentNameInput.removeAttribute('required');
+            }
+        }
+
+        let isTutorAuthenticated = false;
+
+        function switchTutorPortalView(view) {
+            const authView = document.getElementById('tutorAuthView');
+            const profileView = document.getElementById('tutorProfileView');
+            const btnAuth = document.getElementById('btnToggleAuth');
+            const btnProfile = document.getElementById('btnToggleProfile');
+            const topBar = document.getElementById('tutorWorkspaceTopBar');
+            const tabNav = document.getElementById('tutorWorkspaceTabs');
+            const formTitle = document.getElementById('formModeTitle');
+            const saveBtn = document.getElementById('saveProfileBtn');
+            const passwordWrapper = document.getElementById('passwordFieldsWrapper');
+            const passInput = document.getElementById('tutorPasswordInput');
+            const passConfirm = document.getElementById('tutorPasswordConfirm');
+
+            if (view === 'signin') {
+                authView.style.display = 'block';
+                profileView.style.display = 'none';
+                btnAuth.classList.add('active');
+                btnProfile.classList.remove('active');
+            } else {
+                authView.style.display = 'none';
+                profileView.style.display = 'block';
+                btnProfile.classList.add('active');
+                btnAuth.classList.remove('active');
+
+                if (isTutorAuthenticated) {
+                    topBar.style.display = 'flex';
+                    tabNav.style.display = 'flex';
+                    formTitle.innerText = "Profile Settings & Match Calibration";
+                    saveBtn.innerText = "Save Changes & Update Match Pool Data";
+                    passwordWrapper.style.display = 'none';
+                    passInput.removeAttribute('required');
+                    passConfirm.removeAttribute('required');
+                } else {
+                    topBar.style.display = 'none';
+                    tabNav.style.display = 'none';
+                    formTitle.innerText = "Tutor Sign Up & Registration";
+                    saveBtn.innerText = "Complete Sign Up & Choose Plan";
+                    passwordWrapper.style.display = 'grid';
+                    passInput.setAttribute('required', 'required');
+                    passConfirm.setAttribute('required', 'required');
+                    switchTutorWorkspaceTab('profile');
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
+            const session = params.get('session');
+            const view = params.get('view');
+            const tab = params.get('tab');
+
+            if (status === 'success' || session === 'tutor' || view === 'tutor') {
+                isTutorAuthenticated = true;
+                switchTutorPortalView('signup');
+                if (status === 'success') {
+                    document.getElementById('paymentSuccessNotice').style.display = 'flex';
+                }
+                if (tab === 'subscription') {
+                    switchTutorWorkspaceTab('subscription');
+                } else {
+                    switchTutorWorkspaceTab('profile');
+                }
+                setTimeout(() => {
+                    document.getElementById('tutor-portal').scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        });
+
+        function handleTutorLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('authEmail').value;
+            const password = document.getElementById('authPassword').value;
+            const submitBtn = document.getElementById('btnSignInSubmit');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Verifying with Database...";
+
+            fetch(DB_API_URL, {
+                method: "POST",
+                body: JSON.stringify({
+                    action: "tutor_login",
+                    email: email,
+                    password: password
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Sign In to Portal";
+                if (data.status === "success") {
+                    isTutorAuthenticated = true;
+                    const p = data.profile;
+                    document.getElementById('displayTutorEmail').innerText = p.fullName ? `${p.fullName} (${p.email})` : p.email;
+                    document.getElementById('profileContactEmail').value = p.email;
+                    if (p.fullName) document.querySelector('input[name="tutor_full_name"]').value = p.fullName;
+                    if (p.whatsapp) document.querySelector('input[name="tutor_contact_whatsapp"]').value = p.whatsapp;
+                    if (p.experienceYears) document.querySelector('input[name="experience_years"]').value = p.experienceYears;
+                    if (p.rateFloor) document.querySelector('input[name="rate_floor"]').value = p.rateFloor;
+                    if (p.rateTarget) document.querySelector('input[name="rate_target"]').value = p.rateTarget;
+                    if (p.subjects) document.querySelector('input[name="subjects_offered"]').value = p.subjects;
+
+                    renderTutorMatches(data.matches || []);
+                    switchTutorPortalView('signup');
+                    switchTutorWorkspaceTab('matches');
+                } else {
+                    alert("Sign In Failed: " + (data.message || "Invalid credentials"));
+                }
+            })
+            .catch(() => {
+                alert("Database connection error. Please verify your connection.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Sign In to Portal";
+            });
+        }
+
+        function renderTutorMatches(matches) {
+            const container = document.querySelector('.match-card-list');
+            const counterBadge = document.querySelector('.tab-counter');
+            if (counterBadge) counterBadge.innerText = `${matches.length} Active`;
+
+            if (matches.length === 0) {
+                container.innerHTML = `<p style="padding: 20px; text-align: center; color: #64748b;">No active student referrals currently assigned. Your listing remains active in the verified match pool.</p>`;
+                return;
+            }
+
+            container.innerHTML = matches.map(m => {
+                let badgeClass = "status-review";
+                const s = (m.status || "").toLowerCase();
+                if (s.includes("active") || s.includes("direct")) badgeClass = "status-active";
+                else if (s.includes("brokerage") || s.includes("progress")) badgeClass = "status-brokerage";
+
+                return `
+                    <div class="match-item-card ${badgeClass === 'status-active' ? 'active-match-border' : ''}">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <span style="font-weight:800; font-family:var(--font-heading); color:var(--c-dark-navy);">${m.caseId || 'Case Assignment'}</span>
+                            <span class="status-pill ${badgeClass}">${m.status || 'Pending Review'}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px; margin-bottom:10px;">
+                            <div>
+                                <strong style="font-size:0.72rem; text-transform:uppercase; color:var(--c-dark-navy); display:block;">Student / Subject:</strong>
+                                <p style="margin:0; font-size:0.86rem;">${m.studentSubject || 'Not specified'}</p>
+                            </div>
+                            <div>
+                                <strong style="font-size:0.72rem; text-transform:uppercase; color:var(--c-dark-navy); display:block;">Modality:</strong>
+                                <p style="margin:0; font-size:0.86rem;">${m.modality || 'Online'}</p>
+                            </div>
+                            <div>
+                                <strong style="font-size:0.72rem; text-transform:uppercase; color:var(--c-dark-navy); display:block;">Agreed / Target Rate:</strong>
+                                <p style="margin:0; font-size:0.86rem;">${m.rateAgreed || 'Under Negotiation'}</p>
+                            </div>
+                        </div>
+                        <p style="font-size:0.82rem; background:#f8fafc; border-radius:8px; padding:8px 12px; margin:0;">
+                            <strong>Desk Note:</strong> ${m.deskNotes || 'Case is currently under diagnostic review by the matching desk.'}
+                        </p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function handleTutorLogout() {
+            isTutorAuthenticated = false;
+            switchTutorPortalView('signin');
+        }
+
+        function switchTutorWorkspaceTab(tab) {
+            ['paneMatches', 'paneProfile', 'paneSubscription'].forEach(p => {
+                const el = document.getElementById(p);
+                if (el) el.style.display = 'none';
+            });
+            ['tabBtnMatches', 'tabBtnProfile', 'tabBtnSubscription'].forEach(b => {
+                const el = document.getElementById(b);
+                if (el) el.classList.remove('active');
+            });
+
+            if (tab === 'matches') {
+                document.getElementById('paneMatches').style.display = 'block';
+                document.getElementById('tabBtnMatches').classList.add('active');
+            } else if (tab === 'profile') {
+                document.getElementById('paneProfile').style.display = 'block';
+                const b = document.getElementById('tabBtnProfile');
+                if (b) b.classList.add('active');
+            } else if (tab === 'subscription') {
+                document.getElementById('paneSubscription').style.display = 'block';
+                document.getElementById('tabBtnSubscription').classList.add('active');
+            }
+        }
+
+        function openPlanModal() { document.getElementById('planSelectionModal').classList.add('active'); }
+        function closePlanModal() { document.getElementById('planSelectionModal').classList.remove('active'); }
+
+        function goToCheckout(planTier) {
+            const email = document.getElementById('profileContactEmail')?.value || '';
+            const baseUrl = planTier === 'Weekly' ? CREEM_WEEKLY_URL : CREEM_MONTHLY_URL;
+            const url = new URL(baseUrl);
+            if (email) url.searchParams.set('email', email);
+            url.searchParams.set('redirect_url', 'https://apexlearningkw.com/?status=success&session=tutor');
+            window.location.href = url.toString();
+        }
+
+        function openCustomerPortal() {
+            window.open('https://www.creem.io', '_blank');
+        }
+
+        function toggleKuwaitLocation(mode) {
+            const wrapper = document.getElementById('kuwaitLocationWrapper');
+            const select = document.getElementById('kuwaitAreaSelect');
+            if (mode === 'In-person' || mode === 'Hybrid') {
+                wrapper.style.display = 'block';
+                select.setAttribute('required', 'required');
+            } else {
+                wrapper.style.display = 'none';
+                select.removeAttribute('required');
+            }
+        }
+
+        function setupCheckboxCounter(groupName, counterId) {
+            const boxes = document.querySelectorAll(`input[name="${groupName}"]`);
+            const counter = document.getElementById(counterId);
+
+            function update() {
+                let count = 0;
+                boxes.forEach(box => {
+                    const card = box.closest('.option-card');
+                    if (box.checked) {
+                        if (card) card.classList.add('checked');
+                        count++;
+                    } else {
+                        if (card) card.classList.remove('checked');
+                    }
+                });
+                if (counter) {
+                    counter.innerText = `${count} selected`;
+                }
+            }
+
+            boxes.forEach(box => box.addEventListener('change', update));
+            update();
+        }
+
+        setupCheckboxCounter('student_typology', 'studentTypeCounter');
+        setupCheckboxCounter('requested_tutor_archetypes', 'tutorNeedCounter');
+        setupCheckboxCounter('tutor_self_archetype', 'tutorSelfCounter');
+        setupCheckboxCounter('tutor_preferred_students', 'tutorPrefCounter');
+
+        // CV File display name
+        const cvInput = document.getElementById('tutorCV');
+        if (cvInput) {
+            cvInput.addEventListener('change', function() {
+                if (cvInput.files.length > 0) {
+                    document.getElementById('cvFileNameDisplay').innerText = cvInput.files[0].name;
+                }
+            });
+        }
+
+        // Student Intake Submission
+        const studentForm = document.getElementById('studentIntakeForm');
+        const studentResetBtn = document.getElementById('studentResetBtn');
+        const outputPanel = document.getElementById('diagnosticOutputPanel');
+        const studentChips = document.getElementById('studentChips');
+        const tutorChips = document.getElementById('tutorChips');
+        const recommendationBox = document.getElementById('pedagogicalRecommendation');
+
+        studentResetBtn.addEventListener('click', () => {
+            studentForm.reset();
+            outputPanel.style.display = 'none';
+            toggleKuwaitLocation('Online');
+            toggleSubmitterRole('Parent');
+            document.querySelectorAll('.option-card').forEach(c => c.classList.remove('checked'));
+            ['studentTypeCounter', 'tutorNeedCounter'].forEach(id => {
+                const badge = document.getElementById(id);
+                if (badge) { badge.innerText = '0 selected'; }
+            });
+        });
+
+        studentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('studentSubmitBtn');
+
+            const selectedStudents = Array.from(document.querySelectorAll('input[name="student_typology"]:checked'))
+                .map(el => el.getAttribute('data-summary') || el.value);
+
+            const selectedTutors = Array.from(document.querySelectorAll('input[name="requested_tutor_archetypes"]:checked'))
+                .map(el => el.getAttribute('data-summary') || el.value);
+
+            if (selectedStudents.length === 0 || selectedTutors.length === 0) {
+                alert('Please select at least one option under "What type of student is being supported?" and "Select the type of tutor that you need".');
+                return;
+            }
+
+            studentChips.innerHTML = selectedStudents.map(label => `<span style="background:#e0f2fe; color:#0284c7; padding:4px 10px; border-radius:14px; font-size:0.75rem; font-weight:700;">${label}</span>`).join('');
+            tutorChips.innerHTML = selectedTutors.map(label => `<span style="background:#e0f2fe; color:#0284c7; padding:4px 10px; border-radius:14px; font-size:0.75rem; font-weight:700;">${label}</span>`).join('');
+
+            let insightText = "<strong>Session Strategy Focus:</strong> ";
+            if (selectedStudents.some(s => s.includes("Diligent")) && selectedStudents.some(s => s.includes("Correcting"))) {
+                insightText += "Prioritize diagnostic prerequisite pre-tests to locate hidden gaps so the student's high work ethic yields measurable test score gains.";
+            } else if (selectedStudents.some(s => s.includes("Gifted")) && selectedStudents.some(s => s.includes("Skills"))) {
+                insightText += "Balance fast-paced enrichment challenges with explicit time management and note-taking habits before coursework complexity catches up.";
+            } else if (selectedStudents.some(s => s.includes("Coaching")) && selectedStudents.some(s => s.includes("Skills"))) {
+                insightText += "Establish a weekly 15-minute roadmap check-in before diving into academic content to track accountability and assignment pacing.";
+            } else {
+                insightText += "Employ a balanced session framework: 10 minutes of agenda/skill check-in, 40 minutes of targeted diagnostic practice, and 10 minutes of reflective review.";
+            }
+
+            recommendationBox.innerHTML = insightText;
+            outputPanel.style.display = 'block';
+            outputPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            btn.disabled = true;
+            btn.innerText = "Transmitting to Matching Pool...";
+
+            const formData = new FormData(studentForm);
+            const payload = {
+                action: "student_intake",
+                submitter_role: formData.get("submitter_role") || "Parent",
+                contact_name: formData.get("contact_name") || "",
+                student_name: formData.get("student_name") || "",
+                grade_level: formData.get("grade_level") || "",
+                contact_email: formData.get("contact_email") || "",
+                contact_whatsapp: formData.get("contact_whatsapp") || "",
+                curriculum: formData.get("curriculum") || "",
+                subject: formData.get("subject") || "",
+                delivery_mode: formData.get("delivery_mode") || "Online",
+                kuwait_area: formData.get("kuwait_area") || ""
+            };
+
+            fetch(DB_API_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                btn.innerText = "Free Match Request Logged!";
+                btn.style.background = "#A2EEF2";
+                btn.style.color = "#001f3f";
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerText = "Submit Free Match Request";
+                    btn.style.background = "";
+                    btn.style.color = "";
+                    studentForm.reset();
+                }, 3500);
+            })
+            .catch(err => {
+                console.error(err);
+                btn.innerText = "Match Request Logged!";
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerText = "Submit Free Match Request";
+                }, 3500);
+            });
+        });
+
+        // Tutor Profile Save
+        document.getElementById('tutorProfileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const saveBtn = document.getElementById('saveProfileBtn');
+            const feedback = document.getElementById('saveFeedback');
+            const pass = document.getElementById('tutorPasswordInput')?.value || "password123";
+            const passConfirm = document.getElementById('tutorPasswordConfirm')?.value;
+
+            if (!isTutorAuthenticated && passConfirm && pass !== passConfirm) {
+                alert("Passwords do not match. Please re-enter.");
+                return;
+            }
+
+            saveBtn.disabled = true;
+            saveBtn.innerText = "Saving Profile...";
+
+            const form = new FormData(this);
+            const payload = {
+                action: "tutor_save_profile",
+                email: document.getElementById('profileContactEmail').value,
+                password: pass,
+                fullName: form.get("tutor_full_name"),
+                whatsapp: form.get("tutor_contact_whatsapp"),
+                experienceYears: form.get("experience_years"),
+                rateFloor: form.get("rate_floor"),
+                rateTarget: form.get("rate_target"),
+                deliveryMode: Array.from(document.querySelectorAll('input[name="tutor_mode"]:checked')).map(el => el.value).join(', '),
+                curriculums: Array.from(document.querySelectorAll('input[name="curriculums"]:checked')).map(el => el.value).join(', '),
+                subjects: form.get("subjects_offered"),
+                archetype: Array.from(document.querySelectorAll('input[name="tutor_self_archetype"]:checked')).map(el => el.value).join(', ')
+            };
+
+            fetch(DB_API_URL, { method: "POST", body: JSON.stringify(payload) })
+            .then(res => res.json())
+            .then(data => {
+                saveBtn.disabled = false;
+                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Choose Plan";
+                if (!isTutorAuthenticated) {
+                    feedback.innerText = "✓ Profile recorded! Choose your plan below...";
+                    feedback.style.display = 'block';
+                    setTimeout(() => {
+                        feedback.style.display = 'none';
+                        openPlanModal();
+                    }, 500);
+                } else {
+                    feedback.innerText = "✓ Changes recorded successfully in database!";
+                    feedback.style.display = 'block';
+                    setTimeout(() => { feedback.style.display = 'none'; }, 2500);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                saveBtn.disabled = false;
+                saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Choose Plan";
+                alert("Network error saving profile. Please check connection.");
+            });
+        });
+
+        // Contact Admin Submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('enquirySubmit');
+            btn.disabled = true;
+            btn.innerText = "Sending Message...";
+
+            const payload = {
+                action: "contact_inquiry",
+                sender_name: this.querySelector('input[name="Sender Name"]').value,
+                email: this.querySelector('input[name="Your Email"]').value,
+                subject: this.querySelector('input[name="Subject"]').value,
+                message: this.querySelector('textarea[name="Message"]').value
+            };
+
+            fetch(DB_API_URL, { method: 'POST', body: JSON.stringify(payload) })
+            .then(() => {
+                btn.innerText = "Message Sent!";
+                this.reset();
+                setTimeout(() => { btn.disabled = false; btn.innerText = "Send Message"; }, 3000);
+            })
+            .catch(() => {
+                btn.disabled = false;
+                btn.innerText = "Send Message";
+            });
+        });
+
+        // Content Security Script
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.keyCode === 123) return false;
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 'I'.charCodeAt(0) || e.keyCode === 'C'.charCodeAt(0) || e.keyCode === 'J'.charCodeAt(0))) return false;
+            if (e.ctrlKey && (e.keyCode === 'U'.charCodeAt(0) || e.keyCode === 'S'.charCodeAt(0))) return false;
+        };
+    </script>
 </body>
 </html>
