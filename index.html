@@ -13,9 +13,9 @@
     <style>
         /* --- DESIGN SYSTEM: VIBRANT SKY BLUEPRINT --- */
         :root {
-            --c-surface: #A2EEF2;       
+            --c-surface: #A2EEF2;        
             --c-shallows: #7ee0ee;      
-            --c-mid: #48c6ef;           
+            --c-mid: #48c6ef;            
             --c-deep: #1a7cb5;          
             --c-dark-navy: #001f3f;     
             --c-sub-navy: #0b3456;      
@@ -1055,9 +1055,9 @@
         .sub-price { font-size: 1.6rem; font-weight: 800; color: var(--c-dark-navy); font-family: var(--font-heading); margin: 6px 0; }
 
         /* --- MODALS --- */
-        .plan-modal-overlay, .legal-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 31, 63, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
-        .plan-modal-overlay.active, .legal-modal-overlay.active { display: flex; }
-        .plan-modal-card, .legal-modal-card { background: #ffffff; border: 2.5px solid var(--c-dark-navy); border-radius: 20px; max-width: 750px; width: 100%; padding: 28px 20px; box-shadow: 0 20px 50px rgba(0, 31, 63, 0.3); text-align: center; }
+        .plan-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 31, 63, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .plan-modal-overlay.active { display: flex; }
+        .plan-modal-card { background: #ffffff; border: 2.5px solid var(--c-dark-navy); border-radius: 20px; max-width: 750px; width: 100%; padding: 28px 20px; box-shadow: 0 20px 50px rgba(0, 31, 63, 0.3); text-align: center; }
 
         .plan-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 10px 0; text-align: left; }
         .plan-box { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
@@ -2215,25 +2215,6 @@
         </div>
     </div>
 
-    <!-- MODAL: LEGAL POLICIES -->
-    <div id="legalModalOverlay" class="legal-modal-overlay">
-        <div class="legal-modal-card" style="text-align: left; max-height:85vh; display:flex; flex-direction:column; padding:0; overflow:hidden;">
-            <div style="padding:16px 20px; background:#f8fafc; border-bottom:1.5px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
-                <h3 id="legalModalMainTitle" style="margin:0; font-size:1.1rem;">Legal Documentation</h3>
-                <button onclick="closeLegalModal()" style="background:transparent; border:none; font-size:1.6rem; cursor:pointer;">&times;</button>
-            </div>
-            <div style="display:flex; gap:8px; padding:10px 20px; border-bottom:1px solid #e2e8f0;">
-                <button type="button" id="tabLegalTerms" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('terms')">Terms of Service</button>
-                <button type="button" id="tabLegalRefund" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('refund')">Refund Policy</button>
-                <button type="button" id="tabLegalPrivacy" class="btn btn-white" style="padding:5px 12px; font-size:0.75rem;" onclick="switchLegalModalTab('privacy')">Privacy Policy</button>
-            </div>
-            <div id="legalModalBody" style="padding:20px; overflow-y:auto; line-height:1.6; font-size:0.86rem;"></div>
-            <div style="padding:12px 20px; background:#f8fafc; border-top:1.5px solid #e2e8f0; text-align:right;">
-                <button type="button" class="btn btn-navy" onclick="closeLegalModal()">Close Window</button>
-            </div>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="site-footer">
         <div style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
@@ -2249,9 +2230,9 @@
             <div>
                 <h4 style="color: var(--c-surface) !important; margin-bottom: 12px;">Legal & Policies</h4>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom: 6px;"><a href="terms.html" class="footer-legal-link" onclick="openLegalModal('terms', event)">Terms of Service</a></li>
-                    <li style="margin-bottom: 6px;"><a href="refund-policy.html" class="footer-legal-link" onclick="openLegalModal('refund', event)">Refund & Cancellation</a></li>
-                    <li style="margin-bottom: 6px;"><a href="privacy-policy.html" class="footer-legal-link" onclick="openLegalModal('privacy', event)">Privacy Policy</a></li>
+                    <li style="margin-bottom: 6px;"><a href="terms.html" class="footer-legal-link">Terms of Service</a></li>
+                    <li style="margin-bottom: 6px;"><a href="refund-policy.html" class="footer-legal-link">Refund & Cancellation</a></li>
+                    <li style="margin-bottom: 6px;"><a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a></li>
                 </ul>
             </div>
             <div>
@@ -2271,68 +2252,6 @@
         const DB_API_URL = "https://script.google.com/macros/s/AKfycbxP5uITX-dpAbonKZ6QPRO78H08aYYzV-LO25MQqrKfewa7kc5Tr4Km8YptkHZ1gTEqSg/exec";
         const CREEM_WEEKLY_URL = "https://www.creem.io/test/payment/prod_4JmauGZPMVECOGb49X0tTm";
         const CREEM_MONTHLY_URL = "https://www.creem.io/test/payment/prod_6c2YGpuNxJQ3jjMoQsSXyU";
-
-        const LEGAL_DATA = {
-            privacy: {
-                title: "Privacy Policy & Blind Matching Protocols",
-                html: `
-                    <h4>1. Scope & Responsible Entity</h4>
-                    <p>Apex Learning KW (Pty) Ltd (CIPC Registration: <strong>2026 / 262544 / 07</strong>) operates <code>apexlearningkw.com</code>. We comply with South African <strong>POPIA (Protection of Personal Information Act No. 4 of 2013)</strong>, <strong>ECTA (Act 25 of 2002)</strong>, and Kuwait <strong>CITRA Data Privacy & Protection Regulations</strong> alongside <strong>Law No. 20 of 2014</strong>.</p>
-                    <h4>2. Data Collected</h4>
-                    <p>On student match forms, we collect submitter names, contact emails, WhatsApp details, and school grade information. We record subject requests, curriculum requirements, scheduling availability, and self-disclosed behavioral and archetype classifications.</p>
-                    <h4>3. Vetting File Attachments & Educational Transcripts</h4>
-                    <p>Educators must upload verified credentials, certificates, and resumés. Files are processed via encrypted cloud storage and are reviewed only by authorized Apex academic administrators.</p>
-                    <h4>4. Match Objective Safeguards (Blind Verification)</h4>
-                    <p>Matches are based entirely on objective diagnostic variables. Tutor names and profile data remain obscured until matches are completed to guarantee meritocracy and exclude commercial favoritism.</p>
-                `
-            },
-            terms: {
-                title: "Terms of Service",
-                html: `
-                    <h4>1. Scope of Service</h4>
-                    <p>Apex Learning KW operates an independent academic concierge and matchmaking desk in Kuwait, registered under <strong>Apex Learning KW (Pty) Ltd</strong> (CIPC: <strong>2026 / 262544 / 07</strong>).</p>
-                    <h4>2. Zero Lesson Commissions</h4>
-                    <p>Student matching is 100% free for families. Apex Learning charges <strong>0% commission</strong> on hourly lessons. All instructional fees are paid directly between the client and educator.</p>
-                    <h4>3. Platform Listing Subscriptions</h4>
-                    <p>Tutors maintain active matching eligibility through a recurring Weekly (3 KD / ~$10 USD) or Monthly (10 KD / ~$33 USD) listing subscription billed via Creem. Subscriptions auto-renew until cancelled via the self-service portal.</p>
-                `
-            },
-            refund: {
-                title: "Refund, Cancellation & Remittance Terms",
-                html: `
-                    <h4>1. Platform Listing Refunds</h4>
-                    <p>Listing memberships cover immediate digital credentialing and placement pool activation. Tutors may cancel recurring billing anytime without penalty via the customer portal.</p>
-                    <h4>2. Direct Lesson Remittances</h4>
-                    <p>Because Apex Learning collects 0% commission and never holds instructional fees, all lesson rescheduling, package billing, and lesson refunds must be handled directly between the parent and the educator.</p>
-                `
-            }
-        };
-
-        function openLegalModal(section, e) {
-            if (e) e.preventDefault();
-            switchLegalModalTab(section);
-            document.getElementById('legalModalOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLegalModal() {
-            document.getElementById('legalModalOverlay').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function switchLegalModalTab(tabKey) {
-            const data = LEGAL_DATA[tabKey] || LEGAL_DATA.privacy;
-            document.getElementById('legalModalMainTitle').innerText = data.title;
-            document.getElementById('legalModalBody').innerHTML = data.html;
-
-            document.getElementById('tabLegalTerms').className = 'btn btn-white' + (tabKey === 'terms' ? ' btn-navy' : '');
-            document.getElementById('tabLegalRefund').className = 'btn btn-white' + (tabKey === 'refund' ? ' btn-navy' : '');
-            document.getElementById('tabLegalPrivacy').className = 'btn btn-white' + (tabKey === 'privacy' ? ' btn-navy' : '');
-        }
-
-        document.getElementById('legalModalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeLegalModal();
-        });
 
         // Mobile Nav Drawer Logic
         const menuToggle = document.getElementById('menuToggle');
