@@ -2444,7 +2444,38 @@
                     if (p.rateFloor) document.querySelector('input[name="rate_floor"]').value = p.rateFloor;
                     if (p.rateTarget) document.querySelector('input[name="rate_target"]').value = p.rateTarget;
                     if (p.subjects) document.querySelector('input[name="subjects_offered"]').value = p.subjects;
+// INSIDE YOUR TUTOR LOGIN SUCCESS HANDLER:
+if (response.status === "success") {
+    var profile = response.profile;
+    
+    // 1. Grab the live status and renewal date returned from your Google Sheet
+    var accountStatus = (profile.accountStatus || "Active").trim();
+    var renewalDateStr = profile.renewalDate ? new Date(profile.renewalDate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) : "No active renewal date";
+    
+    // 2. Dynamically update the status badge next to "Sign Out" (as seen in your screenshot)
+    var statusBadge = document.getElementById("tutor-status-badge"); 
+    if (statusBadge) {
+        if (accountStatus.toLowerCase() === "active") {
+            statusBadge.innerHTML = "● Active Listing";
+            statusBadge.style.color = "#10B981"; // Green color for active
+        } else {
+            statusBadge.innerHTML = "● " + accountStatus; // Displays "Expired" or "Past Due" in red
+            statusBadge.style.color = "#EF4444"; // Red color for expired/unpaid
+        }
+    }
 
+    // 3. Optional: Display the exact renewal date inside the "Subscription & Billing" tab view
+    var billingTabElement = document.getElementById("subscription-billing-info");
+    if (billingTabElement) {
+        billingTabElement.innerHTML = `
+            <div class="p-4 bg-gray-50 rounded-lg border">
+                <p class="font-semibold text-gray-700">Account Status: <span style="color: ${accountStatus.toLowerCase() === 'active' ? '#10B981' : '#EF4444'}">${accountStatus}</span></p>
+                <p class="text-sm text-gray-600 mt-1">Current Billing Cycle Ends / Renewal Date: <strong>${renewalDateStr}</strong></p>
+                <a href="https://creem.io/my-orders/login" target="_blank" class="inline-block mt-3 px-4 py-2 bg-indigo-600 text-white rounded text-sm font-medium">Manage / Renew Subscription via Creem</a>
+            </div>
+        `;
+    }
+}
                     renderTutorMatches(data.matches || []);
                     switchTutorPortalView('signup');
                     switchTutorWorkspaceTab('matches');
