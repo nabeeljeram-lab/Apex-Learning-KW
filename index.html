@@ -13,9 +13,9 @@
     <style>
         /* --- DESIGN SYSTEM: VIBRANT SKY BLUEPRINT --- */
         :root {
-            --c-surface: #A2EEF2;        
+            --c-surface: #A2EEF2;       
             --c-shallows: #7ee0ee;      
-            --c-mid: #48c6ef;            
+            --c-mid: #48c6ef;           
             --c-deep: #1a7cb5;          
             --c-dark-navy: #001f3f;     
             --c-sub-navy: #0b3456;      
@@ -1823,8 +1823,8 @@
                             <h3 id="displayTutorEmail" class="dash-name">tutor@apexlearningkw.com</h3>
                             <span class="dash-meta">Verified Candidate Pool</span>
                         </div>
-                        <div class="dash-actions">
-                            <span class="status-pill status-active">● Active Listing</span>
+                        <div class="dash-actions" style="display:flex; align-items:center; gap:10px;">
+                            <span id="tutor-status-badge" style="font-family: var(--font-heading); font-size: 0.82rem; font-weight: 800; color: #EF4444;">● Pending Payment</span>
                             <button type="button" class="btn btn-white" onclick="handleTutorLogout()" style="padding: 5px 12px; font-size: 0.72rem;">Sign Out</button>
                         </div>
                     </div>
@@ -1904,7 +1904,6 @@
 
                             <h3 style="font-size: 1.05rem; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 6px; margin-top: 20px; margin-bottom: 14px;">2. Experience, Rates & Modality</h3>
                             
-                            <!-- ITEM 11: SEPARATED & CLARIFIED HOURLY RATE INPUTS -->
                             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 14px; align-items: start;">
                                 <div>
                                     <label class="form-label">Years of Tutoring Experience</label>
@@ -2094,7 +2093,7 @@
                     </div>
 
                     <!-- PANE 3: LISTING SUBSCRIPTION & BILLING -->
-                    <div id="paneSubscription" style="display: none;">
+                    <div id="paneSubscription" style="display: none;" id="subscription-billing-info">
                         <div class="subscription-status-card" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:12px; padding:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
                             <div>
                                 <span style="font-size:0.7rem; font-weight:800; text-transform:uppercase; color:var(--c-dark-navy);">Current Plan: Platform Listing</span>
@@ -2445,41 +2444,21 @@
                     if (p.rateTarget) document.querySelector('input[name="rate_target"]').value = p.rateTarget;
                     if (p.subjects) document.querySelector('input[name="subjects_offered"]').value = p.subjects;
 
-                    // INSIDE YOUR TUTOR LOGIN SUCCESS HANDLER:
-if (response.status === "success") {
-    var profile = response.profile;
-    
-    // 1. Grab the live status and renewal date returned from your Google Sheet
-    var accountStatus = (profile.accountStatus || "Active").trim();
-    var renewalDateStr = profile.renewalDate ? new Date(profile.renewalDate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) : "No active renewal date";
-    
-    
-   // Dynamically update the status badge from the database response
-var accountStatus = (profile.accountStatus || "Pending Payment").trim();
-var statusBadge = document.getElementById("tutor-status-badge"); 
+                    // Dynamically update status badge and billing dates from database response
+                    var accountStatus = (p.accountStatus || "Pending Payment").trim();
+                    var renewalDateStr = p.renewalDate ? new Date(p.renewalDate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) : "No active renewal date";
+                    var statusBadge = document.getElementById("tutor-status-badge"); 
 
-if (statusBadge) {
-    if (accountStatus.toLowerCase() === "active") {
-        statusBadge.innerHTML = "● Active Listing";
-        statusBadge.style.color = "#10B981"; // Green
-    } else {
-        statusBadge.innerHTML = "● " + accountStatus; // Displays "Pending Payment" or "Expired"
-        statusBadge.style.color = "#EF4444"; // Red
-    }
-}
+                    if (statusBadge) {
+                        if (accountStatus.toLowerCase() === "active") {
+                            statusBadge.innerHTML = "● Active Listing";
+                            statusBadge.style.color = "#10B981"; // Green
+                        } else {
+                            statusBadge.innerHTML = "● " + accountStatus; // Displays "Pending Payment" or "Expired"
+                            statusBadge.style.color = "#EF4444"; // Red
+                        }
+                    }
 
-    // 3. Optional: Display the exact renewal date inside the "Subscription & Billing" tab view
-    var billingTabElement = document.getElementById("subscription-billing-info");
-    if (billingTabElement) {
-        billingTabElement.innerHTML = `
-            <div class="p-4 bg-gray-50 rounded-lg border">
-                <p class="font-semibold text-gray-700">Account Status: <span style="color: ${accountStatus.toLowerCase() === 'active' ? '#10B981' : '#EF4444'}">${accountStatus}</span></p>
-                <p class="text-sm text-gray-600 mt-1">Current Billing Cycle Ends / Renewal Date: <strong>${renewalDateStr}</strong></p>
-                <a href="https://creem.io/my-orders/login" target="_blank" class="inline-block mt-3 px-4 py-2 bg-indigo-600 text-white rounded text-sm font-medium">Manage / Renew Subscription via Creem</a>
-            </div>
-        `;
-    }
-}
                     renderTutorMatches(data.matches || []);
                     switchTutorPortalView('signup');
                     switchTutorWorkspaceTab('matches');
@@ -2738,7 +2717,7 @@ if (statusBadge) {
             });
         });
 
-        // Tutor Profile Save (Fixed and fully operational with immediate portal access)
+        // Tutor Profile Save
         document.getElementById('tutorProfileForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const saveBtn = document.getElementById('saveProfileBtn');
@@ -2780,7 +2759,6 @@ if (statusBadge) {
                 saveBtn.disabled = false;
                 saveBtn.innerText = isTutorAuthenticated ? "Save Changes & Update Match Pool Data" : "Complete Sign Up & Enter Portal";
                 
-                // Grant immediate portal access
                 isTutorAuthenticated = true;
                 document.getElementById('displayTutorEmail').innerText = `${fullNameVal} (${emailVal})`;
                 feedback.innerText = "✓ Account created! Entering your portal...";
