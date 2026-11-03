@@ -2454,22 +2454,19 @@ if (response.status === "success") {
     var renewalDateStr = profile.renewalDate ? new Date(profile.renewalDate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) : "No active renewal date";
     
     
-    // 2. Dynamically update the status badge next to "Sign Out" (as seen in your screenshot)
-    var statusBadge = document.getElementById("tutor-status-badge"); 
-   // --- UPDATE STATUS BADGE DYNAMICALLY FROM DATABASE ---
-                const accountStatus = (p.accountStatus || "Pending Payment").trim();
-                const statusBadge = document.getElementById("tutor-status-badge"); 
-                
-                if (statusBadge) {
-                    if (accountStatus.toLowerCase() === "active") {
-                        statusBadge.innerHTML = "● Active Listing";
-                        statusBadge.style.color = "#10B981"; // Green
-                    } else {
-                        // This will now dynamically display whatever is in Column O (e.g., "Pending Payment" or "Expired") in red
-                        statusBadge.innerHTML = "● " + accountStatus; 
-                        statusBadge.style.color = "#EF4444"; // Red
-                    }
-                }
+   // Dynamically update the status badge from the database response
+var accountStatus = (profile.accountStatus || "Pending Payment").trim();
+var statusBadge = document.getElementById("tutor-status-badge"); 
+
+if (statusBadge) {
+    if (accountStatus.toLowerCase() === "active") {
+        statusBadge.innerHTML = "● Active Listing";
+        statusBadge.style.color = "#10B981"; // Green
+    } else {
+        statusBadge.innerHTML = "● " + accountStatus; // Displays "Pending Payment" or "Expired"
+        statusBadge.style.color = "#EF4444"; // Red
+    }
+}
 
     // 3. Optional: Display the exact renewal date inside the "Subscription & Billing" tab view
     var billingTabElement = document.getElementById("subscription-billing-info");
