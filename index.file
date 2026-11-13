@@ -2550,7 +2550,16 @@
         function openPlanModal() { document.getElementById('planSelectionModal').classList.add('active'); }
         function closePlanModal() { document.getElementById('planSelectionModal').classList.remove('active'); }
 
-        function goToCheckout(planTier) {
+   function goToCheckout(planTier) {
+            // Check if the tutor is authenticated before allowing payment access
+            if (!isTutorAuthenticated) {
+                alert("Please sign in or complete your tutor registration before selecting a listing plan.");
+                switchTutorPortalView('signin');
+                const portalSection = document.getElementById('tutor-portal');
+                if (portalSection) portalSection.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
             const email = document.getElementById('profileContactEmail')?.value || '';
             const baseUrl = planTier === 'Weekly' ? CREEM_WEEKLY_URL : CREEM_MONTHLY_URL;
             const url = new URL(baseUrl);
@@ -2558,7 +2567,6 @@
             url.searchParams.set('redirect_url', 'https://apexlearningkw.com/?status=success&session=tutor');
             window.location.href = url.toString();
         }
-
         function openCustomerPortal() {
             window.open('https://www.creem.io/my-orders/login', '_blank');
         }
