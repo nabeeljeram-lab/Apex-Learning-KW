@@ -2283,8 +2283,10 @@
     <!-- INTERACTION LOGIC & LIVE DATABASE INTEGRATION -->
     <script>
         const DB_API_URL = "https://script.google.com/macros/s/AKfycbxP5uITX-dpAbonKZ6QPRO78H08aYYzV-LO25MQqrKfewa7kc5Tr4Km8YptkHZ1gTEqSg/exec";
-        const CREEM_WEEKLY_URL = "https://www.creem.io/test/payment/prod_4JmauGZPMVECOGb49X0tTm";
-        const CREEM_MONTHLY_URL = "https://www.creem.io/test/payment/prod_6c2YGpuNxJQ3jjMoQsSXyU";
+        
+        // Updated Creem Payment Links
+        const CREEM_WEEKLY_URL = "https://www.creem.io/payment/prod_hHlR4k52KyuA7YHCx7Qbt";
+        const CREEM_MONTHLY_URL = "https://www.creem.io/payment/prod_4cVp7PV4Qfwro3ZcAgBPMP";
 
         // Mobile Nav Drawer Logic
         const menuToggle = document.getElementById('menuToggle');
@@ -2548,7 +2550,7 @@
         function openPlanModal() { document.getElementById('planSelectionModal').classList.add('active'); }
         function closePlanModal() { document.getElementById('planSelectionModal').classList.remove('active'); }
 
-       function goToCheckout(planTier) {
+  function goToCheckout(planTier) {
             // Check if the tutor is authenticated before allowing payment access
             if (!isTutorAuthenticated) {
                 alert("Please sign in or complete your tutor registration before selecting a listing plan.");
